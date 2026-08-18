@@ -1,0 +1,4163 @@
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <!-- CSS -->
+     
+<!-- =========================================================
+     BIGHEARTS HERO SLIDER
+     UNIQUE PREFIX: bhhero-
+========================================================= -->
+<style>
+    /* =========================================================
+   FULL SCREEN / PAGE RESET
+   ========================================================= */
+
+html {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #ffffff;
+}
+
+/* Apply predictable box sizing everywhere */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default spacing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure {
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================================
+   REMOVE COMMON WIDTH / MARGIN RESTRICTIONS
+   ========================================================= */
+
+main,
+section,
+header,
+footer {
+    max-width: 100%;
+}
+
+/* If your existing containers have unwanted side margins */
+.container,
+.container-fluid,
+.wrapper,
+.page-wrapper,
+.main-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   CHARITY HERO - FULL WIDTH
+   Change .charity-hero to your actual hero class if needed
+   ========================================================= */
+
+.charity-hero {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden;
+}
+
+/* Hero background/image wrapper */
+.charity-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+/* Hero content */
+.charity-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1400px;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    margin: 0 auto;
+    padding: 120px 60px 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* =========================================================
+   HERO HEADING
+   ========================================================= */
+
+.charity-hero-content h1 {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 20px auto 30px;
+
+    font-size: clamp(42px, 5vw, 82px);
+    line-height: 1.05;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+/* Small heading */
+.charity-hero-content .hero-subtitle {
+    margin-bottom: 20px;
+
+    font-size: clamp(18px, 2vw, 30px);
+    line-height: 1.3;
+
+    color: #ffffff;
+}
+
+/* Button */
+.charity-hero-content .hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    min-height: 58px;
+
+    padding: 14px 30px;
+
+    border-radius: 40px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    color: #ffffff;
+    background: #f4513a;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.charity-hero-content .hero-button:hover {
+    transform: translateY(-3px);
+    background: #ff633f;
+}
+
+
+/* =========================================================
+   HERO SLIDER / BACKGROUND
+   ========================================================= */
+
+.charity-hero-slider,
+.charity-hero-slide {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.charity-hero-slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+
+/* =========================================================
+   HERO OVERLAY
+   ========================================================= */
+
+.charity-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.48) 50%,
+            rgba(244, 81, 58, 0.35) 100%
+        );
+}
+
+
+/* =========================================================
+   SLIDER CONTROLS
+   ========================================================= */
+
+.charity-slider-controls {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 45px;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    z-index: 5;
+}
+
+.charity-slider-controls button {
+    border: 0;
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DOTS
+   ========================================================= */
+
+.charity-slider-dots {
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    z-index: 5;
+}
+
+.charity-slider-dots span {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.charity-slider-dots span.active {
+    width: 30px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   DESKTOP
+   1200px+
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    .charity-hero {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .charity-hero-content {
+        max-width: 1450px;
+
+        padding:
+            120px
+            70px
+            90px;
+    }
+
+    .charity-hero-content h1 {
+        max-width: 1050px;
+
+        font-size: clamp(60px, 5vw, 82px);
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+   992px - 1199px
+   ========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .charity-hero {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .charity-hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        padding:
+            110px
+            45px
+            80px;
+    }
+
+    .charity-hero-content h1 {
+        max-width: 900px;
+
+        font-size: clamp(48px, 5vw, 68px);
+        line-height: 1.08;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 991px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .charity-hero {
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .charity-hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        padding:
+            110px
+            35px
+            90px;
+    }
+
+    .charity-hero-content h1 {
+        max-width: 750px;
+
+        font-size: clamp(42px, 6vw, 58px);
+        line-height: 1.08;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .charity-slider-controls {
+        padding: 0 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   767px AND BELOW
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow-x: hidden;
+    }
+
+    .charity-hero {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 100svh;
+        height: 100svh;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .charity-hero-slider,
+    .charity-hero-slide {
+        width: 100%;
+        height: 100%;
+    }
+
+    .charity-hero-slide img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .charity-hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 100svh;
+
+        padding:
+            100px
+            20px
+            100px;
+
+        justify-content: center;
+    }
+
+    .charity-hero-content h1 {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 15px auto 25px;
+
+        font-size: clamp(36px, 10vw, 52px);
+        line-height: 1.08;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .charity-hero-content .hero-button {
+        min-height: 52px;
+
+        padding: 12px 25px;
+
+        font-size: 14px;
+    }
+
+    .charity-slider-controls {
+        bottom: 45px;
+
+        padding: 0 15px;
+    }
+
+    .charity-slider-dots {
+        bottom: 18px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   480px AND BELOW
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .charity-hero-content {
+        padding:
+            90px
+            16px
+            90px;
+    }
+
+    .charity-hero-content h1 {
+        font-size: clamp(32px, 10vw, 43px);
+
+        line-height: 1.1;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .charity-hero-content .hero-button {
+        min-width: 145px;
+        min-height: 48px;
+
+        padding: 10px 22px;
+    }
+
+    .charity-slider-controls {
+        padding: 0 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   360px AND BELOW
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .charity-hero-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .charity-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 14px;
+    }
+}
+    </style>
+<!-- =========================================================
+     RESPONSIVE ORANGE + BLACK HEADER
+     UNIQUE PREFIX: stkhead-
+========================================================= -->
+
+<header class="stkhead-header">
+
+    <div class="stkhead-container">
+
+        <!-- LOGO -->
+        <a href="404.html" class="stkhead-logo">
+            <img src="./white.webp" alt="Logo">
+        </a>
+
+
+        <!-- DESKTOP / LAPTOP NAVIGATION -->
+        <nav class="stkhead-nav" id="stkheadNav">
+
+            <a href="index.html" class="stkhead-link active">
+                Home
+            </a>
+
+            <a href="about.html" class="stkhead-link">
+                About
+            </a>
+
+            <a href="services.html" class="stkhead-link">
+                Services
+            </a>
+
+            
+            <a href="contact.html" class="stkhead-link">
+                Contact
+            </a>
+
+            <a href="login.html" class="stkhead-login">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </a>
+
+            <a href="register.html" class="stkhead-register">
+                <i class="fa-solid fa-user-plus"></i>
+                Register
+            </a>
+
+        </nav>
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            class="stkhead-menu-btn"
+            id="stkheadMenuBtn"
+            type="button"
+            aria-label="Open Menu"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- FONT AWESOME -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <Style>
+        /* =========================================================
+   STACKLY RESPONSIVE HEADER
+   UNIQUE PREFIX: stkhead-
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.stkhead-header,
+.stkhead-header *,
+.stkhead-header *::before,
+.stkhead-header *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.stkhead-header {
+    width: 100%;
+    background: #000000;
+    position: relative;
+    z-index: 9999;
+    border-bottom: 2px solid #ff7a00;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.stkhead-container {
+    width: 100%;
+    max-width: 1500px;
+    min-height: 100px;
+    margin: 0 auto;
+
+    padding: 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.stkhead-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+}
+
+.stkhead-logo img {
+    width: 150px;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.stkhead-logo:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.stkhead-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 32px;
+
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   NORMAL NAV LINKS
+========================================================= */
+
+.stkhead-link {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    padding: 15px 0;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+/* =========================================================
+   UNDERLINE EFFECT
+========================================================= */
+
+.stkhead-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 5px;
+
+    width: 0;
+    height: 3px;
+
+    background: #ff7a00;
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+
+/* HOVER */
+
+.stkhead-link:hover {
+    color: #ff7a00;
+}
+
+.stkhead-link:hover::after {
+    width: 100%;
+}
+
+
+/* ACTIVE */
+
+.stkhead-link.active {
+    color: #ff7a00;
+}
+
+.stkhead-link.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.stkhead-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    padding: 12px 20px;
+
+    border: 2px solid #ff7a00;
+    border-radius: 7px;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.stkhead-login i {
+    color: #ff7a00;
+    font-size: 20px;
+
+    transition: color 0.3s ease;
+}
+
+.stkhead-login:hover {
+    background: #ff7a00;
+    color: #000000;
+
+    transform: translateY(-2px);
+}
+
+.stkhead-login:hover i {
+    color: #000000;
+}
+
+
+/* =========================================================
+   REGISTER
+========================================================= */
+
+.stkhead-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #000000;
+
+    background: #ff7a00;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    padding: 14px 22px;
+
+    border: 2px solid #ff7a00;
+    border-radius: 7px;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.stkhead-register i {
+    font-size: 20px;
+}
+
+.stkhead-register:hover {
+    background: transparent;
+    color: #ff7a00;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.stkhead-menu-btn {
+    width: 48px;
+    height: 48px;
+
+    padding: 8px;
+
+    border: 2px solid #ff7a00;
+    border-radius: 6px;
+
+    background: transparent;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+
+/* HAMBURGER LINES */
+
+.stkhead-menu-btn span {
+    width: 27px;
+    height: 3px;
+
+    background: #ff7a00;
+
+    border-radius: 5px;
+
+    display: block;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* =========================================================
+   HAMBURGER ACTIVE
+========================================================= */
+
+.stkhead-menu-btn.stkhead-open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.stkhead-menu-btn.stkhead-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.stkhead-menu-btn.stkhead-open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1401px) {
+
+    .stkhead-container {
+        min-height: 105px;
+
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+
+    .stkhead-logo img {
+        width: 165px;
+    }
+
+    .stkhead-nav {
+        gap: 35px;
+    }
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+
+    .stkhead-container {
+        min-height: 100px;
+
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .stkhead-logo img {
+        width: 150px;
+    }
+
+    .stkhead-nav {
+        gap: 27px;
+    }
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .stkhead-container {
+        min-height: 95px;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .stkhead-logo img {
+        width: 135px;
+    }
+
+    .stkhead-nav {
+        gap: 18px;
+    }
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+
+    .stkhead-login {
+        padding: 11px 15px;
+    }
+
+    .stkhead-register {
+        padding: 12px 16px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .stkhead-container {
+        min-height: 90px;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .stkhead-logo img {
+        width: 135px;
+    }
+
+    .stkhead-menu-btn {
+        display: flex;
+    }
+
+    .stkhead-nav {
+        position: absolute;
+
+        top: 90px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: #000000;
+
+        border-top: 1px solid #ff7a00;
+        border-bottom: 2px solid #ff7a00;
+
+        display: flex;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-15px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    .stkhead-nav.stkhead-nav-active {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .stkhead-link {
+        width: 100%;
+
+        font-size: 22px;
+
+        padding: 16px 10px;
+
+        text-align: center;
+
+        border-bottom: 1px solid rgba(255, 122, 0, 0.25);
+    }
+
+
+    .stkhead-link::after {
+        display: none;
+    }
+
+
+    .stkhead-login,
+    .stkhead-register {
+        width: 100%;
+
+        margin-top: 12px;
+
+        font-size: 22px;
+
+        padding: 14px 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .stkhead-container {
+        min-height: 85px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .stkhead-logo img {
+        width: 125px;
+    }
+
+
+    .stkhead-menu-btn {
+        display: flex;
+
+        width: 47px;
+        height: 47px;
+    }
+
+
+    .stkhead-nav {
+        position: absolute;
+
+        top: 85px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px 18px 25px;
+
+        background: #000000;
+
+        border-top: 1px solid #ff7a00;
+        border-bottom: 2px solid #ff7a00;
+
+        display: flex;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-15px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    .stkhead-nav.stkhead-nav-active {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .stkhead-link {
+        width: 100%;
+
+        font-size: 22px;
+
+        padding: 16px 10px;
+
+        text-align: center;
+
+        border-bottom: 1px solid rgba(255, 122, 0, 0.25);
+    }
+
+
+    .stkhead-link::after {
+        display: none;
+    }
+
+
+    .stkhead-login,
+    .stkhead-register {
+        width: 100%;
+
+        margin-top: 12px;
+
+        font-size: 22px;
+
+        padding: 14px 20px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .stkhead-container {
+        min-height: 80px;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .stkhead-logo img {
+        width: 115px;
+    }
+
+
+    .stkhead-menu-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    .stkhead-nav {
+        top: 80px;
+
+        padding: 18px 15px 22px;
+    }
+
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .stkhead-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .stkhead-logo img {
+        width: 105px;
+    }
+
+
+    .stkhead-menu-btn {
+        width: 43px;
+        height: 43px;
+    }
+
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+}
+    </Style>
+
+<script>
+    /* =========================================================
+       STACKLY HEADER MOBILE MENU
+    ========================================================= */
+    
+    document.addEventListener("DOMContentLoaded", function () {
+    
+        const stkheadMenuBtn =
+            document.getElementById("stkheadMenuBtn");
+    
+        const stkheadNav =
+            document.getElementById("stkheadNav");
+    
+    
+        if (!stkheadMenuBtn || !stkheadNav) {
+            return;
+        }
+    
+    
+        /* OPEN / CLOSE MENU */
+    
+        stkheadMenuBtn.addEventListener("click", function () {
+    
+            const isOpen =
+                stkheadNav.classList.toggle("stkhead-nav-active");
+    
+            stkheadMenuBtn.classList.toggle(
+                "stkhead-open",
+                isOpen
+            );
+    
+            stkheadMenuBtn.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+    
+        });
+    
+    
+        /* CLOSE MENU AFTER CLICKING A LINK */
+    
+        const stkheadLinks =
+            stkheadNav.querySelectorAll("a");
+    
+        stkheadLinks.forEach(function (link) {
+    
+            link.addEventListener("click", function () {
+    
+                stkheadNav.classList.remove(
+                    "stkhead-nav-active"
+                );
+    
+                stkheadMenuBtn.classList.remove(
+                    "stkhead-open"
+                );
+    
+                stkheadMenuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+    
+            });
+    
+        });
+    
+    
+        /* CLOSE MENU WHEN CLICKING OUTSIDE */
+    
+        document.addEventListener("click", function (event) {
+    
+            if (
+                !stkheadNav.contains(event.target) &&
+                !stkheadMenuBtn.contains(event.target)
+            ) {
+    
+                stkheadNav.classList.remove(
+                    "stkhead-nav-active"
+                );
+    
+                stkheadMenuBtn.classList.remove(
+                    "stkhead-open"
+                );
+    
+                stkheadMenuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+    
+            }
+    
+        });
+    
+    });
+    </script>
+
+    <!-- ----------------------------------------------------------------- -->
+    
+<!--=========================================================
+                    FOOTER SECTION
+                        PART 1
+==========================================================-->
+
+<footer class="gov-footer reveal-up">
+
+    <!-- Animated Background -->
+    <div class="gov-footer-bg-shape shape-1"></div>
+    <div class="gov-footer-bg-shape shape-2"></div>
+    <div class="gov-footer-bg-shape shape-3"></div>
+
+    <div class="gov-footer-container">
+
+        <!--==================================================
+                    FOOTER TOP
+        ===================================================-->
+
+        <div class="gov-footer-top">
+
+            <!--=========================================
+                    COMPANY DETAILS
+            ==========================================-->
+
+            <div class="footer-column footer-company reveal-up">
+
+                <!-- Logo -->
+                <a href="index.html" class="footer-logo">
+
+                    <img src="./white.webp"
+                     style="height:60px;">
+                </a>
+
+                <p class="footer-description">
+
+                    We’re curious, passionate, and committed to helping nonprofits learn and grow. Donate now!
+
+                </p>
+
+                <!--=============================
+                        SOCIAL ICONS
+                ==============================-->
+
+                <div class="footer-social">
+
+                    <a href="404.html"
+                        class="social-icon">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+                    <a href="404.html"
+                        class="social-icon">
+
+                        <i class="fa-brands fa-x-twitter"></i>
+
+                    </a>
+
+                    <a href="404.html"
+                        class="social-icon">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+                    <a href="404.html"
+                        class="social-icon">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!--=========================================
+                    QUICK LINKS
+            ==========================================-->
+
+            <div class="footer-column reveal-up">
+
+                <h3>
+
+                    Quick Links
+
+                </h3>
+
+                <ul>
+
+                    <li>
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="./about.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+About
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="./services.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Services
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        
+                    </li>
+
+                    <li>
+
+                        <a href="contact.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Contact Us
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!--=========================================
+                    HELP & SUPPORT
+            ==========================================-->
+
+            <div class="footer-column reveal-up">
+
+                <h3>
+
+                    Help & Support
+
+                </h3>
+
+                <ul>
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            FAQs
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Help Manual
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Terms & Conditions
+
+                        </a>
+
+                    </li>
+
+                    
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Website Policies
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Sitemap
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!--=========================================
+                    NEWSLETTER
+            ==========================================-->
+
+            <div class="footer-column newsletter-column reveal-up">
+
+                <h3>
+
+                    Stay Connected
+
+                </h3>
+
+                <p>
+
+                    Subscribe to receive the latest
+                    charity announcements,
+                    schemes and service updates.
+
+                </p>
+
+                <!--=============================
+                        NEWSLETTER FORM
+                ==============================-->
+
+                <form id="footerSubscribeForm"
+                    class="newsletter-form">
+
+                    <div class="newsletter-input">
+
+                        <input
+                            type="email"
+                            id="footerEmail"
+                            placeholder="Enter your email"
+                            autocomplete="off">
+
+                        <button
+                            type="submit">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                        </button>
+
+                    </div>
+
+                    <!-- Error -->
+
+                    <small
+                        id="footerEmailError"
+                        class="footer-error">
+
+                    </small>
+
+                    <!-- Subscribe -->
+
+                    <button
+                        class="subscribe-btn"
+                        type="submit">
+
+                        Subscribe
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!--==================================================
+                    FOOTER BOTTOM
+        ===================================================-->
+
+        <div class="gov-footer-bottom reveal-up">
+
+            <!-- Left -->
+            <div class="footer-bottom-left">
+        
+                <span>
+                    Government of India
+                </span>
+        
+            </div>
+        
+            <!-- Center -->
+            <div class="footer-bottom-center">
+        
+                © 2026 Stackly Advisory Group.
+                All Rights Reserved.
+        
+            </div>
+        
+            <!-- Right -->
+            <div class="footer-bottom-right">
+        
+                <a href="404.html">
+                    Privacy Policy
+                </a>
+        
+                <span>|</span>
+        
+                <a href="404.html">
+                    Terms of Service
+                </a>
+        
+            </div>
+        
+        </div>
+
+    </footer>
+
+<!--=========================================================
+            SUCCESS POPUP
+==========================================================-->
+
+<div
+    class="footer-popup"
+    id="footerPopup">
+
+    <div class="footer-popup-box">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <h3>
+
+            Successfully Subscribed!
+
+        </h3>
+
+        <p>
+
+            Thank you for subscribing.
+            Redirecting...
+
+        </p>
+
+    </div>
+
+</div>
+
+<style>
+    /* =========================================================
+   GOVERNMENT FOOTER BOTTOM
+   NON-CONFLICTING RESPONSIVE CSS
+   ========================================================= */
+
+.gov-footer-bottom {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 22px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+    gap: 25px;
+
+    box-sizing: border-box;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+    font-family: "Poppins", sans-serif;
+
+    color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* =========================================================
+   LEFT
+   ========================================================= */
+
+.gov-footer-bottom .footer-bottom-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-width: 0;
+}
+
+.gov-footer-bottom .footer-bottom-left span {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CENTER
+   ========================================================= */
+
+.gov-footer-bottom .footer-bottom-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   RIGHT
+   ========================================================= */
+
+.gov-footer-bottom .footer-bottom-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+.gov-footer-bottom .footer-bottom-right a {
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 22px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Underline animation */
+
+.gov-footer-bottom .footer-bottom-right a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -4px;
+
+    width: 0;
+    height: 2px;
+
+    background: currentColor;
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+
+.gov-footer-bottom .footer-bottom-right a:hover {
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+.gov-footer-bottom .footer-bottom-right a:hover::after {
+    width: 100%;
+}
+
+
+/* Separator */
+
+.gov-footer-bottom .footer-bottom-right span {
+    color: rgba(255, 255, 255, 0.35);
+
+    font-size: 22px;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   REVEAL-UP ANIMATION
+   ========================================================= */
+
+.gov-footer-bottom.reveal-up {
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    animation: govFooterBottomReveal 0.9s ease forwards;
+
+    animation-delay: 0.15s;
+}
+
+
+@keyframes govFooterBottomReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateY(45px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    .gov-footer-bottom {
+        max-width: 1500px;
+
+        padding: 25px 45px;
+
+        gap: 35px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   1025px - 1399px
+   ========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1399px) {
+
+    .gov-footer-bottom {
+        padding: 20px 25px;
+
+        grid-template-columns: 1fr auto 1fr;
+
+        gap: 20px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right {
+        gap: 20px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size:22px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 1024px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .gov-footer-bottom {
+        padding: 20px 22px;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 15px 25px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left {
+        justify-content: flex-start;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        justify-content: flex-end;
+
+        text-align: right;
+
+        white-space: normal;
+    }
+
+    .gov-footer-bottom .footer-bottom-right {
+        grid-column: 1 / -1;
+
+        justify-content: center;
+
+        padding-top: 5px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .gov-footer-bottom {
+        width: 100%;
+
+        padding: 22px 18px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 14px;
+
+        text-align: center;
+    }
+
+
+    /* LEFT */
+
+    .gov-footer-bottom .footer-bottom-left {
+        width: 100%;
+
+        justify-content: center;
+
+        order: 1;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+
+        white-space: normal;
+
+        text-align: center;
+    }
+
+
+    /* CENTER */
+
+    .gov-footer-bottom .footer-bottom-center {
+        width: 100%;
+
+        justify-content: center;
+
+        order: 2;
+
+        white-space: normal;
+
+        text-align: center;
+
+        font-size: 21px;
+
+        line-height: 1.7;
+    }
+
+
+    /* RIGHT */
+
+    .gov-footer-bottom .footer-bottom-right {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        order: 3;
+
+        gap: 8px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right span {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .gov-footer-bottom {
+        padding: 20px 14px;
+
+        gap: 12px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right {
+        gap: 7px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .gov-footer-bottom {
+        padding: 18px 12px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+}
+/*=========================================================
+                    FOOTER SECTION
+                     PART 2A.1
+            Main Layout + Desktop Styling
+=========================================================*/
+
+.gov-footer{
+
+position:relative;
+
+overflow:hidden;
+
+padding:60px 0 0;
+
+background:linear-gradient(135deg,#0d0d0d,#2a1706);
+
+color:#fff;
+
+z-index:1;
+
+}
+
+/*=========================================================
+            ANIMATED BACKGROUND
+=========================================================*/
+
+.gov-footer-bg-shape{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(80px);
+
+opacity:.18;
+
+animation:footerFloat 12s ease-in-out infinite;
+
+}
+
+.shape-1{
+
+width:260px;
+
+height:260px;
+
+background:#ffffff;
+
+top:-80px;
+
+left:-60px;
+
+}
+
+.shape-2{
+
+width:320px;
+
+height:320px;
+
+background:#080808;
+
+right:-100px;
+
+top:120px;
+
+animation-delay:2s;
+
+}
+
+.shape-3{
+
+width:220px;
+
+height:220px;
+
+background:#080808;
+
+bottom:-70px;
+
+left:40%;
+
+animation-delay:4s;
+
+}
+
+@keyframes footerFloat{
+
+0%{
+
+    transform:translateY(0px);
+
+}
+
+50%{
+
+    transform:translateY(-25px);
+
+}
+
+100%{
+
+    transform:translateY(0px);
+
+}
+
+}
+
+/*=========================================================
+            CONTAINER
+=========================================================*/
+
+/*=========================================================
+                FOOTER CONTAINER
+=========================================================*/
+
+.gov-footer-container{
+
+width:85%;
+
+max-width:1200px;   /* Reduce from 1350px */
+
+margin:0 auto;
+
+position:relative;
+
+z-index:5;
+
+}
+/*=========================================================
+            TOP GRID
+=========================================================*/
+
+.gov-footer-top{
+
+display:grid;
+
+grid-template-columns:
+
+1.35fr
+
+.9fr
+
+.9fr
+
+1.1fr;
+
+gap:60px;
+
+padding-bottom:45px;
+
+}
+
+/*=========================================================
+            COMMON COLUMN
+=========================================================*/
+
+.footer-column{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.footer-column h3{
+
+font-size:22px;
+
+font-weight:700;
+
+margin-bottom:24px;
+
+position:relative;
+
+}
+
+.footer-column h3::after{
+
+content:"";
+
+width:38px;
+
+height:3px;
+
+border-radius:30px;
+
+background:#ffffff;
+
+position:absolute;
+
+left:0;
+
+bottom:-10px;
+
+}
+
+/*=========================================================
+            COMPANY
+=========================================================*/
+
+.footer-logo{
+
+display:inline-flex;
+
+margin-bottom:25px;
+
+}
+
+.footer-logo img{
+
+width:210px;
+
+object-fit:contain;
+
+}
+
+.footer-description{
+
+font-size:19px;
+
+line-height:1.9;
+
+color:#eefefe;
+
+margin-bottom:32px;
+
+max-width:330px;
+
+}
+
+/*=========================================================
+            SOCIAL ICONS
+=========================================================*/
+
+.footer-social{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.social-icon{
+
+width:54px;
+
+height:54px;
+
+border-radius:50%;
+
+border:1px solid rgba(255,255,255,.45);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#fff;
+
+font-size:20px;
+
+text-decoration:none;
+
+transition:.45s;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(8px);
+
+}
+
+/*=========================================================
+            LINKS
+=========================================================*/
+
+.footer-column ul{
+
+padding:0;
+
+margin:0;
+
+list-style:none;
+
+}
+
+.footer-column ul li{
+
+margin-bottom:16px;
+
+}
+
+.footer-column ul li a{
+
+color:#eefefe;
+
+text-decoration:none;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:20px;
+
+transition:.35s;
+
+}
+
+.footer-column ul li a i{
+
+font-size:12px;
+
+}
+
+/*=========================================================
+            NEWSLETTER
+=========================================================*/
+
+.newsletter-column p{
+
+color:#eefefe;
+
+line-height:1.8;
+
+margin-bottom:28px;
+
+font-size:20px;
+
+}
+
+.newsletter-form{
+
+width:100%;
+
+}
+
+.newsletter-input{
+
+display:flex;
+
+align-items:center;
+
+overflow:hidden;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.10);
+
+border:1px solid rgba(255,255,255,.25);
+
+backdrop-filter:blur(12px);
+
+}
+
+.newsletter-input input{
+
+flex:1;
+
+border:none;
+
+background:transparent;
+
+padding:16px 18px;
+
+color:#fff;
+
+font-size:20px;
+
+outline:none;
+
+}
+
+.newsletter-input input::placeholder{
+
+color:#ecffff;
+
+}
+
+.newsletter-input button{
+
+width:62px;
+
+border:none;
+
+cursor:pointer;
+
+color:#fff;
+
+background:#f17c07;
+
+height:56px;
+
+font-size:18px;
+
+}
+
+.subscribe-btn{
+
+margin-top:20px;
+
+padding:15px 34px;
+
+border:none;
+
+border-radius:12px;
+
+background:#f17c07;
+
+color:#fff;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.footer-error{
+
+display:block;
+
+color:#ffe2e2;
+
+font-size:13px;
+
+margin-top:10px;
+
+min-height:18px;
+
+}
+
+/*=========================================================
+            FOOTER BOTTOM
+=========================================================*/
+
+.gov-footer-bottom{
+
+border-top:1px solid rgba(255,255,255,.18);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:25px;
+
+padding:26px 0;
+
+font-size:20px;
+
+}
+
+.footer-bottom-left,
+
+.footer-bottom-right{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+}
+
+.footer-bottom-left img{
+
+width:42px;
+
+}
+
+.footer-bottom-right img{
+
+width:95px;
+
+}
+
+.footer-bottom-right a{
+
+text-decoration:none;
+
+color:#ffffff;
+
+transition:.35s;
+
+}
+
+.footer-bottom-center{
+
+text-align:center;
+
+color:#edfefe;
+
+}
+
+/*=========================================================
+            SUCCESS POPUP
+=========================================================*/
+
+.footer-popup{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:rgba(0,0,0,.45);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.4s;
+
+z-index:9999;
+
+}
+
+.footer-popup.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.footer-popup-box{
+
+width:360px;
+
+background:#fff;
+
+border-radius:22px;
+
+padding:35px;
+
+text-align:center;
+
+color:#222;
+
+}
+
+.footer-popup-box i{
+
+font-size:24px;
+
+color:#18b26d;
+
+margin-bottom:18px;
+
+}
+
+.footer-popup-box h3{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+}
+
+.footer-popup-box p{
+
+color:#666;
+
+line-height:1.7;
+
+}
+
+/*=========================================================
+                    FOOTER SECTION
+                      PART 2B.1
+        Desktop + Laptop Responsive (992px - 1400px)
+=========================================================*/
+
+/*=========================================================
+                LARGE DESKTOP
+=========================================================*/
+
+@media (max-width:1400px){
+
+.gov-footer{
+
+    padding:80px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:94%;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:
+    1.25fr
+    .9fr
+    .9fr
+    1fr;
+
+    gap:55px;
+
+}
+
+.footer-logo img{
+
+    width:190px;
+
+}
+
+.footer-description{
+
+    max-width:300px;
+
+    font-size:15px;
+
+}
+
+}
+
+/*=========================================================
+                LAPTOP
+=========================================================*/
+
+@media (max-width:1200px){
+
+.gov-footer{
+
+    padding:75px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:95%;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:50px 45px;
+
+    align-items:flex-start;
+
+}
+
+.footer-column{
+
+    width:100%;
+
+}
+
+.footer-logo img{
+
+    width:180px;
+
+}
+
+.footer-description{
+
+    max-width:100%;
+
+}
+
+.footer-column h3{
+
+    font-size:21px;
+
+}
+
+.footer-column ul li{
+
+    margin-bottom:14px;
+
+}
+
+.newsletter-column{
+
+    width:100%;
+
+}
+
+.newsletter-input{
+
+    width:100%;
+
+}
+
+.newsletter-input input{
+
+    padding:15px 18px;
+
+    font-size:15px;
+
+}
+
+.newsletter-input button{
+
+    width:58px;
+
+    height:54px;
+
+}
+
+.subscribe-btn{
+
+    width:180px;
+
+    padding:14px;
+
+}
+
+.footer-social{
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.social-icon{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:18px;
+
+}
+
+.gov-footer-bottom{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:20px;
+
+    padding:24px 0;
+
+}
+
+.footer-bottom-left,
+
+.footer-bottom-center,
+
+.footer-bottom-right{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+}
+
+/*=========================================================
+            SMALL LAPTOP
+=========================================================*/
+
+@media (max-width:992px){
+
+.gov-footer{
+
+    padding:70px 0 0;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:
+
+    repeat(2,minmax(280px,1fr));
+
+    gap:45px 35px;
+
+}
+
+.footer-column{
+
+    align-self:flex-start;
+
+}
+
+.footer-logo img{
+
+    width:170px;
+
+}
+
+.footer-description{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.footer-column h3{
+
+    font-size:20px;
+
+}
+
+.footer-column ul li a{
+
+    font-size:14px;
+
+}
+
+.newsletter-column p{
+
+    font-size:14px;
+
+}
+
+.newsletter-input{
+
+    border-radius:12px;
+
+}
+
+.newsletter-input input{
+
+    padding:14px 16px;
+
+}
+
+.newsletter-input button{
+
+    width:55px;
+
+}
+
+.subscribe-btn{
+
+    width:170px;
+
+    font-size:14px;
+
+}
+
+.gov-footer-bottom{
+
+    gap:18px;
+
+    font-size:13px;
+
+}
+
+.footer-bottom-left img{
+
+    width:38px;
+
+}
+
+.footer-bottom-right img{
+
+    width:82px;
+
+}
+
+.footer-popup-box{
+
+    width:340px;
+
+    padding:30px;
+
+}
+
+}
+
+/*=========================================================
+        DESKTOP HOVER IMPROVEMENTS
+=========================================================*/
+
+@media (min-width:993px){
+
+.footer-column:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.social-icon:hover{
+
+    transform:
+
+    translateY(-10px)
+
+    rotate(360deg)
+
+    scale(1.12);
+
+}
+
+.subscribe-btn:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.newsletter-input:hover{
+
+    transform:translateY(-3px);
+
+}
+
+}
+
+/*=========================================================
+                    FOOTER SECTION
+                      PART 2B.2
+          Tablet + Mobile Responsive (992px - 320px)
+=========================================================*/
+
+/*=========================================================
+                    TABLET
+=========================================================*/
+
+@media (max-width:991px){
+
+.gov-footer{
+
+    padding:70px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:92%;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:1fr 1fr;
+
+    gap:45px 35px;
+
+}
+
+.footer-column{
+
+    width:100%;
+
+}
+
+.footer-company{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    align-items:center;
+
+}
+
+.footer-description{
+
+    max-width:600px;
+
+    margin:20px auto 30px;
+
+}
+
+.footer-column h3{
+
+    font-size:22px;
+
+}
+
+.footer-column h3::after{
+
+    left:0;
+
+}
+
+.newsletter-column{
+
+    grid-column:1/-1;
+
+}
+
+.newsletter-form{
+
+    max-width:520px;
+
+    margin:auto;
+
+}
+
+.gov-footer-bottom{
+
+    flex-direction:column;
+
+    gap:18px;
+
+    text-align:center;
+
+    padding:28px 0;
+
+}
+
+.footer-bottom-left,
+
+.footer-bottom-center,
+
+.footer-bottom-right{
+
+    justify-content:center;
+
+    width:100%;
+
+    flex-wrap:wrap;
+
+}
+
+}
+
+/*=========================================================
+                MOBILE
+=========================================================*/
+
+@media (max-width:768px){
+
+.gov-footer{
+
+    padding:60px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:94%;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+
+    text-align:center;
+
+}
+
+.footer-column{
+
+    align-items:center;
+
+}
+
+.footer-column h3{
+
+    font-size:22px;
+
+}
+
+.footer-column h3::after{
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.footer-description{
+
+    max-width:100%;
+
+    margin-bottom:30px;
+
+}
+
+.footer-column ul{
+
+    width:100%;
+
+}
+
+.footer-column ul li{
+
+    text-align:center;
+
+}
+
+.footer-column ul li a{
+
+    justify-content:center;
+
+    font-size:15px;
+
+}
+
+.footer-social{
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.social-icon{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:18px;
+
+}
+
+.newsletter-column p{
+
+    text-align:center;
+
+}
+
+.newsletter-form{
+
+    width:100%;
+
+}
+
+.newsletter-input{
+
+    width:100%;
+
+}
+
+.newsletter-input input{
+
+    padding:15px;
+
+    font-size:15px;
+
+}
+
+.newsletter-input button{
+
+    width:58px;
+
+    height:54px;
+
+}
+
+.subscribe-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:18px;
+
+}
+
+.gov-footer-bottom{
+
+    font-size:14px;
+
+    gap:15px;
+
+}
+
+.footer-bottom-left img{
+
+    width:40px;
+
+}
+
+.footer-bottom-right img{
+
+    width:90px;
+
+    margin-top:10px;
+
+}
+
+}
+
+/*=========================================================
+            SMALL MOBILE
+=========================================================*/
+
+@media (max-width:576px){
+
+.gov-footer{
+
+    padding:50px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:95%;
+
+}
+
+.gov-footer-top{
+
+    gap:40px;
+
+}
+
+.footer-logo img{
+
+    width:170px;
+
+}
+
+.footer-description{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.footer-column h3{
+
+    font-size:20px;
+
+}
+
+.footer-column ul li{
+
+    margin-bottom:14px;
+
+}
+
+.footer-column ul li a{
+
+    font-size:14px;
+
+}
+
+.social-icon{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:17px;
+
+}
+
+.newsletter-column p{
+
+    font-size:14px;
+
+}
+
+.newsletter-input{
+
+    border-radius:12px;
+
+}
+
+.newsletter-input input{
+
+    font-size:14px;
+
+    padding:14px;
+
+}
+
+.newsletter-input button{
+
+    width:54px;
+
+    height:52px;
+
+    font-size:16px;
+
+}
+
+.subscribe-btn{
+
+    font-size:14px;
+
+    padding:14px;
+
+}
+
+.gov-footer-bottom{
+
+    padding:22px 0;
+
+    font-size:13px;
+
+}
+
+.footer-bottom-left img{
+
+    width:34px;
+
+}
+
+.footer-bottom-right img{
+
+    width:75px;
+
+}
+
+.footer-popup-box{
+
+    width:92%;
+
+    padding:28px 20px;
+
+}
+
+.footer-popup-box h3{
+
+    font-size:24px;
+
+}
+
+.footer-popup-box p{
+
+    font-size:14px;
+
+}
+
+}
+
+/*=========================================================
+            EXTRA SMALL MOBILE
+=========================================================*/
+
+@media (max-width:400px){
+
+.gov-footer{
+
+    padding:45px 0 0;
+
+}
+
+.footer-logo img{
+
+    width:150px;
+
+}
+
+.footer-description{
+
+    font-size:13px;
+
+}
+
+.footer-column h3{
+
+    font-size:18px;
+
+}
+
+.footer-column ul li a{
+
+    font-size:13px;
+
+}
+
+.social-icon{
+
+    width:42px;
+
+    height:42px;
+
+    font-size:16px;
+
+}
+
+.newsletter-input{
+
+    flex-direction:column;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+}
+
+.newsletter-input input{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.newsletter-input button{
+
+    width:100%;
+
+    height:48px;
+
+    border-radius:0;
+
+}
+
+.subscribe-btn{
+
+    width:100%;
+
+}
+
+.footer-bottom-right{
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.footer-bottom-right span{
+
+    display:none;
+
+}
+
+}
+
+/*=========================================================
+        LANDSCAPE MOBILE FIX
+=========================================================*/
+
+@media (max-height:500px) and (orientation:landscape){
+
+.gov-footer{
+
+    padding-top:45px;
+
+}
+
+.gov-footer-top{
+
+    gap:30px;
+
+}
+
+}
+
+/*=========================================================
+        OVERFLOW FIX
+=========================================================*/
+
+html,
+body{
+
+overflow-x:hidden;
+
+}
+
+.gov-footer{
+
+overflow:hidden;
+
+}
+
+.gov-footer img{
+
+max-width:100%;
+
+height:auto;
+
+}
+
+.footer-column,
+
+.newsletter-form,
+
+.newsletter-input,
+
+.footer-bottom-left,
+
+.footer-bottom-right{
+
+max-width:100%;
+
+}
+
+    </style>
+
+    <script>
+
+        /*=========================================================
+                    FOOTER SECTION
+                        PART 3
+=========================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*==================================================
+            SCROLL REVEAL ANIMATION
+==================================================*/
+
+const revealElements = document.querySelectorAll(".reveal-up");
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            revealObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.15
+
+});
+
+revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+});
+
+/*==================================================
+            STAGGER ANIMATION
+==================================================*/
+
+const footerItems = document.querySelectorAll(
+
+    ".footer-company," +
+
+    ".gov-footer-top .footer-column," +
+
+    ".gov-footer-bottom"
+
+);
+
+footerItems.forEach((item, index) => {
+
+    item.style.transitionDelay = `${index * 0.15}s`;
+
+});
+
+/*==================================================
+            EMAIL VALIDATION
+==================================================*/
+
+const form = document.getElementById("footerSubscribeForm");
+
+const emailInput = document.getElementById("footerEmail");
+
+const emailError = document.getElementById("footerEmailError");
+
+const popup = document.getElementById("footerPopup");
+
+const emailPattern =
+
+    /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+if (form) {
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+
+        emailError.textContent = "";
+
+        emailInput.style.border = "";
+
+        if (email === "") {
+
+            emailError.textContent =
+
+                "Please fill details correctly.";
+
+            emailInput.style.border =
+
+                "2px solid #ff4d4d";
+
+            emailInput.focus();
+
+            return;
+
+        }
+
+        if (!emailPattern.test(email)) {
+
+            emailError.textContent =
+
+                "Please fill details correctly.";
+
+            emailInput.style.border =
+
+                "2px solid #ff4d4d";
+
+            emailInput.focus();
+
+            return;
+
+        }
+
+        emailInput.style.border =
+
+            "2px solid #22c55e";
+
+        popup.classList.add("active");
+
+        setTimeout(() => {
+
+            window.location.href = "404.html";
+
+        }, 1800);
+
+    });
+
+}
+
+/*==================================================
+            REMOVE ERROR WHILE TYPING
+==================================================*/
+
+if (emailInput) {
+
+    emailInput.addEventListener("input", () => {
+
+        emailError.textContent = "";
+
+        emailInput.style.border = "";
+
+    });
+
+}
+
+/*==================================================
+            SOCIAL ICON HOVER
+==================================================*/
+
+const socialIcons =
+
+    document.querySelectorAll(".social-icon");
+
+socialIcons.forEach((icon) => {
+
+    icon.addEventListener("mouseenter", () => {
+
+        icon.animate([
+
+            {
+
+                transform: "translateY(0) rotate(0deg)"
+
+            },
+
+            {
+
+                transform: "translateY(-10px) rotate(180deg)"
+
+            },
+
+            {
+
+                transform: "translateY(-6px) rotate(360deg)"
+
+            }
+
+        ], {
+
+            duration: 500,
+
+            easing: "ease"
+
+        });
+
+    });
+
+});
+
+/*==================================================
+            FOOTER LINKS
+==================================================*/
+
+const footerLinks =
+
+    document.querySelectorAll(
+
+        ".footer-column ul li a"
+
+    );
+
+footerLinks.forEach((link) => {
+
+    link.addEventListener("mouseenter", () => {
+
+        link.style.transform =
+
+            "translateX(8px)";
+
+    });
+
+    link.addEventListener("mouseleave", () => {
+
+        link.style.transform =
+
+            "translateX(0px)";
+
+    });
+
+});
+
+/*==================================================
+            SUBSCRIBE BUTTON
+==================================================*/
+
+const subscribeBtn =
+
+    document.querySelector(".subscribe-btn");
+
+if (subscribeBtn) {
+
+    subscribeBtn.addEventListener(
+
+        "mouseenter",
+
+        () => {
+
+            subscribeBtn.animate([
+
+                {
+
+                    transform: "translateY(0)"
+
+                },
+
+                {
+
+                    transform: "translateY(-6px)"
+
+                },
+
+                {
+
+                    transform: "translateY(0)"
+
+                }
+
+            ], {
+
+                duration: 450
+
+            });
+
+        }
+
+    );
+
+}
+
+/*==================================================
+            NEWSLETTER INPUT
+==================================================*/
+
+if (emailInput) {
+
+    emailInput.addEventListener("focus", () => {
+
+        emailInput.parentElement.style.boxShadow =
+
+            "0 0 25px rgba(255,255,255,.35)";
+
+    });
+
+    emailInput.addEventListener("blur", () => {
+
+        emailInput.parentElement.style.boxShadow =
+
+            "";
+
+    });
+
+}
+
+/*==================================================
+            FLOATING BACKGROUND
+==================================================*/
+
+const shapes =
+
+    document.querySelectorAll(
+
+        ".gov-footer-bg-shape"
+
+    );
+
+shapes.forEach((shape, index) => {
+
+    setInterval(() => {
+
+        shape.animate([
+
+            {
+
+                transform:
+
+                    "translateY(0px)"
+
+            },
+
+            {
+
+                transform:
+
+                    "translateY(-20px)"
+
+            },
+
+            {
+
+                transform:
+
+                    "translateY(0px)"
+
+            }
+
+        ], {
+
+            duration: 6000 + (index * 1000),
+
+            easing: "ease-in-out"
+
+        });
+
+    }, 6000);
+
+});
+
+/*==================================================
+            POPUP CLOSE
+==================================================*/
+
+if (popup) {
+
+    popup.addEventListener("click", (e) => {
+
+        if (e.target === popup) {
+
+            popup.classList.remove("active");
+
+        }
+
+    });
+
+}
+
+/*==================================================
+            MOBILE OPTIMIZATION
+==================================================*/
+
+function mobileFix() {
+
+    if (window.innerWidth <= 768) {
+
+        footerLinks.forEach((link) => {
+
+            link.style.transform = "none";
+
+        });
+
+    }
+
+}
+
+mobileFix();
+
+window.addEventListener(
+
+    "resize",
+
+    mobileFix
+
+);
+
+/*==================================================
+            LOADED
+==================================================*/
+
+console.log(
+
+    "Footer Loaded Successfully"
+
+);
+
+});
+        </script>
+
+    

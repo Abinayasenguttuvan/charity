@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 | Page Not Found</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="404.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         STACKLY CHARITY 404 PAGE
+    ====================================================== -->
+
+    <main class="charity404-page">
+
+        <!-- Background -->
+        <div class="charity404-background"></div>
+
+        <!-- Dark Overlay -->
+        <div class="charity404-overlay"></div>
+
+
+        <!-- Decorative Orange Glow -->
+        <div class="charity404-glow charity404-glow-one"></div>
+        <div class="charity404-glow charity404-glow-two"></div>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <section class="charity404-content">
+
+            <!-- Icon -->
+
+            <div class="charity404-icon">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+
+            <!-- Small Text -->
+
+            <span class="charity404-small-title">
+                STACKLY CHARITY
+            </span>
+
+
+            <!-- 404 -->
+
+            <h1 class="charity404-number">
+                404
+            </h1>
+
+
+            <!-- Heading -->
+
+            <h2 class="charity404-heading">
+                Page Not Found
+            </h2>
+
+
+            <!-- Description -->
+
+            <p class="charity404-description">
+                Oops! The page you are looking for doesn't exist
+                or may have been moved to another location.
+            </p>
+
+
+            <!-- Buttons -->
+
+            <div class="charity404-buttons">
+
+                <!-- Home -->
+
+                <a
+                    href="index.html"
+                    class="charity404-button charity404-home-button"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Back to Home</span>
+                </a>
+
+
+                <!-- Previous -->
+
+                <button
+                    type="button"
+                    class="charity404-button charity404-back-button"
+                    onclick="charity404GoBack()"
+                >
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Previous Page</span>
+                </button>
+
+            </div>
+
+
+            <!-- Bottom Text -->
+
+            <div class="charity404-bottom-text">
+
+                <i class="fa-solid fa-hand-holding-heart"></i>
+
+                <span>
+                    Every act of kindness makes a difference.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        function charity404GoBack() {
+
+            if (document.referrer) {
+
+                window.history.back();
+
+            } else {
+
+                window.location.href = "index.html";
+
+            }
+
+        }
+
+    </script>
+
+    <style>
+        /* ==========================================================
+   STACKLY CHARITY 404 PAGE
+
+   COLOR:
+   ORANGE + BLACK
+
+   UNIQUE PREFIX:
+   charity404-
+
+   RESPONSIVE:
+   Desktop
+   Laptop
+   Tablet
+   Mobile
+========================================================== */
+
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+:root {
+
+--charity404-orange: #ff7900;
+
+--charity404-orange-dark: #e85d00;
+
+--charity404-orange-light: #ff9a3c;
+
+--charity404-black: #050505;
+
+--charity404-black-soft: #101010;
+
+--charity404-white: #ffffff;
+
+--charity404-gray: #d0d0d0;
+
+}
+
+
+/* ==========================================================
+RESET
+========================================================== */
+
+.charity404-page,
+.charity404-page *,
+.charity404-page *::before,
+.charity404-page *::after {
+
+box-sizing: border-box;
+
+}
+
+
+.charity404-page {
+
+margin: 0;
+
+padding: 0;
+
+width: 100%;
+
+min-height: 100vh;
+
+font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+color: #ffffff;
+
+}
+
+
+/* ==========================================================
+MAIN PAGE
+========================================================== */
+
+.charity404-page {
+
+position: relative;
+
+width: 100%;
+
+min-height: 100vh;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+overflow: hidden;
+
+padding: 50px 25px;
+
+background: #050505;
+
+}
+
+
+/* ==========================================================
+BACKGROUND IMAGE
+========================================================== */
+
+.charity404-background {
+
+position: absolute;
+
+inset: 0;
+
+z-index: 0;
+
+background-image:
+    url("images/charity-404-bg.jpg");
+
+background-size: cover;
+
+background-position: center center;
+
+background-repeat: no-repeat;
+
+transform: scale(1.03);
+
+}
+
+
+/* ==========================================================
+DARK OVERLAY
+========================================================== */
+
+.charity404-overlay {
+
+position: absolute;
+
+inset: 0;
+
+z-index: 1;
+
+background:
+
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,0.94) 0%,
+        rgba(0,0,0,0.82) 45%,
+        rgba(0,0,0,0.72) 100%
+    );
+
+}
+
+
+/* ==========================================================
+ORANGE GLOW
+========================================================== */
+
+.charity404-glow {
+
+position: absolute;
+
+z-index: 2;
+
+border-radius: 50%;
+
+pointer-events: none;
+
+filter: blur(2px);
+
+}
+
+
+.charity404-glow-one {
+
+width: 350px;
+
+height: 350px;
+
+top: -180px;
+
+right: -100px;
+
+background:
+    rgba(255,121,0,0.20);
+
+box-shadow:
+    0 0 120px
+    rgba(255,121,0,0.20);
+
+}
+
+
+.charity404-glow-two {
+
+width: 280px;
+
+height: 280px;
+
+left: -140px;
+
+bottom: -130px;
+
+background:
+    rgba(255,121,0,0.15);
+
+box-shadow:
+    0 0 100px
+    rgba(255,121,0,0.18);
+
+}
+
+
+/* ==========================================================
+CONTENT
+========================================================== */
+
+.charity404-content {
+
+position: relative;
+
+z-index: 5;
+
+width: min(900px, 100%);
+
+text-align: center;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+}
+
+
+/* ==========================================================
+ICON
+========================================================== */
+
+.charity404-icon {
+
+width: 75px;
+
+height: 75px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 50%;
+
+background:
+    linear-gradient(
+        135deg,
+        #ff7900,
+        #e85d00
+    );
+
+color: #ffffff;
+
+font-size: 30px;
+
+box-shadow:
+    0 12px 35px
+    rgba(255,121,0,0.30);
+
+animation:
+    charity404-heart 2s ease-in-out infinite;
+
+}
+
+
+@keyframes charity404-heart {
+
+0%,
+100% {
+
+    transform: scale(1);
+
+}
+
+50% {
+
+    transform: scale(1.08);
+
+}
+
+}
+
+
+/* ==========================================================
+SMALL TITLE
+========================================================== */
+
+.charity404-small-title {
+
+margin-top: 20px;
+
+color:
+    var(--charity404-orange-light);
+
+font-size: 14px;
+
+font-weight: 800;
+
+letter-spacing: 3px;
+
+}
+
+
+/* ==========================================================
+404 NUMBER
+========================================================== */
+
+.charity404-number {
+
+margin: 10px 0 0;
+
+font-size: clamp(150px, 20vw, 260px);
+
+line-height: 0.9;
+
+font-weight: 900;
+
+letter-spacing: -10px;
+
+color: #ffffff;
+
+text-shadow:
+    0 15px 40px
+    rgba(0,0,0,0.55);
+
+}
+
+
+/* ==========================================================
+HEADING
+========================================================== */
+
+.charity404-heading {
+
+margin: 15px 0 10px;
+
+font-size: 42px;
+
+line-height: 1.2;
+
+font-weight: 800;
+
+color: #ffffff;
+
+}
+
+
+/* ==========================================================
+DESCRIPTION
+========================================================== */
+
+.charity404-description {
+
+width: min(650px, 100%);
+
+margin: 0;
+
+font-size: 21px;
+
+line-height: 1.7;
+
+color:
+    rgba(255,255,255,0.75);
+
+}
+
+
+/* ==========================================================
+BUTTONS
+========================================================== */
+
+.charity404-buttons {
+
+width: min(650px, 100%);
+
+margin-top: 30px;
+
+display: grid;
+
+grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+gap: 15px;
+
+}
+
+
+/* ==========================================================
+COMMON BUTTON
+========================================================== */
+
+.charity404-button {
+
+min-height: 60px;
+
+padding: 12px 20px;
+
+border-radius: 12px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 10px;
+
+font-family: inherit;
+
+font-size: 18px;
+
+font-weight: 800;
+
+cursor: pointer;
+
+text-decoration: none;
+
+transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+
+}
+
+
+/* ==========================================================
+HOME BUTTON
+========================================================== */
+
+.charity404-home-button {
+
+border: 1px solid
+    var(--charity404-orange);
+
+background:
+    linear-gradient(
+        135deg,
+        #ff7900,
+        #e85d00
+    );
+
+color: #ffffff;
+
+box-shadow:
+    0 10px 25px
+    rgba(255,121,0,0.22);
+
+}
+
+
+.charity404-home-button:hover {
+
+transform:
+    translateY(-4px);
+
+box-shadow:
+    0 16px 35px
+    rgba(255,121,0,0.38);
+
+}
+
+
+/* ==========================================================
+PREVIOUS BUTTON
+========================================================== */
+
+.charity404-back-button {
+
+border: 1px solid
+    rgba(255,255,255,0.30);
+
+background:
+    rgba(0,0,0,0.45);
+
+color:
+    #ffffff;
+
+backdrop-filter:
+    blur(10px);
+
+}
+
+
+.charity404-back-button:hover {
+
+transform:
+    translateY(-4px);
+
+background:
+    rgba(255,121,0,0.12);
+
+border-color:
+    var(--charity404-orange);
+
+color:
+    var(--charity404-orange-light);
+
+}
+
+
+/* ==========================================================
+BUTTON ICON
+========================================================== */
+
+.charity404-button i {
+
+font-size: 18px;
+
+}
+
+
+/* ==========================================================
+BOTTOM TEXT
+========================================================== */
+
+.charity404-bottom-text {
+
+margin-top: 25px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 9px;
+
+font-size: 14px;
+
+color:
+    rgba(255,255,255,0.55);
+
+}
+
+
+.charity404-bottom-text i {
+
+color:
+    var(--charity404-orange);
+
+}
+
+
+/* ==========================================================
+LARGE LAPTOP
+========================================================== */
+
+@media (max-width: 1250px) {
+
+.charity404-page {
+
+    padding: 45px 25px;
+
+}
+
+.charity404-heading {
+
+    font-size: 40px;
+
+}
+
+}
+
+
+/* ==========================================================
+TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+.charity404-page {
+
+    padding:
+        45px 25px;
+
+}
+
+
+.charity404-number {
+
+    font-size:
+        clamp(125px, 22vw, 200px);
+
+    letter-spacing:
+        -7px;
+
+}
+
+
+.charity404-heading {
+
+    font-size:
+        36px;
+
+}
+
+
+.charity404-description {
+
+    font-size:
+        21px;
+
+}
+
+
+.charity404-buttons {
+
+    max-width:
+        600px;
+
+}
+
+}
+
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+.charity404-page {
+
+    min-height: 100svh;
+
+    padding:
+        35px 16px;
+
+    overflow-y: auto;
+
+}
+
+
+.charity404-overlay {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.88),
+            rgba(0,0,0,0.82)
+        );
+
+}
+
+
+.charity404-icon {
+
+    width:
+        62px;
+
+    height:
+        62px;
+
+    font-size:
+        25px;
+
+}
+
+
+.charity404-small-title {
+
+    margin-top:
+        16px;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.charity404-number {
+
+    margin-top:
+        13px;
+
+    font-size:
+        clamp(95px, 29vw, 145px);
+
+    letter-spacing:
+        -6px;
+
+}
+
+
+.charity404-heading {
+
+    margin-top:
+        10px;
+
+    font-size:
+        30px;
+
+}
+
+
+.charity404-description {
+
+    font-size:
+        21px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.charity404-buttons {
+
+    width:
+        100%;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        12px;
+
+    margin-top:
+        25px;
+
+}
+
+
+.charity404-button {
+
+    width:
+        100%;
+
+    min-height:
+        58px;
+
+    font-size:
+        17px;
+
+}
+
+
+.charity404-bottom-text {
+
+    margin-top:
+        22px;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.5;
+
+    padding:
+        0 10px;
+
+}
+
+}
+
+
+/* ==========================================================
+SMALL MOBILE
+========================================================== */
+
+@media (max-width: 390px) {
+
+.charity404-page {
+
+    padding:
+        28px 13px;
+
+}
+
+
+.charity404-icon {
+
+    width:
+        57px;
+
+    height:
+        57px;
+
+    font-size:
+        23px;
+
+}
+
+
+.charity404-small-title {
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1.6px;
+
+}
+
+
+.charity404-number {
+
+    font-size:
+        88px;
+
+    letter-spacing:
+        -5px;
+
+}
+
+
+.charity404-heading {
+
+    font-size:
+        27px;
+
+}
+
+
+.charity404-description {
+
+    font-size:
+        18px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.charity404-button {
+
+    min-height:
+        55px;
+
+    font-size:
+        16px;
+
+}
+
+
+.charity404-bottom-text {
+
+    font-size:
+        12px;
+
+}
+
+}
+
+
+/* ==========================================================
+VERY SMALL MOBILE
+========================================================== */
+
+@media (max-width: 320px) {
+
+.charity404-number {
+
+    font-size:
+        76px;
+
+}
+
+
+.charity404-heading {
+
+    font-size:
+        24px;
+
+}
+
+
+.charity404-description {
+
+    font-size:
+        17px;
+
+}
+
+}
+
+
+/* ==========================================================
+ACCESSIBILITY
+========================================================== */
+
+.charity404-button:focus-visible {
+
+outline:
+    3px solid
+    rgba(255,121,0,0.60);
+
+outline-offset:
+    3px;
+
+}
+
+
+/* ==========================================================
+REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+.charity404-page *,
+.charity404-page *::before,
+.charity404-page *::after {
+
+    animation:
+        none !important;
+
+    transition:
+        none !important;
+
+}
+
+}
+    </style>
+
+</body>
+</html>

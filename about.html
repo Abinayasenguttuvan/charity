@@ -1,0 +1,8211 @@
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <!-- CSS -->
+     
+<!-- =========================================================
+     BIGHEARTS HERO SLIDER
+     UNIQUE PREFIX: bhhero-
+========================================================= -->
+<style>
+    /* =========================================================
+   FULL SCREEN / PAGE RESET
+   ========================================================= */
+
+html {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #ffffff;
+}
+
+/* Apply predictable box sizing everywhere */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default spacing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure {
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================================
+   REMOVE COMMON WIDTH / MARGIN RESTRICTIONS
+   ========================================================= */
+
+main,
+section,
+header,
+footer {
+    max-width: 100%;
+}
+
+/* If your existing containers have unwanted side margins */
+.container,
+.container-fluid,
+.wrapper,
+.page-wrapper,
+.main-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   CHARITY HERO - FULL WIDTH
+   Change .charity-hero to your actual hero class if needed
+   ========================================================= */
+
+.charity-hero {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden;
+}
+
+/* Hero background/image wrapper */
+.charity-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+/* Hero content */
+.charity-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1400px;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    margin: 0 auto;
+    padding: 120px 60px 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* =========================================================
+   HERO HEADING
+   ========================================================= */
+
+.charity-hero-content h1 {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 20px auto 30px;
+
+    font-size: clamp(42px, 5vw, 82px);
+    line-height: 1.05;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+/* Small heading */
+.charity-hero-content .hero-subtitle {
+    margin-bottom: 20px;
+
+    font-size: clamp(18px, 2vw, 30px);
+    line-height: 1.3;
+
+    color: #ffffff;
+}
+
+/* Button */
+.charity-hero-content .hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    min-height: 58px;
+
+    padding: 14px 30px;
+
+    border-radius: 40px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    color: #ffffff;
+    background: #f4513a;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.charity-hero-content .hero-button:hover {
+    transform: translateY(-3px);
+    background: #ff633f;
+}
+
+
+/* =========================================================
+   HERO SLIDER / BACKGROUND
+   ========================================================= */
+
+.charity-hero-slider,
+.charity-hero-slide {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.charity-hero-slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+
+/* =========================================================
+   HERO OVERLAY
+   ========================================================= */
+
+.charity-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.48) 50%,
+            rgba(244, 81, 58, 0.35) 100%
+        );
+}
+
+
+/* =========================================================
+   SLIDER CONTROLS
+   ========================================================= */
+
+.charity-slider-controls {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 45px;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    z-index: 5;
+}
+
+.charity-slider-controls button {
+    border: 0;
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DOTS
+   ========================================================= */
+
+.charity-slider-dots {
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    z-index: 5;
+}
+
+.charity-slider-dots span {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.charity-slider-dots span.active {
+    width: 30px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   DESKTOP
+   1200px+
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    .charity-hero {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .charity-hero-content {
+        max-width: 1450px;
+
+        padding:
+            120px
+            70px
+            90px;
+    }
+
+    .charity-hero-content h1 {
+        max-width: 1050px;
+
+        font-size: clamp(60px, 5vw, 82px);
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+   992px - 1199px
+   ========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .charity-hero {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .charity-hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        padding:
+            110px
+            45px
+            80px;
+    }
+
+    .charity-hero-content h1 {
+        max-width: 900px;
+
+        font-size: clamp(48px, 5vw, 68px);
+        line-height: 1.08;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 991px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .charity-hero {
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .charity-hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        padding:
+            110px
+            35px
+            90px;
+    }
+
+    .charity-hero-content h1 {
+        max-width: 750px;
+
+        font-size: clamp(42px, 6vw, 58px);
+        line-height: 1.08;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .charity-slider-controls {
+        padding: 0 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   767px AND BELOW
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow-x: hidden;
+    }
+
+    .charity-hero {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 100svh;
+        height: 100svh;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .charity-hero-slider,
+    .charity-hero-slide {
+        width: 100%;
+        height: 100%;
+    }
+
+    .charity-hero-slide img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .charity-hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 100svh;
+
+        padding:
+            100px
+            20px
+            100px;
+
+        justify-content: center;
+    }
+
+    .charity-hero-content h1 {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 15px auto 25px;
+
+        font-size: clamp(36px, 10vw, 52px);
+        line-height: 1.08;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .charity-hero-content .hero-button {
+        min-height: 52px;
+
+        padding: 12px 25px;
+
+        font-size: 14px;
+    }
+
+    .charity-slider-controls {
+        bottom: 45px;
+
+        padding: 0 15px;
+    }
+
+    .charity-slider-dots {
+        bottom: 18px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   480px AND BELOW
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .charity-hero-content {
+        padding:
+            90px
+            16px
+            90px;
+    }
+
+    .charity-hero-content h1 {
+        font-size: clamp(32px, 10vw, 43px);
+
+        line-height: 1.1;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .charity-hero-content .hero-button {
+        min-width: 145px;
+        min-height: 48px;
+
+        padding: 10px 22px;
+    }
+
+    .charity-slider-controls {
+        padding: 0 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   360px AND BELOW
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .charity-hero-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .charity-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .charity-hero-content .hero-subtitle {
+        font-size: 14px;
+    }
+}
+    </style>
+<!-- =========================================================
+     RESPONSIVE ORANGE + BLACK HEADER
+     UNIQUE PREFIX: stkhead-
+========================================================= -->
+
+<header class="stkhead-header">
+
+    <div class="stkhead-container">
+
+        <!-- LOGO -->
+        <a href="404.html" class="stkhead-logo">
+            <img src="./white.webp" alt="Logo">
+        </a>
+
+
+        <!-- DESKTOP / LAPTOP NAVIGATION -->
+        <nav class="stkhead-nav" id="stkheadNav">
+
+            <a href="index.html" class="stkhead-link active">
+                Home
+            </a>
+
+            <a href="about.html" class="stkhead-link">
+                About
+            </a>
+
+            <a href="services.html" class="stkhead-link">
+                Services
+            </a>
+
+            
+            <a href="contact.html" class="stkhead-link">
+                Contact
+            </a>
+
+            <a href="login.html" class="stkhead-login">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </a>
+
+            <a href="register.html" class="stkhead-register">
+                <i class="fa-solid fa-user-plus"></i>
+                Register
+            </a>
+
+        </nav>
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            class="stkhead-menu-btn"
+            id="stkheadMenuBtn"
+            type="button"
+            aria-label="Open Menu"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     STACKLY CHARITY
+     ABOUT PAGE HERO
+
+     UNIQUE PREFIX:
+     charityabout-
+========================================================= -->
+
+<section class="charityabout-hero">
+
+    <!-- Background Image -->
+    <div class="charityabout-hero-bg"></div>
+
+    <!-- Dark Overlay -->
+    <div class="charityabout-hero-overlay"></div>
+
+    <!-- Orange Decorative Glow -->
+    <div class="charityabout-hero-glow"></div>
+
+
+    <!-- =====================================================
+         HERO CONTENT
+    ====================================================== -->
+
+    <div class="charityabout-hero-container">
+
+        <!-- Small Label -->
+
+        <div class="charityabout-hero-label">
+
+            <i class="fa-solid fa-heart"></i>
+
+            <span>STACKLY CHARITY</span>
+
+        </div>
+
+
+        <!-- Main Heading -->
+
+        <h1 class="charityabout-hero-title">
+            About Us
+        </h1>
+
+
+        <!-- Breadcrumb -->
+
+        <div class="charityabout-hero-breadcrumb">
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <span>
+                <i class="fa-solid fa-angle-right"></i>
+            </span>
+
+            <span class="charityabout-hero-current">
+                ABOUT
+            </span>
+
+        </div>
+
+
+        <!-- One Line Description -->
+
+        <p class="charityabout-hero-description">
+            We are committed to creating positive change by connecting people, communities, and meaningful causes.
+        </p>
+
+    </div>
+
+</section>
+
+<style>
+    /* ==========================================================
+   STACKLY CHARITY
+   ABOUT PAGE HERO
+
+   ORANGE + BLACK THEME
+
+   UNIQUE PREFIX:
+   charityabout-
+
+   RESPONSIVE:
+   DESKTOP
+   LAPTOP
+   TABLET
+   MOBILE
+========================================================== */
+
+
+/* ==========================================================
+   ROOT VARIABLES
+========================================================== */
+
+:root {
+
+--charityabout-orange: #ff7900;
+
+--charityabout-orange-light: #ff9b42;
+
+--charityabout-orange-dark: #e85d00;
+
+--charityabout-black: #050505;
+
+--charityabout-white: #ffffff;
+
+--charityabout-gray: #dddddd;
+
+}
+
+
+/* ==========================================================
+HERO MAIN
+========================================================== */
+
+.charityabout-hero {
+
+position: relative;
+
+width: 100%;
+
+min-height: 520px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+overflow: hidden;
+
+background:
+    var(--charityabout-black);
+
+}
+
+
+/* ==========================================================
+BACKGROUND IMAGE
+========================================================== */
+
+.charityabout-hero-bg {
+
+position: absolute;
+
+inset: 0;
+
+z-index: 0;
+
+background-image:
+    url("images/about-hero.jpg");
+
+background-size: cover;
+
+background-position: center center;
+
+background-repeat: no-repeat;
+
+transform:
+    scale(1.02);
+
+}
+
+
+/* ==========================================================
+DARK OVERLAY
+========================================================== */
+
+.charityabout-hero-overlay {
+
+position: absolute;
+
+inset: 0;
+
+z-index: 1;
+
+background:
+
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,0.88) 0%,
+        rgba(0,0,0,0.70) 45%,
+        rgba(0,0,0,0.76) 100%
+    );
+
+}
+
+
+/* ==========================================================
+ORANGE GLOW
+========================================================== */
+
+.charityabout-hero-glow {
+
+position: absolute;
+
+z-index: 2;
+
+width: 350px;
+
+height: 350px;
+
+right: -140px;
+
+top: -150px;
+
+border-radius: 50%;
+
+background:
+    rgba(255,121,0,0.18);
+
+filter:
+    blur(20px);
+
+pointer-events: none;
+
+}
+
+
+/* ==========================================================
+HERO CONTAINER
+========================================================== */
+
+.charityabout-hero-container {
+
+position: relative;
+
+z-index: 5;
+
+width:
+    min(1200px, 100%);
+
+margin:
+    0 auto;
+
+padding:
+    75px 35px;
+
+text-align:
+    center;
+
+display:
+    flex;
+
+flex-direction:
+    column;
+
+align-items:
+    center;
+
+}
+
+
+/* ==========================================================
+SMALL LABEL
+========================================================== */
+
+.charityabout-hero-label {
+
+display:
+    inline-flex;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+gap:
+    9px;
+
+padding:
+    9px 18px;
+
+border:
+    1px solid
+    rgba(255,121,0,0.55);
+
+border-radius:
+    50px;
+
+background:
+    rgba(255,121,0,0.12);
+
+color:
+    var(--charityabout-orange-light);
+
+font-size:
+    13px;
+
+font-weight:
+    800;
+
+letter-spacing:
+    2px;
+
+}
+
+
+.charityabout-hero-label i {
+
+color:
+    var(--charityabout-orange);
+
+}
+
+
+/* ==========================================================
+MAIN TITLE
+========================================================== */
+
+.charityabout-hero-title {
+
+margin:
+    20px 0 15px;
+
+padding:
+    0;
+
+font-size:
+    56px;
+
+line-height:
+    1.1;
+
+font-weight:
+    900;
+
+color:
+    var(--charityabout-white);
+
+letter-spacing:
+    -1px;
+
+text-shadow:
+    0 8px 25px
+    rgba(0,0,0,0.40);
+
+}
+
+
+/* ==========================================================
+BREADCRUMB
+========================================================== */
+
+.charityabout-hero-breadcrumb {
+
+display:
+    flex;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+flex-wrap:
+    wrap;
+
+gap:
+    11px;
+
+font-size:
+    17px;
+
+font-weight:
+    700;
+
+}
+
+
+/* HOME */
+
+.charityabout-hero-breadcrumb a {
+
+color:
+    var(--charityabout-orange);
+
+text-decoration:
+    none;
+
+transition:
+    color 0.25s ease;
+
+}
+
+
+.charityabout-hero-breadcrumb a:hover {
+
+color:
+    var(--charityabout-orange-light);
+
+}
+
+
+/* Arrow */
+
+.charityabout-hero-breadcrumb span {
+
+color:
+    rgba(255,255,255,0.60);
+
+}
+
+
+.charityabout-hero-breadcrumb span i {
+
+font-size:
+    13px;
+
+}
+
+
+/* Current */
+
+.charityabout-hero-breadcrumb
+.charityabout-hero-current {
+
+color:
+    var(--charityabout-white);
+
+}
+
+
+/* ==========================================================
+DESCRIPTION
+========================================================== */
+
+.charityabout-hero-description {
+
+width:
+    min(780px, 100%);
+
+margin:
+    20px auto 0;
+
+font-size:
+    21px;
+
+line-height:
+    1.65;
+
+font-weight:
+    500;
+
+color:
+    rgba(255,255,255,0.78);
+
+}
+
+
+/* ==========================================================
+ORANGE LINE
+========================================================== */
+
+.charityabout-hero-description::after {
+
+content:
+    "";
+
+display:
+    block;
+
+width:
+    75px;
+
+height:
+    3px;
+
+margin:
+    22px auto 0;
+
+border-radius:
+    50px;
+
+background:
+    var(--charityabout-orange);
+
+}
+
+
+/* ==========================================================
+LARGE LAPTOP
+========================================================== */
+
+@media (max-width: 1250px) {
+
+.charityabout-hero {
+
+    min-height:
+        500px;
+
+}
+
+
+.charityabout-hero-container {
+
+    padding:
+        70px 30px;
+
+}
+
+
+.charityabout-hero-title {
+
+    font-size:
+        52px;
+
+}
+
+
+.charityabout-hero-description {
+
+    font-size:
+        21px;
+
+}
+
+}
+
+
+/* ==========================================================
+TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+.charityabout-hero {
+
+    min-height:
+        470px;
+
+}
+
+
+.charityabout-hero-container {
+
+    padding:
+        65px 25px;
+
+}
+
+
+.charityabout-hero-title {
+
+    font-size:
+        46px;
+
+}
+
+
+.charityabout-hero-breadcrumb {
+
+    font-size:
+        16px;
+
+}
+
+
+.charityabout-hero-description {
+
+    font-size:
+        21px;
+
+    max-width:
+        700px;
+
+}
+
+}
+
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+.charityabout-hero {
+
+    min-height:
+        430px;
+
+}
+
+
+.charityabout-hero-bg {
+
+    background-position:
+        center center;
+
+}
+
+
+.charityabout-hero-overlay {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.84),
+            rgba(0,0,0,0.76)
+        );
+
+}
+
+
+.charityabout-hero-container {
+
+    padding:
+        55px 18px;
+
+}
+
+
+.charityabout-hero-label {
+
+    padding:
+        8px 14px;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+.charityabout-hero-title {
+
+    margin-top:
+        17px;
+
+    font-size:
+        38px;
+
+    letter-spacing:
+        -0.5px;
+
+}
+
+
+.charityabout-hero-breadcrumb {
+
+    gap:
+        8px;
+
+    font-size:
+        15px;
+
+}
+
+
+.charityabout-hero-breadcrumb span i {
+
+    font-size:
+        11px;
+
+}
+
+
+.charityabout-hero-description {
+
+    margin-top:
+        18px;
+
+    font-size:
+        21px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.charityabout-hero-description::after {
+
+    margin-top:
+        18px;
+
+    width:
+        60px;
+
+}
+
+}
+
+
+/* ==========================================================
+SMALL MOBILE
+========================================================== */
+
+@media (max-width: 390px) {
+
+.charityabout-hero {
+
+    min-height:
+        410px;
+
+}
+
+
+.charityabout-hero-container {
+
+    padding:
+        48px 15px;
+
+}
+
+
+.charityabout-hero-label {
+
+    font-size:
+        9px;
+
+    padding:
+        7px 12px;
+
+}
+
+
+.charityabout-hero-title {
+
+    font-size:
+        34px;
+
+}
+
+
+.charityabout-hero-breadcrumb {
+
+    font-size:
+        14px;
+
+}
+
+
+.charityabout-hero-description {
+
+    font-size:
+        19px;
+
+    line-height:
+        1.55;
+
+}
+
+}
+
+
+/* ==========================================================
+EXTRA SMALL MOBILE
+========================================================== */
+
+@media (max-width: 320px) {
+
+.charityabout-hero {
+
+    min-height:
+        390px;
+
+}
+
+
+.charityabout-hero-title {
+
+    font-size:
+        30px;
+
+}
+
+
+.charityabout-hero-description {
+
+    font-size:
+        18px;
+
+}
+
+}
+</style>
+
+<!-- =========================================================
+     RISEHAND ABOUT / MISSION / VISION SECTION
+     UNIQUE PREFIX: rh-
+========================================================= -->
+
+<section class="rh-info-section" id="rhInfoSection">
+
+    <div class="rh-info-container">
+
+        <!-- =================================================
+             LEFT IMAGE AREA
+        ================================================== -->
+
+        <div class="rh-info-visual">
+
+            <div class="rh-info-brush"></div>
+
+            <div class="rh-info-image-wrap">
+
+                <img
+                    id="rhInfoImage"
+                    class="rh-info-image"
+                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=85"
+                    alt="Charity volunteers helping children"
+                >
+
+            </div>
+
+            <!-- Decorative circle -->
+            <div class="rh-info-circle rh-info-circle-one"></div>
+            <div class="rh-info-circle rh-info-circle-two"></div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT CONTENT AREA
+        ================================================== -->
+
+        <div class="rh-info-content">
+
+            <!-- Heading Label -->
+
+            <div class="rh-info-label">
+
+                <span class="rh-info-label-icon">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </span>
+
+                <span>About Us</span>
+
+            </div>
+
+
+            <!-- Main Heading -->
+
+            <h2 class="rh-info-title" id="rhInfoTitle">
+                What We Do For Donate
+                Charity Foundations
+            </h2>
+
+
+            <!-- =================================================
+                 TAB BUTTONS
+            ================================================== -->
+
+            <div
+                class="rh-info-tabs"
+                role="tablist"
+                aria-label="Charity information"
+            >
+
+                <button
+                    type="button"
+                    class="rh-info-tab rh-info-tab-active"
+                    data-rh-tab="about"
+                    role="tab"
+                    aria-selected="true"
+                >
+                    <span>About Us</span>
+                    <i class="fa-solid fa-angles-right"></i>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="rh-info-tab"
+                    data-rh-tab="mission"
+                    role="tab"
+                    aria-selected="false"
+                >
+                    <span>Mission</span>
+                    <i class="fa-solid fa-angles-right"></i>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="rh-info-tab"
+                    data-rh-tab="vision"
+                    role="tab"
+                    aria-selected="false"
+                >
+                    <span>Vision</span>
+                    <i class="fa-solid fa-angles-right"></i>
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 DYNAMIC CONTENT
+            ================================================== -->
+
+            <div class="rh-info-dynamic" id="rhInfoDynamic">
+
+                <!-- ABOUT -->
+
+                <div
+                    class="rh-info-panel rh-info-panel-active"
+                    data-rh-panel="about"
+                >
+
+                    <p class="rh-info-description">
+                        We believe every child deserves a safe,
+                        healthy and hopeful future. Our charity
+                        foundation works with communities, volunteers
+                        and generous supporters to create meaningful
+                        opportunities for people in need.
+                    </p>
+
+
+                    <ul class="rh-info-list">
+
+                        <li>
+                            <span class="rh-info-check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                Charity For Medical &amp; Health
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="rh-info-check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                Charity For Education To Poor People's
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="rh-info-check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                Charity For Clean Water
+                            </span>
+                        </li>
+
+                    </ul>
+
+
+                    <a href="#" class="rh-info-action">
+                        Discover More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <!-- MISSION -->
+
+                <div
+                    class="rh-info-panel"
+                    data-rh-panel="mission"
+                >
+
+                    <p class="rh-info-description">
+                        Our mission is to support children and
+                        vulnerable communities through education,
+                        healthcare, nutrition and access to clean
+                        water. We work together with local partners
+                        to turn every contribution into lasting
+                        positive change.
+                    </p>
+
+
+                    <ul class="rh-info-list">
+
+                        <li>
+                            <span class="rh-info-check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                Support Quality Education
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="rh-info-check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                Provide Healthcare Assistance
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="rh-info-check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                Deliver Food &amp; Clean Water
+                            </span>
+                        </li>
+
+                    </ul>
+
+
+                    <a href="#" class="rh-info-action">
+                        Our Mission
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <!-- VISION -->
+
+                <div
+                    class="rh-info-panel"
+                    data-rh-panel="vision"
+                >
+
+                    <p class="rh-info-description">
+                        Our vision is to build a world where every
+                        child can grow with dignity, receive quality
+                        education and live a healthy life. We want to
+                        inspire people everywhere to participate in
+                        creating a kinder and more equal future.
+                    </p>
+
+
+                    <ul class="rh-info-list">
+
+                        <li>
+                            <span class="rh-info-check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                A Better Future For Every Child
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="rh-info-check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                Stronger And Healthier Communities
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="rh-info-check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                Equal Opportunities For Everyone
+                            </span>
+                        </li>
+
+                    </ul>
+
+
+                    <a href="#" class="rh-info-action">
+                        Our Vision
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* =========================================================
+   RISEHAND ABOUT / MISSION / VISION
+   UNIQUE PREFIX: rh-
+========================================================= */
+
+.rh-info-section {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    background: #171717;
+
+    padding: 100px 6%;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RESET ONLY INSIDE SECTION
+========================================================= */
+
+.rh-info-section *,
+.rh-info-section *::before,
+.rh-info-section *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.rh-info-container {
+    width: 100%;
+    max-width: 1380px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(420px, 48%)
+        minmax(0, 52%);
+
+    align-items: center;
+
+    gap: 65px;
+}
+
+
+/* =========================================================
+   LEFT IMAGE AREA
+========================================================= */
+
+.rh-info-visual {
+    position: relative;
+
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+
+    opacity: 0;
+
+    transform: translateX(100px);
+
+    transition:
+        opacity 1s ease,
+        transform 1.1s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* SECTION ENTER ANIMATION */
+
+.rh-info-section.rh-info-visible .rh-info-visual {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   ORANGE BRUSH BACKGROUND
+========================================================= */
+
+.rh-info-brush {
+    position: absolute;
+
+    width: 92%;
+    height: 92%;
+
+    left: -5%;
+    top: 2%;
+
+    background: #f7ae3d;
+
+    border-radius:
+        48% 35% 44% 38%
+        / 44% 42% 52% 47%;
+
+    transform:
+        rotate(-8deg)
+        scale(.9);
+
+    z-index: 1;
+
+    opacity: 0;
+
+    transition:
+        opacity .9s ease .2s,
+        transform 1.2s cubic-bezier(.22,.61,.36,1) .2s;
+}
+
+.rh-info-section.rh-info-visible .rh-info-brush {
+    opacity: 1;
+
+    transform:
+        rotate(-8deg)
+        scale(1);
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.rh-info-image-wrap {
+    position: relative;
+
+    width: min(560px, 90%);
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    z-index: 3;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.28);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.rh-info-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform: scale(1.08);
+
+    opacity: 0;
+
+    transition:
+        opacity .8s ease,
+        transform 1s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* IMAGE ENTER */
+
+.rh-info-section.rh-info-visible .rh-info-image {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   IMAGE CHANGE ANIMATION
+========================================================= */
+
+.rh-info-image.rh-info-image-changing {
+    animation:
+        rhInfoImageSwipe
+        .75s
+        cubic-bezier(.22,.61,.36,1);
+}
+
+
+@keyframes rhInfoImageSwipe {
+
+    0% {
+        opacity: .1;
+        transform:
+            translateX(120px)
+            scale(.95);
+    }
+
+    55% {
+        opacity: .8;
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateX(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+========================================================= */
+
+.rh-info-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+.rh-info-circle-one {
+    width: 90px;
+    height: 90px;
+
+    right: 0;
+    top: 11%;
+
+    border: 1px solid #f7ae3d;
+
+    opacity: .65;
+}
+
+
+.rh-info-circle-two {
+    width: 130px;
+    height: 130px;
+
+    right: -25px;
+    bottom: 8%;
+
+    border: 1px solid rgba(247,174,61,.45);
+
+    opacity: .7;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.rh-info-content {
+    position: relative;
+
+    width: 100%;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.rh-info-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    color: #f5aa37;
+
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        cursive;
+
+    font-size: 23px;
+
+    font-weight: 500;
+
+    text-decoration: underline;
+
+    text-underline-offset: 5px;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity .7s ease .35s,
+        transform .7s ease .35s;
+}
+
+
+.rh-info-section.rh-info-visible .rh-info-label {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.rh-info-label-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #f5aa37;
+
+    font-size: 28px;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.rh-info-title {
+    margin: 0 0 30px;
+
+    max-width: 680px;
+
+    color: #ffffff;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: clamp(34px, 3.5vw, 52px);
+
+    line-height: 1.18;
+
+    font-weight: 700;
+
+    letter-spacing: -.5px;
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .8s ease .45s,
+        transform .8s ease .45s;
+}
+
+
+.rh-info-section.rh-info-visible .rh-info-title {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.rh-info-tabs {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-bottom: 32px;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity .8s ease .55s,
+        transform .8s ease .55s;
+}
+
+
+.rh-info-section.rh-info-visible .rh-info-tabs {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TAB BUTTON
+========================================================= */
+
+.rh-info-tab {
+    min-width: 165px;
+
+    height: 58px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    border-radius: 10px;
+
+    background: #1d1d1d;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .35s ease,
+        color .35s ease,
+        transform .3s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.rh-info-tab:hover {
+    transform: translateY(-3px);
+
+    border-color: #f44d36;
+
+    background: #242424;
+}
+
+
+.rh-info-tab i {
+    font-size: 14px;
+
+    transition:
+        transform .35s ease;
+}
+
+
+.rh-info-tab:hover i {
+    transform: translateX(4px);
+}
+
+
+/* ACTIVE TAB */
+
+.rh-info-tab.rh-info-tab-active {
+    background: #f34d36;
+
+    border-color: #f34d36;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 25px rgba(243,77,54,.16);
+}
+
+
+/* =========================================================
+   DYNAMIC CONTENT
+========================================================= */
+
+.rh-info-dynamic {
+    position: relative;
+
+    min-height: 280px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity .8s ease .65s,
+        transform .8s ease .65s;
+}
+
+
+.rh-info-section.rh-info-visible .rh-info-dynamic {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.rh-info-panel {
+    width: 100%;
+
+    display: none;
+
+    opacity: 0;
+
+    transform: translateX(70px);
+}
+
+
+/* ACTIVE PANEL */
+
+.rh-info-panel.rh-info-panel-active {
+    display: block;
+
+    animation:
+        rhInfoPanelIn
+        .65s
+        cubic-bezier(.22,.61,.36,1)
+        forwards;
+}
+
+
+/* PANEL ANIMATION */
+
+@keyframes rhInfoPanelIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(80px);
+    }
+
+    60% {
+        opacity: .8;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.rh-info-description {
+    margin: 0 0 24px;
+
+    max-width: 720px;
+
+    color: rgba(255,255,255,.88);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.rh-info-list {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0 0 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.rh-info-list li {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CHECK ICON
+========================================================= */
+
+.rh-info-check {
+    width: 23px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #f34d36;
+
+    border-radius: 50%;
+
+    color: #f34d36;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.rh-info-action {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 22px;
+
+    border-radius: 7px;
+
+    background: #f34d36;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.rh-info-action:hover {
+    transform: translateY(-3px);
+
+    background: #ff5b43;
+
+    box-shadow:
+        0 10px 25px rgba(243,77,54,.2);
+}
+
+
+.rh-info-action i {
+    transition:
+        transform .3s ease;
+}
+
+
+.rh-info-action:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1399px) {
+
+    .rh-info-section {
+        padding: 80px 5%;
+    }
+
+    .rh-info-container {
+        grid-template-columns:
+            minmax(390px, 47%)
+            minmax(0, 53%);
+
+        gap: 45px;
+    }
+
+    .rh-info-visual {
+        min-height: 540px;
+    }
+
+    .rh-info-image-wrap {
+        width: min(470px, 90%);
+    }
+
+    .rh-info-title {
+        font-size: 42px;
+    }
+
+    .rh-info-tab {
+        min-width: 145px;
+
+        height: 54px;
+
+        padding: 0 20px;
+
+        font-size: 14px;
+    }
+
+    .rh-info-description {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .rh-info-section {
+        padding: 75px 5%;
+    }
+
+    .rh-info-container {
+        grid-template-columns:
+            minmax(300px, 44%)
+            minmax(0, 56%);
+
+        gap: 35px;
+    }
+
+    .rh-info-visual {
+        min-height: 470px;
+    }
+
+    .rh-info-image-wrap {
+        width: min(390px, 94%);
+    }
+
+    .rh-info-brush {
+        width: 100%;
+        height: 90%;
+    }
+
+    .rh-info-title {
+        font-size: 34px;
+
+        margin-bottom: 25px;
+    }
+
+    .rh-info-label {
+        font-size: 20px;
+
+        margin-bottom: 18px;
+    }
+
+    .rh-info-label-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 23px;
+    }
+
+    .rh-info-tabs {
+        gap: 10px;
+    }
+
+    .rh-info-tab {
+        min-width: 105px;
+
+        height: 50px;
+
+        padding: 0 14px;
+
+        gap: 8px;
+
+        font-size: 13px;
+    }
+
+    .rh-info-description {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .rh-info-list {
+        gap: 11px;
+    }
+
+    .rh-info-list li {
+        font-size: 14px;
+    }
+
+    .rh-info-circle-one {
+        width: 60px;
+        height: 60px;
+    }
+
+    .rh-info-circle-two {
+        width: 90px;
+        height: 90px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .rh-info-section {
+        padding: 65px 20px 70px;
+    }
+
+    .rh-info-container {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 50px;
+    }
+
+
+    /* IMAGE */
+
+    .rh-info-visual {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 20px 0;
+
+        order: 1;
+
+        transform: translateX(100px);
+    }
+
+    .rh-info-image-wrap {
+        width: min(430px, 85vw);
+    }
+
+    .rh-info-brush {
+        width: 88%;
+        height: 88%;
+
+        left: 2%;
+    }
+
+
+    /* CONTENT */
+
+    .rh-info-content {
+        width: 100%;
+
+        order: 2;
+    }
+
+
+    .rh-info-label {
+        font-size: 20px;
+
+        margin-bottom: 18px;
+    }
+
+    .rh-info-label-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 24px;
+    }
+
+
+    .rh-info-title {
+        font-size: clamp(30px, 8vw, 40px);
+
+        line-height: 1.2;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* TABS */
+
+    .rh-info-tabs {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 8px;
+
+        margin-bottom: 25px;
+    }
+
+    .rh-info-tab {
+        min-width: 0;
+
+        width: 100%;
+
+        height: 52px;
+
+        padding: 0 8px;
+
+        gap: 6px;
+
+        font-size: 12px;
+
+        border-radius: 7px;
+    }
+
+    .rh-info-tab i {
+        font-size: 10px;
+    }
+
+
+    /* CONTENT */
+
+    .rh-info-dynamic {
+        min-height: 330px;
+    }
+
+    .rh-info-description {
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+    .rh-info-list {
+        gap: 13px;
+    }
+
+    .rh-info-list li {
+        align-items: flex-start;
+
+        font-size: 14px;
+
+        line-height: 1.45;
+    }
+
+    .rh-info-check {
+        margin-top: 1px;
+    }
+
+
+    .rh-info-action {
+        font-size: 13px;
+
+        padding: 12px 18px;
+    }
+
+
+    /* DECORATION */
+
+    .rh-info-circle-one {
+        width: 55px;
+        height: 55px;
+
+        right: 0;
+        top: 3%;
+    }
+
+    .rh-info-circle-two {
+        width: 75px;
+        height: 75px;
+
+        right: -8px;
+        bottom: 4%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .rh-info-section {
+        padding: 55px 16px 60px;
+    }
+
+    .rh-info-container {
+        gap: 38px;
+    }
+
+    .rh-info-image-wrap {
+        width: 88vw;
+    }
+
+    .rh-info-title {
+        font-size: 29px;
+    }
+
+    .rh-info-tabs {
+        gap: 6px;
+    }
+
+    .rh-info-tab {
+        height: 48px;
+
+        padding: 0 5px;
+
+        font-size: 11px;
+    }
+
+    .rh-info-tab i {
+        display: none;
+    }
+
+    .rh-info-dynamic {
+        min-height: 350px;
+    }
+
+    .rh-info-description {
+        font-size: 13px;
+    }
+
+    .rh-info-list li {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rh-info-visual,
+    .rh-info-brush,
+    .rh-info-image,
+    .rh-info-panel,
+    .rh-info-title,
+    .rh-info-label,
+    .rh-info-tabs,
+    .rh-info-dynamic {
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+</style>
+<script>
+    /* =========================================================
+       RISEHAND ABOUT / MISSION / VISION
+       UNIQUE PREFIX: rh-
+    ========================================================= */
+    
+    (function () {
+    
+        "use strict";
+    
+    
+        /* =====================================================
+           CONTENT DATA
+        ===================================================== */
+    
+        const rhInfoData = {
+    
+            about: {
+                title:
+                    "What We Do For Donate Charity Foundations",
+    
+                label:
+                    "About Us",
+    
+                image:
+                    "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=85"
+            },
+    
+            mission: {
+                title:
+                    "Our Mission Is To Create A Better Future",
+    
+                label:
+                    "Our Mission",
+    
+                image:
+                    "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1000&q=85"
+            },
+    
+            vision: {
+                title:
+                    "Our Vision Is A World Full Of Hope",
+    
+                label:
+                    "Our Vision",
+    
+                image:
+                    "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&q=85"
+            }
+    
+        };
+    
+    
+        /* =====================================================
+           INITIALIZE
+        ===================================================== */
+    
+        function rhInfoInit() {
+    
+            const rhSection =
+                document.querySelector(
+                    "#rhInfoSection"
+                );
+    
+            if (!rhSection) {
+                return;
+            }
+    
+    
+            const rhTabs =
+                rhSection.querySelectorAll(
+                    ".rh-info-tab"
+                );
+    
+            const rhPanels =
+                rhSection.querySelectorAll(
+                    ".rh-info-panel"
+                );
+    
+            const rhTitle =
+                rhSection.querySelector(
+                    "#rhInfoTitle"
+                );
+    
+            const rhImage =
+                rhSection.querySelector(
+                    "#rhInfoImage"
+                );
+    
+            const rhLabel =
+                rhSection.querySelector(
+                    ".rh-info-label span:last-child"
+                );
+    
+    
+            /* =================================================
+               SECTION LOAD ANIMATION
+            ================================================== */
+    
+            function rhInfoReveal() {
+    
+                rhSection.classList.add(
+                    "rh-info-visible"
+                );
+    
+            }
+    
+    
+            /* =================================================
+               INTERSECTION OBSERVER
+            ================================================== */
+    
+            if ("IntersectionObserver" in window) {
+    
+                const rhObserver =
+                    new IntersectionObserver(
+                        function (rhEntries, rhObserverInstance) {
+    
+                            rhEntries.forEach(
+                                function (rhEntry) {
+    
+                                    if (
+                                        rhEntry.isIntersecting
+                                    ) {
+    
+                                        rhInfoReveal();
+    
+                                        rhObserverInstance.unobserve(
+                                            rhEntry.target
+                                        );
+    
+                                    }
+    
+                                }
+                            );
+    
+                        },
+                        {
+                            threshold: 0.15
+                        }
+                    );
+    
+    
+                rhObserver.observe(
+                    rhSection
+                );
+    
+            } else {
+    
+                rhInfoReveal();
+    
+            }
+    
+    
+            /* =================================================
+               CHANGE CONTENT
+            ================================================== */
+    
+            function rhChangeTab(
+                rhTarget
+            ) {
+    
+                const rhData =
+                    rhInfoData[rhTarget];
+    
+                if (!rhData) {
+                    return;
+                }
+    
+    
+                /* =============================================
+                   ACTIVE BUTTON
+                ============================================== */
+    
+                rhTabs.forEach(
+                    function (rhTab) {
+    
+                        const rhIsActive =
+                            rhTab.dataset.rhTab === rhTarget;
+    
+                        rhTab.classList.toggle(
+                            "rh-info-tab-active",
+                            rhIsActive
+                        );
+    
+                        rhTab.setAttribute(
+                            "aria-selected",
+                            rhIsActive
+                                ? "true"
+                                : "false"
+                        );
+    
+                    }
+                );
+    
+    
+                /* =============================================
+                   CONTENT PANELS
+                ============================================== */
+    
+                rhPanels.forEach(
+                    function (rhPanel) {
+    
+                        rhPanel.classList.remove(
+                            "rh-info-panel-active"
+                        );
+    
+                        if (
+                            rhPanel.dataset.rhPanel ===
+                            rhTarget
+                        ) {
+    
+                            /*
+                             * Force browser to restart
+                             * the swipe animation.
+                             */
+    
+                            void rhPanel.offsetWidth;
+    
+                            rhPanel.classList.add(
+                                "rh-info-panel-active"
+                            );
+    
+                        }
+    
+                    }
+                );
+    
+    
+                /* =============================================
+                   TITLE ANIMATION
+                ============================================== */
+    
+                rhTitle.classList.remove(
+                    "rh-info-title-switching"
+                );
+    
+                void rhTitle.offsetWidth;
+    
+                rhTitle.classList.add(
+                    "rh-info-title-switching"
+                );
+    
+                rhTitle.textContent =
+                    rhData.title;
+    
+    
+                /* =============================================
+                   LABEL
+                ============================================== */
+    
+                if (rhLabel) {
+    
+                    rhLabel.textContent =
+                        rhData.label;
+    
+                }
+    
+    
+                /* =============================================
+                   IMAGE CHANGE
+                ============================================== */
+    
+                rhImage.classList.remove(
+                    "rh-info-image-changing"
+                );
+    
+                void rhImage.offsetWidth;
+    
+                rhImage.classList.add(
+                    "rh-info-image-changing"
+                );
+    
+                rhImage.src =
+                    rhData.image;
+    
+    
+                /* =============================================
+                   ACCESSIBILITY
+                ============================================== */
+    
+                rhImage.alt =
+                    rhData.label +
+                    " charity image";
+    
+            }
+    
+    
+            /* =================================================
+               TAB EVENTS
+            ================================================== */
+    
+            rhTabs.forEach(
+                function (rhTab) {
+    
+                    rhTab.addEventListener(
+                        "click",
+                        function () {
+    
+                            const rhTarget =
+                                rhTab.dataset.rhTab;
+    
+                            if (!rhTarget) {
+                                return;
+                            }
+    
+                            rhChangeTab(
+                                rhTarget
+                            );
+    
+                        }
+                    );
+    
+                }
+            );
+    
+    
+            /* =================================================
+               KEYBOARD SUPPORT
+            ================================================== */
+    
+            rhTabs.forEach(
+                function (rhTab, rhIndex) {
+    
+                    rhTab.addEventListener(
+                        "keydown",
+                        function (rhEvent) {
+    
+                            let rhNextIndex =
+                                rhIndex;
+    
+    
+                            if (
+                                rhEvent.key ===
+                                "ArrowRight"
+                            ) {
+    
+                                rhNextIndex =
+                                    (rhIndex + 1) %
+                                    rhTabs.length;
+    
+                            }
+    
+    
+                            if (
+                                rhEvent.key ===
+                                "ArrowLeft"
+                            ) {
+    
+                                rhNextIndex =
+                                    (rhIndex - 1 +
+                                    rhTabs.length) %
+                                    rhTabs.length;
+    
+                            }
+    
+    
+                            if (
+                                rhNextIndex !==
+                                rhIndex
+                            ) {
+    
+                                rhEvent.preventDefault();
+    
+                                rhTabs[rhNextIndex].focus();
+    
+                                rhTabs[rhNextIndex].click();
+    
+                            }
+    
+                        }
+                    );
+    
+                }
+    
+    
+            );
+    
+    
+            /* =================================================
+               IMAGE LOAD ERROR FALLBACK
+            ================================================== */
+    
+            rhImage.addEventListener(
+                "error",
+                function () {
+    
+                    rhImage.style.opacity = "1";
+    
+                }
+            );
+    
+        }
+    
+    
+        /* =====================================================
+           START
+        ===================================================== */
+    
+        if (
+            document.readyState ===
+            "loading"
+        ) {
+    
+            document.addEventListener(
+                "DOMContentLoaded",
+                rhInfoInit
+            );
+    
+        } else {
+    
+            rhInfoInit();
+    
+        }
+    
+    })();
+    </script>
+
+    <!-- =========================================================
+     STACKLY CHARITY
+     WHY DONATE US SECTION
+
+     UNIQUE PREFIX:
+     charitydonate-
+========================================================= -->
+
+<section class="charitydonate-section">
+
+    <div class="charitydonate-container">
+
+        <!-- =================================================
+             LEFT CONTENT
+        ================================================== -->
+
+        <div class="charitydonate-content">
+
+            <span class="charitydonate-label">
+                <i class="fa-solid fa-heart"></i>
+                MAKE A DIFFERENCE
+            </span>
+
+            <h2 class="charitydonate-heading">
+                Why Donate <span>Us?</span>
+            </h2>
+
+            <div class="charitydonate-line"></div>
+
+            <p class="charitydonate-description">
+                Your generous donation can help us create meaningful
+                change and provide hope to people and communities
+                who need it most.
+            </p>
+
+            <p class="charitydonate-description">
+                Every contribution, no matter how small, helps us
+                support essential causes, empower communities and
+                build a better future for everyone.
+            </p>
+
+
+            <!-- =================================================
+                 BENEFITS
+            ================================================== -->
+
+            <div class="charitydonate-benefits">
+
+                <!-- Benefit 1 -->
+
+                <div class="charitydonate-benefit">
+
+                    <div class="charitydonate-benefit-icon">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+
+                    <div class="charitydonate-benefit-content">
+
+                        <h3>
+                            Support Those In Need
+                        </h3>
+
+                        <p>
+                            Your support reaches people facing
+                            difficult circumstances.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Benefit 2 -->
+
+                <div class="charitydonate-benefit">
+
+                    <div class="charitydonate-benefit-icon">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+
+                    <div class="charitydonate-benefit-content">
+
+                        <h3>
+                            Empower Communities
+                        </h3>
+
+                        <p>
+                            Help communities grow stronger through
+                            sustainable initiatives.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Benefit 3 -->
+
+                <div class="charitydonate-benefit">
+
+                    <div class="charitydonate-benefit-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div class="charitydonate-benefit-content">
+
+                        <h3>
+                            Create A Better Future
+                        </h3>
+
+                        <p>
+                            Together, we can create lasting positive
+                            change for future generations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 BUTTON
+            ================================================== -->
+
+            <a href="404.html" class="charitydonate-button">
+
+                <span>
+                    Donate Now
+                </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT IMAGE
+        ================================================== -->
+
+        <div class="charitydonate-image-wrapper">
+
+            <div class="charitydonate-image-frame">
+
+                <img
+                    src="images/why-donate.jpg"
+                    alt="Why Donate to Charity"
+                    class="charitydonate-image"
+                >
+
+                <!-- Orange Badge -->
+
+                <div class="charitydonate-image-badge">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <div>
+                        <strong>100%</strong>
+                        <span>For A Cause</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* ==========================================================
+   STACKLY CHARITY
+   WHY DONATE US SECTION
+
+   ORANGE + BLACK THEME
+
+   UNIQUE PREFIX:
+   charitydonate-
+
+   RESPONSIVE:
+   DESKTOP
+   LAPTOP
+   TABLET
+   MOBILE
+========================================================== */
+
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+:root {
+
+--charitydonate-orange: #ff7900;
+
+--charitydonate-orange-light: #ff9d45;
+
+--charitydonate-orange-dark: #e85d00;
+
+--charitydonate-black: #080808;
+
+--charitydonate-dark: #151515;
+
+--charitydonate-white: #ffffff;
+
+--charitydonate-gray: #686868;
+
+--charitydonate-light: #f7f7f7;
+
+}
+
+
+/* ==========================================================
+SECTION
+========================================================== */
+
+.charitydonate-section {
+
+position: relative;
+
+width: 100%;
+
+padding: 100px 0;
+
+overflow: hidden;
+
+background:
+    var(--charitydonate-white);
+
+}
+
+
+/* ==========================================================
+CONTAINER
+========================================================== */
+
+.charitydonate-container {
+
+width:
+    min(1200px, 100%);
+
+margin:
+    0 auto;
+
+padding:
+    0 30px;
+
+display: grid;
+
+grid-template-columns:
+    1fr 1fr;
+
+align-items: center;
+
+gap: 70px;
+
+}
+
+
+/* ==========================================================
+LEFT CONTENT
+========================================================== */
+
+.charitydonate-content {
+
+width: 100%;
+
+opacity: 0;
+
+transform:
+    translateX(-70px);
+
+transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+
+}
+
+
+/* Active animation */
+
+.charitydonate-section.charitydonate-visible
+.charitydonate-content {
+
+opacity: 1;
+
+transform:
+    translateX(0);
+
+}
+
+
+/* ==========================================================
+LABEL
+========================================================== */
+
+.charitydonate-label {
+
+display:
+    inline-flex;
+
+align-items:
+    center;
+
+gap:
+    9px;
+
+padding:
+    9px 16px;
+
+border-radius:
+    50px;
+
+background:
+    rgba(255,121,0,0.10);
+
+border:
+    1px solid
+    rgba(255,121,0,0.30);
+
+color:
+    var(--charitydonate-orange);
+
+font-size:
+    13px;
+
+font-weight:
+    800;
+
+letter-spacing:
+    1.7px;
+
+}
+
+
+.charitydonate-label i {
+
+font-size:
+    14px;
+
+}
+
+
+/* ==========================================================
+HEADING
+========================================================== */
+
+.charitydonate-heading {
+
+margin:
+    18px 0 12px;
+
+font-size:
+    50px;
+
+line-height:
+    1.12;
+
+font-weight:
+    900;
+
+color:
+    var(--charitydonate-black);
+
+letter-spacing:
+    -1px;
+
+}
+
+
+.charitydonate-heading span {
+
+color:
+    var(--charitydonate-orange);
+
+}
+
+
+/* ==========================================================
+ORANGE LINE
+========================================================== */
+
+.charitydonate-line {
+
+width:
+    75px;
+
+height:
+    4px;
+
+margin:
+    0 0 24px;
+
+border-radius:
+    50px;
+
+background:
+    var(--charitydonate-orange);
+
+}
+
+
+/* ==========================================================
+DESCRIPTION
+========================================================== */
+
+.charitydonate-description {
+
+margin:
+    0 0 15px;
+
+font-size:
+    21px;
+
+line-height:
+    1.65;
+
+color:
+    var(--charitydonate-gray);
+
+}
+
+
+/* ==========================================================
+BENEFITS
+========================================================== */
+
+.charitydonate-benefits {
+
+display:
+    flex;
+
+flex-direction:
+    column;
+
+gap:
+    16px;
+
+margin-top:
+    28px;
+
+}
+
+
+/* ==========================================================
+BENEFIT
+========================================================== */
+
+.charitydonate-benefit {
+
+display:
+    flex;
+
+align-items:
+    center;
+
+gap:
+    15px;
+
+padding:
+    14px 16px;
+
+border-radius:
+    15px;
+
+background:
+    #fafafa;
+
+border:
+    1px solid
+    #eeeeee;
+
+transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+}
+
+
+.charitydonate-benefit:hover {
+
+transform:
+    translateX(6px);
+
+border-color:
+    rgba(255,121,0,0.35);
+
+box-shadow:
+    0 10px 25px
+    rgba(0,0,0,0.08);
+
+}
+
+
+/* ==========================================================
+BENEFIT ICON
+========================================================== */
+
+.charitydonate-benefit-icon {
+
+flex-shrink: 0;
+
+width:
+    53px;
+
+height:
+    53px;
+
+border-radius:
+    14px;
+
+display:
+    flex;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+background:
+    var(--charitydonate-orange);
+
+color:
+    var(--charitydonate-white);
+
+font-size:
+    22px;
+
+}
+
+
+/* ==========================================================
+BENEFIT CONTENT
+========================================================== */
+
+.charitydonate-benefit-content {
+
+min-width:
+    0;
+
+}
+
+
+.charitydonate-benefit-content h3 {
+
+margin:
+    0 0 4px;
+
+font-size:
+    19px;
+
+font-weight:
+    800;
+
+color:
+    var(--charitydonate-black);
+
+}
+
+
+.charitydonate-benefit-content p {
+
+margin:
+    0;
+
+font-size:
+    15px;
+
+line-height:
+    1.5;
+
+color:
+    var(--charitydonate-gray);
+
+}
+
+
+/* ==========================================================
+DONATE BUTTON
+========================================================== */
+
+.charitydonate-button {
+
+display:
+    inline-flex;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+gap:
+    12px;
+
+margin-top:
+    30px;
+
+min-height:
+    55px;
+
+padding:
+    0 25px;
+
+border-radius:
+    10px;
+
+background:
+    var(--charitydonate-black);
+
+color:
+    var(--charitydonate-white);
+
+text-decoration:
+    none;
+
+font-size:
+    18px;
+
+font-weight:
+    800;
+
+transition:
+    all 0.3s ease;
+
+}
+
+
+.charitydonate-button i {
+
+color:
+    var(--charitydonate-orange);
+
+transition:
+    transform 0.3s ease;
+
+}
+
+
+.charitydonate-button:hover {
+
+background:
+    var(--charitydonate-orange);
+
+color:
+    var(--charitydonate-white);
+
+transform:
+    translateY(-3px);
+
+box-shadow:
+    0 12px 25px
+    rgba(255,121,0,0.25);
+
+}
+
+
+.charitydonate-button:hover i {
+
+color:
+    var(--charitydonate-white);
+
+transform:
+    translateX(5px);
+
+}
+
+
+/* ==========================================================
+RIGHT IMAGE WRAPPER
+========================================================== */
+
+.charitydonate-image-wrapper {
+
+width:
+    100%;
+
+display:
+    flex;
+
+justify-content:
+    center;
+
+opacity:
+    0;
+
+transform:
+    translateX(100px);
+
+transition:
+    opacity 1s ease 0.15s,
+    transform 1s ease 0.15s;
+
+}
+
+
+/* ==========================================================
+IMAGE ANIMATION
+========================================================== */
+
+.charitydonate-section.charitydonate-visible
+.charitydonate-image-wrapper {
+
+opacity:
+    1;
+
+transform:
+    translateX(0);
+
+}
+
+
+/* ==========================================================
+IMAGE FRAME
+========================================================== */
+
+.charitydonate-image-frame {
+
+position:
+    relative;
+
+width:
+    100%;
+
+max-width:
+    540px;
+
+padding:
+    12px;
+
+border-radius:
+    28px;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--charitydonate-orange),
+        var(--charitydonate-black)
+    );
+
+box-shadow:
+    0 25px 55px
+    rgba(0,0,0,0.18);
+
+}
+
+
+/* ==========================================================
+IMAGE
+========================================================== */
+
+.charitydonate-image {
+
+display:
+    block;
+
+width:
+    100%;
+
+height:
+    510px;
+
+object-fit:
+    cover;
+
+object-position:
+    center;
+
+border-radius:
+    20px;
+
+}
+
+
+/* ==========================================================
+IMAGE BADGE
+========================================================== */
+
+.charitydonate-image-badge {
+
+position:
+    absolute;
+
+left:
+    -25px;
+
+bottom:
+    35px;
+
+display:
+    flex;
+
+align-items:
+    center;
+
+gap:
+    12px;
+
+min-width:
+    185px;
+
+padding:
+    14px 18px;
+
+border-radius:
+    15px;
+
+background:
+    var(--charitydonate-black);
+
+color:
+    var(--charitydonate-white);
+
+box-shadow:
+    0 15px 30px
+    rgba(0,0,0,0.25);
+
+}
+
+
+.charitydonate-image-badge > i {
+
+width:
+    43px;
+
+height:
+    43px;
+
+display:
+    flex;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+border-radius:
+    50%;
+
+background:
+    var(--charitydonate-orange);
+
+color:
+    var(--charitydonate-white);
+
+font-size:
+    18px;
+
+}
+
+
+.charitydonate-image-badge div {
+
+display:
+    flex;
+
+flex-direction:
+    column;
+
+}
+
+
+.charitydonate-image-badge strong {
+
+font-size:
+    20px;
+
+color:
+    var(--charitydonate-orange);
+
+}
+
+
+.charitydonate-image-badge span {
+
+margin-top:
+    2px;
+
+font-size:
+    12px;
+
+color:
+    #dddddd;
+
+}
+
+
+/* ==========================================================
+LAPTOP
+========================================================== */
+
+@media (max-width: 1250px) {
+
+.charitydonate-section {
+
+    padding:
+        85px 0;
+
+}
+
+
+.charitydonate-container {
+
+    gap:
+        50px;
+
+    padding:
+        0 35px;
+
+}
+
+
+.charitydonate-heading {
+
+    font-size:
+        45px;
+
+}
+
+
+.charitydonate-description {
+
+    font-size:
+        20px;
+
+}
+
+
+.charitydonate-image {
+
+    height:
+        470px;
+
+}
+
+}
+
+
+/* ==========================================================
+TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+.charitydonate-section {
+
+    padding:
+        70px 0;
+
+}
+
+
+.charitydonate-container {
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        55px;
+
+    padding:
+        0 30px;
+
+}
+
+
+/* Content */
+
+.charitydonate-content {
+
+    max-width:
+        750px;
+
+    margin:
+        0 auto;
+
+}
+
+
+.charitydonate-heading {
+
+    font-size:
+        43px;
+
+}
+
+
+.charitydonate-description {
+
+    font-size:
+        21px;
+
+}
+
+
+/* Image */
+
+.charitydonate-image-wrapper {
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto;
+
+}
+
+
+.charitydonate-image-frame {
+
+    max-width:
+        650px;
+
+}
+
+
+.charitydonate-image {
+
+    height:
+        450px;
+
+}
+
+
+.charitydonate-image-badge {
+
+    left:
+        15px;
+
+}
+
+}
+
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+.charitydonate-section {
+
+    padding:
+        55px 0;
+
+}
+
+
+.charitydonate-container {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        40px;
+
+    padding:
+        0 17px;
+
+}
+
+
+/* Content */
+
+.charitydonate-content {
+
+    width:
+        100%;
+
+}
+
+
+.charitydonate-label {
+
+    font-size:
+        10px;
+
+    padding:
+        8px 13px;
+
+    letter-spacing:
+        1.2px;
+
+}
+
+
+.charitydonate-heading {
+
+    margin-top:
+        16px;
+
+    font-size:
+        36px;
+
+    line-height:
+        1.15;
+
+}
+
+
+.charitydonate-line {
+
+    width:
+        60px;
+
+    height:
+        3px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.charitydonate-description {
+
+    font-size:
+        21px;
+
+    line-height:
+        1.55;
+
+}
+
+
+/* Benefits */
+
+.charitydonate-benefits {
+
+    gap:
+        12px;
+
+    margin-top:
+        23px;
+
+}
+
+
+.charitydonate-benefit {
+
+    padding:
+        13px;
+
+    gap:
+        12px;
+
+}
+
+
+.charitydonate-benefit-icon {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    font-size:
+        19px;
+
+    border-radius:
+        12px;
+
+}
+
+
+.charitydonate-benefit-content h3 {
+
+    font-size:
+        17px;
+
+}
+
+
+.charitydonate-benefit-content p {
+
+    font-size:
+        14px;
+
+}
+
+
+/* Button */
+
+.charitydonate-button {
+
+    width:
+        100%;
+
+    min-height:
+        54px;
+
+    margin-top:
+        25px;
+
+    font-size:
+        17px;
+
+}
+
+
+/* Image */
+
+.charitydonate-image-wrapper {
+
+    width:
+        100%;
+
+}
+
+
+.charitydonate-image-frame {
+
+    width:
+        100%;
+
+    padding:
+        8px;
+
+    border-radius:
+        22px;
+
+}
+
+
+.charitydonate-image {
+
+    height:
+        390px;
+
+    border-radius:
+        16px;
+
+}
+
+
+.charitydonate-image-badge {
+
+    left:
+        12px;
+
+    bottom:
+        20px;
+
+    min-width:
+        165px;
+
+    padding:
+        11px 14px;
+
+}
+
+
+.charitydonate-image-badge > i {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    font-size:
+        16px;
+
+}
+
+
+.charitydonate-image-badge strong {
+
+    font-size:
+        18px;
+
+}
+
+}
+
+
+/* ==========================================================
+SMALL MOBILE
+========================================================== */
+
+@media (max-width: 390px) {
+
+.charitydonate-section {
+
+    padding:
+        45px 0;
+
+}
+
+
+.charitydonate-container {
+
+    padding:
+        0 14px;
+
+    gap:
+        35px;
+
+}
+
+
+.charitydonate-heading {
+
+    font-size:
+        32px;
+
+}
+
+
+.charitydonate-description {
+
+    font-size:
+        19px;
+
+}
+
+
+.charitydonate-benefit {
+
+    align-items:
+        flex-start;
+
+}
+
+
+.charitydonate-benefit-icon {
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    font-size:
+        17px;
+
+}
+
+
+.charitydonate-benefit-content h3 {
+
+    font-size:
+        16px;
+
+}
+
+
+.charitydonate-benefit-content p {
+
+    font-size:
+        13px;
+
+}
+
+
+.charitydonate-image {
+
+    height:
+        340px;
+
+}
+
+
+.charitydonate-image-badge {
+
+    left:
+        8px;
+
+    bottom:
+        15px;
+
+    min-width:
+        150px;
+
+    padding:
+        9px 11px;
+
+}
+
+}
+
+
+/* ==========================================================
+REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+.charitydonate-content,
+.charitydonate-image-wrapper {
+
+    opacity:
+        1;
+
+    transform:
+        none;
+
+    transition:
+        none;
+
+}
+
+}
+
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+        const charityDonateSection =
+            document.querySelector(".charitydonate-section");
+    
+        if (!charityDonateSection) return;
+    
+        const charityDonateObserver =
+            new IntersectionObserver(
+                function (entries) {
+    
+                    entries.forEach(function (entry) {
+    
+                        if (entry.isIntersecting) {
+    
+                            entry.target.classList.add(
+                                "charitydonate-visible"
+                            );
+    
+                            charityDonateObserver.unobserve(
+                                entry.target
+                            );
+    
+                        }
+    
+                    });
+    
+                },
+                {
+                    threshold: 0.18
+                }
+            );
+    
+        charityDonateObserver.observe(
+            charityDonateSection
+        );
+    
+    });
+    </script>
+
+
+<!-- FONT AWESOME -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <Style>
+        /* =========================================================
+   STACKLY RESPONSIVE HEADER
+   UNIQUE PREFIX: stkhead-
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.stkhead-header,
+.stkhead-header *,
+.stkhead-header *::before,
+.stkhead-header *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.stkhead-header {
+    width: 100%;
+    background: #000000;
+    position: relative;
+    z-index: 9999;
+    border-bottom: 2px solid #ff7a00;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.stkhead-container {
+    width: 100%;
+    max-width: 1500px;
+    min-height: 100px;
+    margin: 0 auto;
+
+    padding: 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.stkhead-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+}
+
+.stkhead-logo img {
+    width: 150px;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.stkhead-logo:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.stkhead-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 32px;
+
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   NORMAL NAV LINKS
+========================================================= */
+
+.stkhead-link {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    padding: 15px 0;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+/* =========================================================
+   UNDERLINE EFFECT
+========================================================= */
+
+.stkhead-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 5px;
+
+    width: 0;
+    height: 3px;
+
+    background: #ff7a00;
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+
+/* HOVER */
+
+.stkhead-link:hover {
+    color: #ff7a00;
+}
+
+.stkhead-link:hover::after {
+    width: 100%;
+}
+
+
+/* ACTIVE */
+
+.stkhead-link.active {
+    color: #ff7a00;
+}
+
+.stkhead-link.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.stkhead-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    padding: 12px 20px;
+
+    border: 2px solid #ff7a00;
+    border-radius: 7px;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.stkhead-login i {
+    color: #ff7a00;
+    font-size: 20px;
+
+    transition: color 0.3s ease;
+}
+
+.stkhead-login:hover {
+    background: #ff7a00;
+    color: #000000;
+
+    transform: translateY(-2px);
+}
+
+.stkhead-login:hover i {
+    color: #000000;
+}
+
+
+/* =========================================================
+   REGISTER
+========================================================= */
+
+.stkhead-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #000000;
+
+    background: #ff7a00;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    padding: 14px 22px;
+
+    border: 2px solid #ff7a00;
+    border-radius: 7px;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.stkhead-register i {
+    font-size: 20px;
+}
+
+.stkhead-register:hover {
+    background: transparent;
+    color: #ff7a00;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.stkhead-menu-btn {
+    width: 48px;
+    height: 48px;
+
+    padding: 8px;
+
+    border: 2px solid #ff7a00;
+    border-radius: 6px;
+
+    background: transparent;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+
+/* HAMBURGER LINES */
+
+.stkhead-menu-btn span {
+    width: 27px;
+    height: 3px;
+
+    background: #ff7a00;
+
+    border-radius: 5px;
+
+    display: block;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* =========================================================
+   HAMBURGER ACTIVE
+========================================================= */
+
+.stkhead-menu-btn.stkhead-open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.stkhead-menu-btn.stkhead-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.stkhead-menu-btn.stkhead-open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1401px) {
+
+    .stkhead-container {
+        min-height: 105px;
+
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+
+    .stkhead-logo img {
+        width: 165px;
+    }
+
+    .stkhead-nav {
+        gap: 35px;
+    }
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+
+    .stkhead-container {
+        min-height: 100px;
+
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .stkhead-logo img {
+        width: 150px;
+    }
+
+    .stkhead-nav {
+        gap: 27px;
+    }
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .stkhead-container {
+        min-height: 95px;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .stkhead-logo img {
+        width: 135px;
+    }
+
+    .stkhead-nav {
+        gap: 18px;
+    }
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+
+    .stkhead-login {
+        padding: 11px 15px;
+    }
+
+    .stkhead-register {
+        padding: 12px 16px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .stkhead-container {
+        min-height: 90px;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .stkhead-logo img {
+        width: 135px;
+    }
+
+    .stkhead-menu-btn {
+        display: flex;
+    }
+
+    .stkhead-nav {
+        position: absolute;
+
+        top: 90px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: #000000;
+
+        border-top: 1px solid #ff7a00;
+        border-bottom: 2px solid #ff7a00;
+
+        display: flex;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-15px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    .stkhead-nav.stkhead-nav-active {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .stkhead-link {
+        width: 100%;
+
+        font-size: 22px;
+
+        padding: 16px 10px;
+
+        text-align: center;
+
+        border-bottom: 1px solid rgba(255, 122, 0, 0.25);
+    }
+
+
+    .stkhead-link::after {
+        display: none;
+    }
+
+
+    .stkhead-login,
+    .stkhead-register {
+        width: 100%;
+
+        margin-top: 12px;
+
+        font-size: 22px;
+
+        padding: 14px 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .stkhead-container {
+        min-height: 85px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .stkhead-logo img {
+        width: 125px;
+    }
+
+
+    .stkhead-menu-btn {
+        display: flex;
+
+        width: 47px;
+        height: 47px;
+    }
+
+
+    .stkhead-nav {
+        position: absolute;
+
+        top: 85px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px 18px 25px;
+
+        background: #000000;
+
+        border-top: 1px solid #ff7a00;
+        border-bottom: 2px solid #ff7a00;
+
+        display: flex;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-15px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    .stkhead-nav.stkhead-nav-active {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .stkhead-link {
+        width: 100%;
+
+        font-size: 22px;
+
+        padding: 16px 10px;
+
+        text-align: center;
+
+        border-bottom: 1px solid rgba(255, 122, 0, 0.25);
+    }
+
+
+    .stkhead-link::after {
+        display: none;
+    }
+
+
+    .stkhead-login,
+    .stkhead-register {
+        width: 100%;
+
+        margin-top: 12px;
+
+        font-size: 22px;
+
+        padding: 14px 20px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .stkhead-container {
+        min-height: 80px;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .stkhead-logo img {
+        width: 115px;
+    }
+
+
+    .stkhead-menu-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    .stkhead-nav {
+        top: 80px;
+
+        padding: 18px 15px 22px;
+    }
+
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .stkhead-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .stkhead-logo img {
+        width: 105px;
+    }
+
+
+    .stkhead-menu-btn {
+        width: 43px;
+        height: 43px;
+    }
+
+
+    .stkhead-link,
+    .stkhead-login,
+    .stkhead-register {
+        font-size: 22px;
+    }
+}
+    </Style>
+
+<script>
+    /* =========================================================
+       STACKLY HEADER MOBILE MENU
+    ========================================================= */
+    
+    document.addEventListener("DOMContentLoaded", function () {
+    
+        const stkheadMenuBtn =
+            document.getElementById("stkheadMenuBtn");
+    
+        const stkheadNav =
+            document.getElementById("stkheadNav");
+    
+    
+        if (!stkheadMenuBtn || !stkheadNav) {
+            return;
+        }
+    
+    
+        /* OPEN / CLOSE MENU */
+    
+        stkheadMenuBtn.addEventListener("click", function () {
+    
+            const isOpen =
+                stkheadNav.classList.toggle("stkhead-nav-active");
+    
+            stkheadMenuBtn.classList.toggle(
+                "stkhead-open",
+                isOpen
+            );
+    
+            stkheadMenuBtn.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+    
+        });
+    
+    
+        /* CLOSE MENU AFTER CLICKING A LINK */
+    
+        const stkheadLinks =
+            stkheadNav.querySelectorAll("a");
+    
+        stkheadLinks.forEach(function (link) {
+    
+            link.addEventListener("click", function () {
+    
+                stkheadNav.classList.remove(
+                    "stkhead-nav-active"
+                );
+    
+                stkheadMenuBtn.classList.remove(
+                    "stkhead-open"
+                );
+    
+                stkheadMenuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+    
+            });
+    
+        });
+    
+    
+        /* CLOSE MENU WHEN CLICKING OUTSIDE */
+    
+        document.addEventListener("click", function (event) {
+    
+            if (
+                !stkheadNav.contains(event.target) &&
+                !stkheadMenuBtn.contains(event.target)
+            ) {
+    
+                stkheadNav.classList.remove(
+                    "stkhead-nav-active"
+                );
+    
+                stkheadMenuBtn.classList.remove(
+                    "stkhead-open"
+                );
+    
+                stkheadMenuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+    
+            }
+    
+        });
+    
+    });
+    </script>
+
+    <!-- ----------------------------------------------------------------- -->
+    
+<!--=========================================================
+                    FOOTER SECTION
+                        PART 1
+==========================================================-->
+
+<footer class="gov-footer reveal-up">
+
+    <!-- Animated Background -->
+    <div class="gov-footer-bg-shape shape-1"></div>
+    <div class="gov-footer-bg-shape shape-2"></div>
+    <div class="gov-footer-bg-shape shape-3"></div>
+
+    <div class="gov-footer-container">
+
+        <!--==================================================
+                    FOOTER TOP
+        ===================================================-->
+
+        <div class="gov-footer-top">
+
+            <!--=========================================
+                    COMPANY DETAILS
+            ==========================================-->
+
+            <div class="footer-column footer-company reveal-up">
+
+                <!-- Logo -->
+                <a href="index.html" class="footer-logo">
+
+                    <img src="./white.webp"
+                     style="height:60px;">
+                </a>
+
+                <p class="footer-description">
+
+                    We’re curious, passionate, and committed to helping nonprofits learn and grow. Donate now!
+
+                </p>
+
+                <!--=============================
+                        SOCIAL ICONS
+                ==============================-->
+
+                <div class="footer-social">
+
+                    <a href="404.html"
+                        class="social-icon">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+                    <a href="404.html"
+                        class="social-icon">
+
+                        <i class="fa-brands fa-x-twitter"></i>
+
+                    </a>
+
+                    <a href="404.html"
+                        class="social-icon">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+                    <a href="404.html"
+                        class="social-icon">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!--=========================================
+                    QUICK LINKS
+            ==========================================-->
+
+            <div class="footer-column reveal-up">
+
+                <h3>
+
+                    Quick Links
+
+                </h3>
+
+                <ul>
+
+                    <li>
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="./about.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+About
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="./services.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Services
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        
+                    </li>
+
+                    <li>
+
+                        <a href="contact.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Contact Us
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!--=========================================
+                    HELP & SUPPORT
+            ==========================================-->
+
+            <div class="footer-column reveal-up">
+
+                <h3>
+
+                    Help & Support
+
+                </h3>
+
+                <ul>
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            FAQs
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Help Manual
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Terms & Conditions
+
+                        </a>
+
+                    </li>
+
+                    
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Website Policies
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="404.html">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                            Sitemap
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!--=========================================
+                    NEWSLETTER
+            ==========================================-->
+
+            <div class="footer-column newsletter-column reveal-up">
+
+                <h3>
+
+                    Stay Connected
+
+                </h3>
+
+                <p>
+
+                    Subscribe to receive the latest
+                    charity announcements,
+                    schemes and service updates.
+
+                </p>
+
+                <!--=============================
+                        NEWSLETTER FORM
+                ==============================-->
+
+                <form id="footerSubscribeForm"
+                    class="newsletter-form">
+
+                    <div class="newsletter-input">
+
+                        <input
+                            type="email"
+                            id="footerEmail"
+                            placeholder="Enter your email"
+                            autocomplete="off">
+
+                        <button
+                            type="submit">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                        </button>
+
+                    </div>
+
+                    <!-- Error -->
+
+                    <small
+                        id="footerEmailError"
+                        class="footer-error">
+
+                    </small>
+
+                    <!-- Subscribe -->
+
+                    <button
+                        class="subscribe-btn"
+                        type="submit">
+
+                        Subscribe
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!--==================================================
+                    FOOTER BOTTOM
+        ===================================================-->
+
+        <div class="gov-footer-bottom reveal-up">
+
+            <!-- Left -->
+            <div class="footer-bottom-left">
+        
+                <span>
+                    Government of India
+                </span>
+        
+            </div>
+        
+            <!-- Center -->
+            <div class="footer-bottom-center">
+        
+                © 2026 Stackly Advisory Group.
+                All Rights Reserved.
+        
+            </div>
+        
+            <!-- Right -->
+            <div class="footer-bottom-right">
+        
+                <a href="404.html">
+                    Privacy Policy
+                </a>
+        
+                <span>|</span>
+        
+                <a href="404.html">
+                    Terms of Service
+                </a>
+        
+            </div>
+        
+        </div>
+
+    </footer>
+
+<!--=========================================================
+            SUCCESS POPUP
+==========================================================-->
+
+<div
+    class="footer-popup"
+    id="footerPopup">
+
+    <div class="footer-popup-box">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <h3>
+
+            Successfully Subscribed!
+
+        </h3>
+
+        <p>
+
+            Thank you for subscribing.
+            Redirecting...
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+
+<style>
+    /* =========================================================
+   GOVERNMENT FOOTER BOTTOM
+   NON-CONFLICTING RESPONSIVE CSS
+   ========================================================= */
+
+.gov-footer-bottom {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 22px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+    gap: 25px;
+
+    box-sizing: border-box;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+    font-family: "Poppins", sans-serif;
+
+    color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* =========================================================
+   LEFT
+   ========================================================= */
+
+.gov-footer-bottom .footer-bottom-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-width: 0;
+}
+
+.gov-footer-bottom .footer-bottom-left span {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CENTER
+   ========================================================= */
+
+.gov-footer-bottom .footer-bottom-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   RIGHT
+   ========================================================= */
+
+.gov-footer-bottom .footer-bottom-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+.gov-footer-bottom .footer-bottom-right a {
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 22px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Underline animation */
+
+.gov-footer-bottom .footer-bottom-right a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -4px;
+
+    width: 0;
+    height: 2px;
+
+    background: currentColor;
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+
+.gov-footer-bottom .footer-bottom-right a:hover {
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+.gov-footer-bottom .footer-bottom-right a:hover::after {
+    width: 100%;
+}
+
+
+/* Separator */
+
+.gov-footer-bottom .footer-bottom-right span {
+    color: rgba(255, 255, 255, 0.35);
+
+    font-size: 22px;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   REVEAL-UP ANIMATION
+   ========================================================= */
+
+.gov-footer-bottom.reveal-up {
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    animation: govFooterBottomReveal 0.9s ease forwards;
+
+    animation-delay: 0.15s;
+}
+
+
+@keyframes govFooterBottomReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateY(45px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    .gov-footer-bottom {
+        max-width: 1500px;
+
+        padding: 25px 45px;
+
+        gap: 35px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   1025px - 1399px
+   ========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1399px) {
+
+    .gov-footer-bottom {
+        padding: 20px 25px;
+
+        grid-template-columns: 1fr auto 1fr;
+
+        gap: 20px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right {
+        gap: 20px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size:22px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 1024px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .gov-footer-bottom {
+        padding: 20px 22px;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 15px 25px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left {
+        justify-content: flex-start;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        justify-content: flex-end;
+
+        text-align: right;
+
+        white-space: normal;
+    }
+
+    .gov-footer-bottom .footer-bottom-right {
+        grid-column: 1 / -1;
+
+        justify-content: center;
+
+        padding-top: 5px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .gov-footer-bottom {
+        width: 100%;
+
+        padding: 22px 18px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 14px;
+
+        text-align: center;
+    }
+
+
+    /* LEFT */
+
+    .gov-footer-bottom .footer-bottom-left {
+        width: 100%;
+
+        justify-content: center;
+
+        order: 1;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+
+        white-space: normal;
+
+        text-align: center;
+    }
+
+
+    /* CENTER */
+
+    .gov-footer-bottom .footer-bottom-center {
+        width: 100%;
+
+        justify-content: center;
+
+        order: 2;
+
+        white-space: normal;
+
+        text-align: center;
+
+        font-size: 21px;
+
+        line-height: 1.7;
+    }
+
+
+    /* RIGHT */
+
+    .gov-footer-bottom .footer-bottom-right {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        order: 3;
+
+        gap: 8px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right span {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .gov-footer-bottom {
+        padding: 20px 14px;
+
+        gap: 12px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right {
+        gap: 7px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .gov-footer-bottom {
+        padding: 18px 12px;
+    }
+
+    .gov-footer-bottom .footer-bottom-left span {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-center {
+        font-size: 22px;
+    }
+
+    .gov-footer-bottom .footer-bottom-right a {
+        font-size: 22px;
+    }
+
+}
+/*=========================================================
+                    FOOTER SECTION
+                     PART 2A.1
+            Main Layout + Desktop Styling
+=========================================================*/
+
+.gov-footer{
+
+position:relative;
+
+overflow:hidden;
+
+padding:60px 0 0;
+
+background:linear-gradient(135deg,#0d0d0d,#2a1706);
+
+color:#fff;
+
+z-index:1;
+
+}
+
+/*=========================================================
+            ANIMATED BACKGROUND
+=========================================================*/
+
+.gov-footer-bg-shape{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(80px);
+
+opacity:.18;
+
+animation:footerFloat 12s ease-in-out infinite;
+
+}
+
+.shape-1{
+
+width:260px;
+
+height:260px;
+
+background:#ffffff;
+
+top:-80px;
+
+left:-60px;
+
+}
+
+.shape-2{
+
+width:320px;
+
+height:320px;
+
+background:#080808;
+
+right:-100px;
+
+top:120px;
+
+animation-delay:2s;
+
+}
+
+.shape-3{
+
+width:220px;
+
+height:220px;
+
+background:#080808;
+
+bottom:-70px;
+
+left:40%;
+
+animation-delay:4s;
+
+}
+
+@keyframes footerFloat{
+
+0%{
+
+    transform:translateY(0px);
+
+}
+
+50%{
+
+    transform:translateY(-25px);
+
+}
+
+100%{
+
+    transform:translateY(0px);
+
+}
+
+}
+
+/*=========================================================
+            CONTAINER
+=========================================================*/
+
+/*=========================================================
+                FOOTER CONTAINER
+=========================================================*/
+
+.gov-footer-container{
+
+width:85%;
+
+max-width:1200px;   /* Reduce from 1350px */
+
+margin:0 auto;
+
+position:relative;
+
+z-index:5;
+
+}
+/*=========================================================
+            TOP GRID
+=========================================================*/
+
+.gov-footer-top{
+
+display:grid;
+
+grid-template-columns:
+
+1.35fr
+
+.9fr
+
+.9fr
+
+1.1fr;
+
+gap:60px;
+
+padding-bottom:45px;
+
+}
+
+/*=========================================================
+            COMMON COLUMN
+=========================================================*/
+
+.footer-column{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.footer-column h3{
+
+font-size:22px;
+
+font-weight:700;
+
+margin-bottom:24px;
+
+position:relative;
+
+}
+
+.footer-column h3::after{
+
+content:"";
+
+width:38px;
+
+height:3px;
+
+border-radius:30px;
+
+background:#ffffff;
+
+position:absolute;
+
+left:0;
+
+bottom:-10px;
+
+}
+
+/*=========================================================
+            COMPANY
+=========================================================*/
+
+.footer-logo{
+
+display:inline-flex;
+
+margin-bottom:25px;
+
+}
+
+.footer-logo img{
+
+width:210px;
+
+object-fit:contain;
+
+}
+
+.footer-description{
+
+font-size:19px;
+
+line-height:1.9;
+
+color:#eefefe;
+
+margin-bottom:32px;
+
+max-width:330px;
+
+}
+
+/*=========================================================
+            SOCIAL ICONS
+=========================================================*/
+
+.footer-social{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.social-icon{
+
+width:54px;
+
+height:54px;
+
+border-radius:50%;
+
+border:1px solid rgba(255,255,255,.45);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#fff;
+
+font-size:20px;
+
+text-decoration:none;
+
+transition:.45s;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(8px);
+
+}
+
+/*=========================================================
+            LINKS
+=========================================================*/
+
+.footer-column ul{
+
+padding:0;
+
+margin:0;
+
+list-style:none;
+
+}
+
+.footer-column ul li{
+
+margin-bottom:16px;
+
+}
+
+.footer-column ul li a{
+
+color:#eefefe;
+
+text-decoration:none;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:20px;
+
+transition:.35s;
+
+}
+
+.footer-column ul li a i{
+
+font-size:12px;
+
+}
+
+/*=========================================================
+            NEWSLETTER
+=========================================================*/
+
+.newsletter-column p{
+
+color:#eefefe;
+
+line-height:1.8;
+
+margin-bottom:28px;
+
+font-size:20px;
+
+}
+
+.newsletter-form{
+
+width:100%;
+
+}
+
+.newsletter-input{
+
+display:flex;
+
+align-items:center;
+
+overflow:hidden;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.10);
+
+border:1px solid rgba(255,255,255,.25);
+
+backdrop-filter:blur(12px);
+
+}
+
+.newsletter-input input{
+
+flex:1;
+
+border:none;
+
+background:transparent;
+
+padding:16px 18px;
+
+color:#fff;
+
+font-size:20px;
+
+outline:none;
+
+}
+
+.newsletter-input input::placeholder{
+
+color:#ecffff;
+
+}
+
+.newsletter-input button{
+
+width:62px;
+
+border:none;
+
+cursor:pointer;
+
+color:#fff;
+
+background:#f17c07;
+
+height:56px;
+
+font-size:18px;
+
+}
+
+.subscribe-btn{
+
+margin-top:20px;
+
+padding:15px 34px;
+
+border:none;
+
+border-radius:12px;
+
+background:#f17c07;
+
+color:#fff;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.footer-error{
+
+display:block;
+
+color:#ffe2e2;
+
+font-size:13px;
+
+margin-top:10px;
+
+min-height:18px;
+
+}
+
+/*=========================================================
+            FOOTER BOTTOM
+=========================================================*/
+
+.gov-footer-bottom{
+
+border-top:1px solid rgba(255,255,255,.18);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:25px;
+
+padding:26px 0;
+
+font-size:20px;
+
+}
+
+.footer-bottom-left,
+
+.footer-bottom-right{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+}
+
+.footer-bottom-left img{
+
+width:42px;
+
+}
+
+.footer-bottom-right img{
+
+width:95px;
+
+}
+
+.footer-bottom-right a{
+
+text-decoration:none;
+
+color:#ffffff;
+
+transition:.35s;
+
+}
+
+.footer-bottom-center{
+
+text-align:center;
+
+color:#edfefe;
+
+}
+
+/*=========================================================
+            SUCCESS POPUP
+=========================================================*/
+
+.footer-popup{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:rgba(0,0,0,.45);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.4s;
+
+z-index:9999;
+
+}
+
+.footer-popup.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.footer-popup-box{
+
+width:360px;
+
+background:#fff;
+
+border-radius:22px;
+
+padding:35px;
+
+text-align:center;
+
+color:#222;
+
+}
+
+.footer-popup-box i{
+
+font-size:24px;
+
+color:#18b26d;
+
+margin-bottom:18px;
+
+}
+
+.footer-popup-box h3{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+}
+
+.footer-popup-box p{
+
+color:#666;
+
+line-height:1.7;
+
+}
+
+/*=========================================================
+                    FOOTER SECTION
+                      PART 2B.1
+        Desktop + Laptop Responsive (992px - 1400px)
+=========================================================*/
+
+/*=========================================================
+                LARGE DESKTOP
+=========================================================*/
+
+@media (max-width:1400px){
+
+.gov-footer{
+
+    padding:80px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:94%;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:
+    1.25fr
+    .9fr
+    .9fr
+    1fr;
+
+    gap:55px;
+
+}
+
+.footer-logo img{
+
+    width:190px;
+
+}
+
+.footer-description{
+
+    max-width:300px;
+
+    font-size:15px;
+
+}
+
+}
+
+/*=========================================================
+                LAPTOP
+=========================================================*/
+
+@media (max-width:1200px){
+
+.gov-footer{
+
+    padding:75px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:95%;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:50px 45px;
+
+    align-items:flex-start;
+
+}
+
+.footer-column{
+
+    width:100%;
+
+}
+
+.footer-logo img{
+
+    width:180px;
+
+}
+
+.footer-description{
+
+    max-width:100%;
+
+}
+
+.footer-column h3{
+
+    font-size:21px;
+
+}
+
+.footer-column ul li{
+
+    margin-bottom:14px;
+
+}
+
+.newsletter-column{
+
+    width:100%;
+
+}
+
+.newsletter-input{
+
+    width:100%;
+
+}
+
+.newsletter-input input{
+
+    padding:15px 18px;
+
+    font-size:15px;
+
+}
+
+.newsletter-input button{
+
+    width:58px;
+
+    height:54px;
+
+}
+
+.subscribe-btn{
+
+    width:180px;
+
+    padding:14px;
+
+}
+
+.footer-social{
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.social-icon{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:18px;
+
+}
+
+.gov-footer-bottom{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:20px;
+
+    padding:24px 0;
+
+}
+
+.footer-bottom-left,
+
+.footer-bottom-center,
+
+.footer-bottom-right{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+}
+
+/*=========================================================
+            SMALL LAPTOP
+=========================================================*/
+
+@media (max-width:992px){
+
+.gov-footer{
+
+    padding:70px 0 0;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:
+
+    repeat(2,minmax(280px,1fr));
+
+    gap:45px 35px;
+
+}
+
+.footer-column{
+
+    align-self:flex-start;
+
+}
+
+.footer-logo img{
+
+    width:170px;
+
+}
+
+.footer-description{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.footer-column h3{
+
+    font-size:20px;
+
+}
+
+.footer-column ul li a{
+
+    font-size:14px;
+
+}
+
+.newsletter-column p{
+
+    font-size:14px;
+
+}
+
+.newsletter-input{
+
+    border-radius:12px;
+
+}
+
+.newsletter-input input{
+
+    padding:14px 16px;
+
+}
+
+.newsletter-input button{
+
+    width:55px;
+
+}
+
+.subscribe-btn{
+
+    width:170px;
+
+    font-size:14px;
+
+}
+
+.gov-footer-bottom{
+
+    gap:18px;
+
+    font-size:13px;
+
+}
+
+.footer-bottom-left img{
+
+    width:38px;
+
+}
+
+.footer-bottom-right img{
+
+    width:82px;
+
+}
+
+.footer-popup-box{
+
+    width:340px;
+
+    padding:30px;
+
+}
+
+}
+
+/*=========================================================
+        DESKTOP HOVER IMPROVEMENTS
+=========================================================*/
+
+@media (min-width:993px){
+
+.footer-column:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.social-icon:hover{
+
+    transform:
+
+    translateY(-10px)
+
+    rotate(360deg)
+
+    scale(1.12);
+
+}
+
+.subscribe-btn:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.newsletter-input:hover{
+
+    transform:translateY(-3px);
+
+}
+
+}
+
+/*=========================================================
+                    FOOTER SECTION
+                      PART 2B.2
+          Tablet + Mobile Responsive (992px - 320px)
+=========================================================*/
+
+/*=========================================================
+                    TABLET
+=========================================================*/
+
+@media (max-width:991px){
+
+.gov-footer{
+
+    padding:70px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:92%;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:1fr 1fr;
+
+    gap:45px 35px;
+
+}
+
+.footer-column{
+
+    width:100%;
+
+}
+
+.footer-company{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    align-items:center;
+
+}
+
+.footer-description{
+
+    max-width:600px;
+
+    margin:20px auto 30px;
+
+}
+
+.footer-column h3{
+
+    font-size:22px;
+
+}
+
+.footer-column h3::after{
+
+    left:0;
+
+}
+
+.newsletter-column{
+
+    grid-column:1/-1;
+
+}
+
+.newsletter-form{
+
+    max-width:520px;
+
+    margin:auto;
+
+}
+
+.gov-footer-bottom{
+
+    flex-direction:column;
+
+    gap:18px;
+
+    text-align:center;
+
+    padding:28px 0;
+
+}
+
+.footer-bottom-left,
+
+.footer-bottom-center,
+
+.footer-bottom-right{
+
+    justify-content:center;
+
+    width:100%;
+
+    flex-wrap:wrap;
+
+}
+
+}
+
+/*=========================================================
+                MOBILE
+=========================================================*/
+
+@media (max-width:768px){
+
+.gov-footer{
+
+    padding:60px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:94%;
+
+}
+
+.gov-footer-top{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+
+    text-align:center;
+
+}
+
+.footer-column{
+
+    align-items:center;
+
+}
+
+.footer-column h3{
+
+    font-size:22px;
+
+}
+
+.footer-column h3::after{
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.footer-description{
+
+    max-width:100%;
+
+    margin-bottom:30px;
+
+}
+
+.footer-column ul{
+
+    width:100%;
+
+}
+
+.footer-column ul li{
+
+    text-align:center;
+
+}
+
+.footer-column ul li a{
+
+    justify-content:center;
+
+    font-size:15px;
+
+}
+
+.footer-social{
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.social-icon{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:18px;
+
+}
+
+.newsletter-column p{
+
+    text-align:center;
+
+}
+
+.newsletter-form{
+
+    width:100%;
+
+}
+
+.newsletter-input{
+
+    width:100%;
+
+}
+
+.newsletter-input input{
+
+    padding:15px;
+
+    font-size:15px;
+
+}
+
+.newsletter-input button{
+
+    width:58px;
+
+    height:54px;
+
+}
+
+.subscribe-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:18px;
+
+}
+
+.gov-footer-bottom{
+
+    font-size:14px;
+
+    gap:15px;
+
+}
+
+.footer-bottom-left img{
+
+    width:40px;
+
+}
+
+.footer-bottom-right img{
+
+    width:90px;
+
+    margin-top:10px;
+
+}
+
+}
+
+/*=========================================================
+            SMALL MOBILE
+=========================================================*/
+
+@media (max-width:576px){
+
+.gov-footer{
+
+    padding:50px 0 0;
+
+}
+
+.gov-footer-container{
+
+    width:95%;
+
+}
+
+.gov-footer-top{
+
+    gap:40px;
+
+}
+
+.footer-logo img{
+
+    width:170px;
+
+}
+
+.footer-description{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.footer-column h3{
+
+    font-size:20px;
+
+}
+
+.footer-column ul li{
+
+    margin-bottom:14px;
+
+}
+
+.footer-column ul li a{
+
+    font-size:14px;
+
+}
+
+.social-icon{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:17px;
+
+}
+
+.newsletter-column p{
+
+    font-size:14px;
+
+}
+
+.newsletter-input{
+
+    border-radius:12px;
+
+}
+
+.newsletter-input input{
+
+    font-size:14px;
+
+    padding:14px;
+
+}
+
+.newsletter-input button{
+
+    width:54px;
+
+    height:52px;
+
+    font-size:16px;
+
+}
+
+.subscribe-btn{
+
+    font-size:14px;
+
+    padding:14px;
+
+}
+
+.gov-footer-bottom{
+
+    padding:22px 0;
+
+    font-size:13px;
+
+}
+
+.footer-bottom-left img{
+
+    width:34px;
+
+}
+
+.footer-bottom-right img{
+
+    width:75px;
+
+}
+
+.footer-popup-box{
+
+    width:92%;
+
+    padding:28px 20px;
+
+}
+
+.footer-popup-box h3{
+
+    font-size:24px;
+
+}
+
+.footer-popup-box p{
+
+    font-size:14px;
+
+}
+
+}
+
+/*=========================================================
+            EXTRA SMALL MOBILE
+=========================================================*/
+
+@media (max-width:400px){
+
+.gov-footer{
+
+    padding:45px 0 0;
+
+}
+
+.footer-logo img{
+
+    width:150px;
+
+}
+
+.footer-description{
+
+    font-size:13px;
+
+}
+
+.footer-column h3{
+
+    font-size:18px;
+
+}
+
+.footer-column ul li a{
+
+    font-size:13px;
+
+}
+
+.social-icon{
+
+    width:42px;
+
+    height:42px;
+
+    font-size:16px;
+
+}
+
+.newsletter-input{
+
+    flex-direction:column;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+}
+
+.newsletter-input input{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.newsletter-input button{
+
+    width:100%;
+
+    height:48px;
+
+    border-radius:0;
+
+}
+
+.subscribe-btn{
+
+    width:100%;
+
+}
+
+.footer-bottom-right{
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.footer-bottom-right span{
+
+    display:none;
+
+}
+
+}
+
+/*=========================================================
+        LANDSCAPE MOBILE FIX
+=========================================================*/
+
+@media (max-height:500px) and (orientation:landscape){
+
+.gov-footer{
+
+    padding-top:45px;
+
+}
+
+.gov-footer-top{
+
+    gap:30px;
+
+}
+
+}
+
+/*=========================================================
+        OVERFLOW FIX
+=========================================================*/
+
+html,
+body{
+
+overflow-x:hidden;
+
+}
+
+.gov-footer{
+
+overflow:hidden;
+
+}
+
+.gov-footer img{
+
+max-width:100%;
+
+height:auto;
+
+}
+
+.footer-column,
+
+.newsletter-form,
+
+.newsletter-input,
+
+.footer-bottom-left,
+
+.footer-bottom-right{
+
+max-width:100%;
+
+}
+
+    </style>
+
+    <script>
+
+        /*=========================================================
+                    FOOTER SECTION
+                        PART 3
+=========================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*==================================================
+            SCROLL REVEAL ANIMATION
+==================================================*/
+
+const revealElements = document.querySelectorAll(".reveal-up");
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            revealObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.15
+
+});
+
+revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+});
+
+/*==================================================
+            STAGGER ANIMATION
+==================================================*/
+
+const footerItems = document.querySelectorAll(
+
+    ".footer-company," +
+
+    ".gov-footer-top .footer-column," +
+
+    ".gov-footer-bottom"
+
+);
+
+footerItems.forEach((item, index) => {
+
+    item.style.transitionDelay = `${index * 0.15}s`;
+
+});
+
+/*==================================================
+            EMAIL VALIDATION
+==================================================*/
+
+const form = document.getElementById("footerSubscribeForm");
+
+const emailInput = document.getElementById("footerEmail");
+
+const emailError = document.getElementById("footerEmailError");
+
+const popup = document.getElementById("footerPopup");
+
+const emailPattern =
+
+    /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+if (form) {
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+
+        emailError.textContent = "";
+
+        emailInput.style.border = "";
+
+        if (email === "") {
+
+            emailError.textContent =
+
+                "Please fill details correctly.";
+
+            emailInput.style.border =
+
+                "2px solid #ff4d4d";
+
+            emailInput.focus();
+
+            return;
+
+        }
+
+        if (!emailPattern.test(email)) {
+
+            emailError.textContent =
+
+                "Please fill details correctly.";
+
+            emailInput.style.border =
+
+                "2px solid #ff4d4d";
+
+            emailInput.focus();
+
+            return;
+
+        }
+
+        emailInput.style.border =
+
+            "2px solid #22c55e";
+
+        popup.classList.add("active");
+
+        setTimeout(() => {
+
+            window.location.href = "404.html";
+
+        }, 1800);
+
+    });
+
+}
+
+/*==================================================
+            REMOVE ERROR WHILE TYPING
+==================================================*/
+
+if (emailInput) {
+
+    emailInput.addEventListener("input", () => {
+
+        emailError.textContent = "";
+
+        emailInput.style.border = "";
+
+    });
+
+}
+
+/*==================================================
+            SOCIAL ICON HOVER
+==================================================*/
+
+const socialIcons =
+
+    document.querySelectorAll(".social-icon");
+
+socialIcons.forEach((icon) => {
+
+    icon.addEventListener("mouseenter", () => {
+
+        icon.animate([
+
+            {
+
+                transform: "translateY(0) rotate(0deg)"
+
+            },
+
+            {
+
+                transform: "translateY(-10px) rotate(180deg)"
+
+            },
+
+            {
+
+                transform: "translateY(-6px) rotate(360deg)"
+
+            }
+
+        ], {
+
+            duration: 500,
+
+            easing: "ease"
+
+        });
+
+    });
+
+});
+
+/*==================================================
+            FOOTER LINKS
+==================================================*/
+
+const footerLinks =
+
+    document.querySelectorAll(
+
+        ".footer-column ul li a"
+
+    );
+
+footerLinks.forEach((link) => {
+
+    link.addEventListener("mouseenter", () => {
+
+        link.style.transform =
+
+            "translateX(8px)";
+
+    });
+
+    link.addEventListener("mouseleave", () => {
+
+        link.style.transform =
+
+            "translateX(0px)";
+
+    });
+
+});
+
+/*==================================================
+            SUBSCRIBE BUTTON
+==================================================*/
+
+const subscribeBtn =
+
+    document.querySelector(".subscribe-btn");
+
+if (subscribeBtn) {
+
+    subscribeBtn.addEventListener(
+
+        "mouseenter",
+
+        () => {
+
+            subscribeBtn.animate([
+
+                {
+
+                    transform: "translateY(0)"
+
+                },
+
+                {
+
+                    transform: "translateY(-6px)"
+
+                },
+
+                {
+
+                    transform: "translateY(0)"
+
+                }
+
+            ], {
+
+                duration: 450
+
+            });
+
+        }
+
+    );
+
+}
+
+/*==================================================
+            NEWSLETTER INPUT
+==================================================*/
+
+if (emailInput) {
+
+    emailInput.addEventListener("focus", () => {
+
+        emailInput.parentElement.style.boxShadow =
+
+            "0 0 25px rgba(255,255,255,.35)";
+
+    });
+
+    emailInput.addEventListener("blur", () => {
+
+        emailInput.parentElement.style.boxShadow =
+
+            "";
+
+    });
+
+}
+
+/*==================================================
+            FLOATING BACKGROUND
+==================================================*/
+
+const shapes =
+
+    document.querySelectorAll(
+
+        ".gov-footer-bg-shape"
+
+    );
+
+shapes.forEach((shape, index) => {
+
+    setInterval(() => {
+
+        shape.animate([
+
+            {
+
+                transform:
+
+                    "translateY(0px)"
+
+            },
+
+            {
+
+                transform:
+
+                    "translateY(-20px)"
+
+            },
+
+            {
+
+                transform:
+
+                    "translateY(0px)"
+
+            }
+
+        ], {
+
+            duration: 6000 + (index * 1000),
+
+            easing: "ease-in-out"
+
+        });
+
+    }, 6000);
+
+});
+
+/*==================================================
+            POPUP CLOSE
+==================================================*/
+
+if (popup) {
+
+    popup.addEventListener("click", (e) => {
+
+        if (e.target === popup) {
+
+            popup.classList.remove("active");
+
+        }
+
+    });
+
+}
+
+/*==================================================
+            MOBILE OPTIMIZATION
+==================================================*/
+
+function mobileFix() {
+
+    if (window.innerWidth <= 768) {
+
+        footerLinks.forEach((link) => {
+
+            link.style.transform = "none";
+
+        });
+
+    }
+
+}
+
+mobileFix();
+
+window.addEventListener(
+
+    "resize",
+
+    mobileFix
+
+);
+
+/*==================================================
+            LOADED
+==================================================*/
+
+console.log(
+
+    "Footer Loaded Successfully"
+
+);
+
+});
+        </script>
+
+    

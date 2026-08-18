@@ -1,0 +1,6757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Stackly Government Dashboard">
+
+    <title>Stackly Charity Dashboard</title>
+
+
+    <!-- ======================================================
+         GOOGLE FONT
+    ======================================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- ======================================================
+         FONT AWESOME
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <!-- ======================================================
+         GOVERNMENT DASHBOARD CSS
+    ======================================================= -->
+
+    
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     MAIN GOVERNMENT DASHBOARD
+=========================================================== -->
+
+<div class="gov-dashboard">
+
+
+    <!-- ======================================================
+         MOBILE SIDEBAR OVERLAY
+    ======================================================= -->
+
+    <div
+        class="gov-sidebar-overlay"
+        id="govSidebarOverlay">
+    </div>
+
+
+
+    <!-- ======================================================
+         SIDEBAR
+    ======================================================= -->
+
+    <aside
+        class="gov-sidebar"
+        id="govSidebar">
+
+
+        <!-- ==================================================
+             SIDEBAR TOP / STACKLY LOGO
+        =================================================== -->
+
+        <div class="gov-sidebar-header">
+
+
+            <!-- Stackly Logo -->
+
+            <a
+                href="index.html"
+                class="gov-sidebar-logo"
+                aria-label="Stackly Home"
+                title="Stackly">
+
+
+                <img
+                    src="./white.webp"
+                    alt="Stackly Logo"
+                    class="gov-sidebar-logo-image">
+
+
+            </a>
+
+
+
+            <!-- Mobile Close Button -->
+
+            <button
+                type="button"
+                class="gov-sidebar-close"
+                id="govSidebarClose"
+                aria-label="Close Sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             SIDEBAR USER PROFILE
+        =================================================== -->
+
+        <div class="gov-sidebar-profile">
+
+
+            <div class="gov-profile-avatar">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+
+            <div class="gov-profile-details">
+
+                <strong id="govSidebarName">
+                    Government User
+                </strong>
+
+                <span id="govSidebarEmail">
+                    user@example.com
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             SIDEBAR NAVIGATION
+        =================================================== -->
+
+        <nav
+            class="gov-sidebar-nav"
+            aria-label="Government Dashboard Navigation">
+
+
+            <!-- Main Menu -->
+
+            <p class="gov-menu-title">
+                MAIN MENU
+            </p>
+
+
+
+            <!-- Dashboard -->
+
+            <a
+                href="./coordinator.html"
+                class="gov-nav-item ">
+
+                <span class="gov-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span class="gov-nav-text">
+                    Dashboard
+                </span>
+
+            </a>
+
+
+
+            <!-- Departments -->
+
+            <a
+                href="./task.html"
+                class="gov-nav-item ">
+
+                <span class="gov-nav-icon">
+
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+
+                </span>
+
+                <span class="gov-nav-text">
+                  Task manager
+                </span>
+
+            </a>
+
+
+
+
+            <!-- Applications -->
+
+            <a
+                href="./expense.html"
+                class="gov-nav-item gov-active ">
+
+                <span class="gov-nav-icon">
+
+                    <i class="fa-solid fa-bullhorn"></i>
+
+                </span>
+
+                <span class="gov-nav-text">
+                   Expense log
+                </span>
+
+            </a>
+
+
+
+            
+
+            <!-- System -->
+
+            <p class="gov-menu-title gov-menu-title-bottom">
+                SYSTEM
+            </p>
+
+
+
+            <!-- Settings -->
+
+            <!-- Notifications -->
+
+            <a
+                href="./announcement.html"
+                class="gov-nav-item ">
+
+                <span class="gov-nav-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </span>
+
+                <span class="gov-nav-text">
+                   Announcement 
+                </span>
+
+
+                
+            </a>
+
+        </nav>
+
+
+
+        <!-- ==================================================
+             SIDEBAR LOGOUT
+        =================================================== -->
+
+        <div class="gov-sidebar-footer">
+
+
+            <button
+                type="button"
+                class="gov-logout-sidebar"
+                id="govSidebarLogout">
+
+
+                <span class="gov-nav-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+<a href="./404.html">
+                <span>
+                    Logout
+                </span></a>
+
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ======================================================
+         MAIN CONTENT AREA
+    ======================================================= -->
+
+    <main class="gov-main">
+
+
+
+        <!-- ==================================================
+             TOP BAR
+        =================================================== -->
+
+        <header class="gov-topbar">
+
+
+            <!-- TOP LEFT -->
+
+            <div class="gov-topbar-left">
+
+
+                <!-- Mobile Menu -->
+
+                <button
+                    type="button"
+                    class="gov-menu-toggle"
+                    id="govMenuToggle"
+                    aria-label="Open Sidebar">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+
+                <!-- Top Logo -->
+
+                <a
+                    href="404.html"
+                    class="gov-top-logo"
+                    aria-label="Stackly Home"
+                    title="Stackly">
+
+
+                    <div class="gov-top-logo-icon">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                    </div>
+
+
+                    <div class="gov-top-logo-text">
+
+                        
+
+                    </div>
+
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- TOP RIGHT -->
+
+            <div class="gov-topbar-right">
+
+
+                <!-- Notification -->
+<a href="./404.html">
+                <button
+                    type="button"
+                    class="gov-top-icon"
+                    title="Notifications"
+                    aria-label="Notifications">
+
+
+                    <i class="fa-regular fa-bell"></i>
+
+
+                    <span class="gov-top-notification">
+                        4
+                    </span>
+
+
+                </button></a>
+
+
+
+                <!-- User -->
+
+                <div class="gov-top-user">
+
+
+                    <div class="gov-top-avatar">
+
+                        <i class="fa-solid fa-user-tie"></i>
+
+                    </div>
+
+
+                    <div class="gov-top-user-info">
+
+
+                        <strong id="govTopName">
+                            Government User
+                        </strong>
+
+
+                        <span id="govTopEmail">
+                            user@example.com
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Top Logout -->
+
+                
+
+            </div>
+
+
+        </header>
+
+
+<!-- =========================================================
+     STACKLY CHARITY ADMIN
+     EXPENSE LOG DASHBOARD CONTENT ONLY
+     
+     CONTENT ONLY
+     NO HEADER
+     NO SIDEBAR
+     
+     UNIQUE PREFIX:
+     char-exp-
+========================================================= -->
+
+<main class="char-exp-page">
+
+    <div class="char-exp-container">
+
+        <!-- =====================================================
+             PAGE HEADER
+        ====================================================== -->
+
+        <section class="char-exp-page-header">
+
+            <div class="char-exp-heading">
+
+                <span class="char-exp-label">
+                    EXPENSE MANAGEMENT
+                </span>
+
+                <h1>
+                    Expense Log
+                </h1>
+
+                <p>
+                    Monitor, manage and track all charity expenses
+                    with complete transparency.
+                </p>
+
+            </div>
+
+            <a href="404.html" class="char-exp-add-btn">
+                <i class="fa-solid fa-plus"></i>
+                Add Expense
+            </a>
+
+        </section>
+
+
+        <!-- =====================================================
+             EXPENSE SUMMARY
+        ====================================================== -->
+
+        <section class="char-exp-summary-grid">
+
+            <!-- Total Expenses -->
+
+            <article class="char-exp-summary-card">
+
+                <div class="char-exp-summary-icon char-exp-orange">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                </div>
+
+                <div class="char-exp-summary-content">
+
+                    <span>
+                        Total Expenses
+                    </span>
+
+                    <strong>
+                        ₹8,45,680
+                    </strong>
+
+                    <small>
+                        <i class="fa-solid fa-arrow-up"></i>
+                        12.4% this month
+                    </small>
+
+                </div>
+
+            </article>
+
+
+            <!-- Monthly Expense -->
+
+            <article class="char-exp-summary-card">
+
+                <div class="char-exp-summary-icon char-exp-black">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div class="char-exp-summary-content">
+
+                    <span>
+                        This Month
+                    </span>
+
+                    <strong>
+                        ₹1,28,450
+                    </strong>
+
+                    <small>
+                        <i class="fa-solid fa-chart-line"></i>
+                        Current month
+                    </small>
+
+                </div>
+
+            </article>
+
+
+            <!-- Pending -->
+
+            <article class="char-exp-summary-card">
+
+                <div class="char-exp-summary-icon char-exp-yellow">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="char-exp-summary-content">
+
+                    <span>
+                        Pending Expenses
+                    </span>
+
+                    <strong>
+                        ₹34,850
+                    </strong>
+
+                    <small>
+                        <i class="fa-solid fa-hourglass-half"></i>
+                        8 pending entries
+                    </small>
+
+                </div>
+
+            </article>
+
+
+            <!-- Approved -->
+
+            <article class="char-exp-summary-card">
+
+                <div class="char-exp-summary-icon char-exp-green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div class="char-exp-summary-content">
+
+                    <span>
+                        Approved
+                    </span>
+
+                    <strong>
+                        ₹7,82,320
+                    </strong>
+
+                    <small>
+                        <i class="fa-solid fa-check"></i>
+                        96% approved
+                    </small>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =====================================================
+             CHART SECTION
+        ====================================================== -->
+
+        <section class="char-exp-chart-grid">
+
+
+            <!-- Expense Overview -->
+
+            <article class="char-exp-chart-card">
+
+                <div class="char-exp-card-header">
+
+                    <div>
+
+                        <span class="char-exp-card-label">
+                            FINANCIAL OVERVIEW
+                        </span>
+
+                        <h2>
+                            Expense Overview
+                        </h2>
+
+                    </div>
+
+                    <a href="404.html"
+                       class="char-exp-small-btn">
+                        View Report
+                    </a>
+
+                </div>
+
+                <div class="char-exp-chart-wrapper">
+
+                    <canvas id="charExpOverviewChart"></canvas>
+
+                </div>
+
+            </article>
+
+
+            <!-- Expense Categories -->
+
+            <article class="char-exp-chart-card">
+
+                <div class="char-exp-card-header">
+
+                    <div>
+
+                        <span class="char-exp-card-label">
+                            EXPENSE BREAKDOWN
+                        </span>
+
+                        <h2>
+                            Expense Categories
+                        </h2>
+
+                    </div>
+
+                    <a href="404.html"
+                       class="char-exp-small-btn">
+                        Details
+                    </a>
+
+                </div>
+
+                <div class="char-exp-category-area">
+
+                    <div class="char-exp-doughnut">
+
+                        <canvas id="charExpCategoryChart"></canvas>
+
+                    </div>
+
+
+                    <div class="char-exp-category-list">
+
+                        <div class="char-exp-category-item">
+
+                            <span>
+                                <i class="fa-solid fa-circle"></i>
+                                Food & Meals
+                            </span>
+
+                            <strong>
+                                32%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="char-exp-category-item">
+
+                            <span>
+                                <i class="fa-solid fa-circle"></i>
+                                Medical Support
+                            </span>
+
+                            <strong>
+                                24%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="char-exp-category-item">
+
+                            <span>
+                                <i class="fa-solid fa-circle"></i>
+                                Education
+                            </span>
+
+                            <strong>
+                                19%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="char-exp-category-item">
+
+                            <span>
+                                <i class="fa-solid fa-circle"></i>
+                                Operations
+                            </span>
+
+                            <strong>
+                                15%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="char-exp-category-item">
+
+                            <span>
+                                <i class="fa-solid fa-circle"></i>
+                                Other
+                            </span>
+
+                            <strong>
+                                10%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =====================================================
+             RECENT EXPENSE LOG
+        ====================================================== -->
+
+        <section class="char-exp-log-card">
+
+            <div class="char-exp-log-header">
+
+                <div>
+
+                    <span class="char-exp-card-label">
+                        TRANSACTION HISTORY
+                    </span>
+
+                    <h2>
+                        Recent Expense Log
+                    </h2>
+
+                    <p>
+                        Latest recorded expenses from charity activities.
+                    </p>
+
+                </div>
+
+                <a href="404.html"
+                   class="char-exp-view-all">
+                    View All
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 EXPENSE TABLE
+            ================================================== -->
+
+            <div class="char-exp-table-wrapper">
+
+                <table class="char-exp-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Expense
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <!-- Row 1 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="char-exp-name">
+
+                                    <div class="char-exp-row-icon">
+                                        <i class="fa-solid fa-utensils"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>
+                                            Community Food Drive
+                                        </strong>
+
+                                        <span>
+                                            EXP-1024
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Food & Meals
+                            </td>
+
+
+                            <td>
+                                18 Aug 2026
+                            </td>
+
+
+                            <td class="char-exp-amount">
+                                ₹24,500
+                            </td>
+
+
+                            <td>
+
+                                <span class="char-exp-status approved">
+                                    Approved
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a href="404.html"
+                                   class="char-exp-action">
+                                    <i class="fa-solid fa-eye"></i>
+                                    View
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Row 2 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="char-exp-name">
+
+                                    <div class="char-exp-row-icon">
+                                        <i class="fa-solid fa-heart-pulse"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>
+                                            Medical Camp
+                                        </strong>
+
+                                        <span>
+                                            EXP-1023
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Medical Support
+                            </td>
+
+
+                            <td>
+                                17 Aug 2026
+                            </td>
+
+
+                            <td class="char-exp-amount">
+                                ₹38,750
+                            </td>
+
+
+                            <td>
+
+                                <span class="char-exp-status approved">
+                                    Approved
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a href="404.html"
+                                   class="char-exp-action">
+                                    <i class="fa-solid fa-eye"></i>
+                                    View
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Row 3 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="char-exp-name">
+
+                                    <div class="char-exp-row-icon">
+                                        <i class="fa-solid fa-book-open"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>
+                                            School Supplies
+                                        </strong>
+
+                                        <span>
+                                            EXP-1022
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Education
+                            </td>
+
+
+                            <td>
+                                16 Aug 2026
+                            </td>
+
+
+                            <td class="char-exp-amount">
+                                ₹18,200
+                            </td>
+
+
+                            <td>
+
+                                <span class="char-exp-status pending">
+                                    Pending
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a href="404.html"
+                                   class="char-exp-action">
+                                    <i class="fa-solid fa-eye"></i>
+                                    View
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Row 4 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="char-exp-name">
+
+                                    <div class="char-exp-row-icon">
+                                        <i class="fa-solid fa-building"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>
+                                            Office Operations
+                                        </strong>
+
+                                        <span>
+                                            EXP-1021
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Operations
+                            </td>
+
+
+                            <td>
+                                15 Aug 2026
+                            </td>
+
+
+                            <td class="char-exp-amount">
+                                ₹12,600
+                            </td>
+
+
+                            <td>
+
+                                <span class="char-exp-status approved">
+                                    Approved
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a href="404.html"
+                                   class="char-exp-action">
+                                    <i class="fa-solid fa-eye"></i>
+                                    View
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Row 5 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="char-exp-name">
+
+                                    <div class="char-exp-row-icon">
+                                        <i class="fa-solid fa-truck"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>
+                                            Transportation
+                                        </strong>
+
+                                        <span>
+                                            EXP-1020
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Logistics
+                            </td>
+
+
+                            <td>
+                                14 Aug 2026
+                            </td>
+
+
+                            <td class="char-exp-amount">
+                                ₹9,850
+                            </td>
+
+
+                            <td>
+
+                                <span class="char-exp-status pending">
+                                    Pending
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a href="404.html"
+                                   class="char-exp-action">
+                                    <i class="fa-solid fa-eye"></i>
+                                    View
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             BOTTOM INFORMATION CARDS
+        ====================================================== -->
+
+        <section class="char-exp-bottom-grid">
+
+
+            <!-- Budget Utilization -->
+
+            <article class="char-exp-info-card">
+
+                <div class="char-exp-info-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <div class="char-exp-info-content">
+
+                    <span>
+                        Budget Utilization
+                    </span>
+
+                    <strong>
+                        72%
+                    </strong>
+
+                    <div class="char-exp-progress">
+
+                        <span style="width:72%;"></span>
+
+                    </div>
+
+                    <p>
+                        ₹8.45L of ₹11.75L allocated budget used.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- Monthly Savings -->
+
+            <article class="char-exp-info-card">
+
+                <div class="char-exp-info-icon">
+                    <i class="fa-solid fa-piggy-bank"></i>
+                </div>
+
+                <div class="char-exp-info-content">
+
+                    <span>
+                        Monthly Savings
+                    </span>
+
+                    <strong>
+                        ₹42,850
+                    </strong>
+
+                    <p>
+                        Savings increased compared with last month.
+                    </p>
+
+                    <a href="404.html"
+                       class="char-exp-info-btn">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Pending Approvals -->
+
+            <article class="char-exp-info-card">
+
+                <div class="char-exp-info-icon">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+
+                <div class="char-exp-info-content">
+
+                    <span>
+                        Pending Approvals
+                    </span>
+
+                    <strong>
+                        08
+                    </strong>
+
+                    <p>
+                        Expenses waiting for administrator approval.
+                    </p>
+
+                    <a href="404.html"
+                       class="char-exp-info-btn">
+                        Review
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </div>
+
+</main>
+
+<style>
+    /* =========================================================
+   STACKLY CHARITY
+   EXPENSE LOG DASHBOARD CONTENT
+
+   CONTENT ONLY
+   NO HEADER
+   NO SIDEBAR
+
+   UNIQUE PREFIX:
+   char-exp-
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+--char-exp-orange: #ff7a00;
+--char-exp-orange-dark: #e85f00;
+--char-exp-orange-light: #fff1e4;
+
+--char-exp-black: #111111;
+--char-exp-black-soft: #1c1c1c;
+
+--char-exp-white: #ffffff;
+
+--char-exp-bg: #f7f7f7;
+
+--char-exp-text: #151515;
+--char-exp-muted: #777777;
+
+--char-exp-border: #e8e8e8;
+
+--char-exp-green: #18a558;
+--char-exp-yellow: #f4b400;
+--char-exp-red: #dc3545;
+
+--char-exp-radius: 18px;
+
+--char-exp-shadow:
+    0 10px 30px rgba(0,0,0,0.07);
+}
+
+
+/* =========================================================
+PAGE
+========================================================= */
+
+.char-exp-page {
+
+width: 100%;
+
+min-height: 100vh;
+
+padding: 35px;
+
+background:
+    linear-gradient(
+        135deg,
+        #f8f8f8,
+        #ffffff
+    );
+
+color: var(--char-exp-text);
+
+font-family:
+    "Inter",
+    Arial,
+    sans-serif;
+
+font-size: 21px;
+}
+
+
+/* =========================================================
+GLOBAL CONTENT
+========================================================= */
+
+.char-exp-page *,
+.char-exp-page *::before,
+.char-exp-page *::after {
+
+box-sizing: border-box;
+}
+
+
+.char-exp-page a {
+
+text-decoration: none;
+
+}
+
+
+.char-exp-container {
+
+width: 100%;
+
+max-width: 1600px;
+
+margin: 0 auto;
+}
+
+
+/* =========================================================
+PAGE HEADER
+========================================================= */
+
+.char-exp-page-header {
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+gap: 25px;
+
+margin-bottom: 30px;
+}
+
+
+.char-exp-heading {
+
+min-width: 0;
+}
+
+
+.char-exp-label {
+
+display: inline-flex;
+
+padding: 7px 13px;
+
+border-radius: 8px;
+
+background:
+    var(--char-exp-orange-light);
+
+color:
+    var(--char-exp-orange-dark);
+
+font-size: 13px;
+
+font-weight: 800;
+
+letter-spacing: 1.4px;
+}
+
+
+.char-exp-heading h1 {
+
+margin:
+    12px 0 8px;
+
+font-size: 36px;
+
+line-height: 1.15;
+
+font-weight: 800;
+
+color:
+    var(--char-exp-black);
+}
+
+
+.char-exp-heading p {
+
+margin: 0;
+
+color:
+    var(--char-exp-muted);
+
+font-size: 21px;
+
+line-height: 1.6;
+}
+
+
+/* =========================================================
+ADD BUTTON
+========================================================= */
+
+.char-exp-add-btn {
+
+flex-shrink: 0;
+
+min-height: 55px;
+
+padding: 0 22px;
+
+border-radius: 13px;
+
+display: inline-flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 9px;
+
+background:
+    var(--char-exp-orange);
+
+color:
+    #ffffff;
+
+font-size: 21px;
+
+font-weight: 700;
+
+box-shadow:
+    0 8px 20px
+    rgba(255,122,0,0.22);
+
+transition:
+    all 0.25s ease;
+}
+
+
+.char-exp-add-btn:hover {
+
+background:
+    var(--char-exp-orange-dark);
+
+transform:
+    translateY(-3px);
+}
+
+
+/* =========================================================
+SUMMARY GRID
+========================================================= */
+
+.char-exp-summary-grid {
+
+display: grid;
+
+grid-template-columns:
+    repeat(4, minmax(0,1fr));
+
+gap: 20px;
+
+margin-bottom: 25px;
+}
+
+
+/* =========================================================
+SUMMARY CARD
+========================================================= */
+
+.char-exp-summary-card {
+
+min-height: 155px;
+
+padding: 23px;
+
+border-radius:
+    var(--char-exp-radius);
+
+background:
+    var(--char-exp-white);
+
+border:
+    1px solid
+    var(--char-exp-border);
+
+box-shadow:
+    var(--char-exp-shadow);
+
+display: flex;
+
+align-items: center;
+
+gap: 17px;
+
+transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.char-exp-summary-card:hover {
+
+transform:
+    translateY(-5px);
+
+box-shadow:
+    0 16px 35px
+    rgba(0,0,0,0.10);
+}
+
+
+/* =========================================================
+SUMMARY ICON
+========================================================= */
+
+.char-exp-summary-icon {
+
+width: 65px;
+
+height: 65px;
+
+flex-shrink: 0;
+
+border-radius: 17px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+font-size: 27px;
+}
+
+
+.char-exp-orange {
+
+background:
+    var(--char-exp-orange-light);
+
+color:
+    var(--char-exp-orange);
+}
+
+
+.char-exp-black {
+
+background:
+    #eeeeee;
+
+color:
+    var(--char-exp-black);
+}
+
+
+.char-exp-yellow {
+
+background:
+    #fff8dd;
+
+color:
+    #d79b00;
+}
+
+
+.char-exp-green {
+
+background:
+    #e7f8ef;
+
+color:
+    var(--char-exp-green);
+}
+
+
+/* =========================================================
+SUMMARY CONTENT
+========================================================= */
+
+.char-exp-summary-content {
+
+min-width: 0;
+
+display: flex;
+
+flex-direction: column;
+}
+
+
+.char-exp-summary-content span {
+
+font-size: 17px;
+
+color:
+    var(--char-exp-muted);
+}
+
+
+.char-exp-summary-content strong {
+
+margin-top: 6px;
+
+font-size: 28px;
+
+line-height: 1.2;
+
+color:
+    var(--char-exp-black);
+}
+
+
+.char-exp-summary-content small {
+
+margin-top: 7px;
+
+font-size: 14px;
+
+color:
+    var(--char-exp-green);
+}
+
+
+/* =========================================================
+CHART GRID
+========================================================= */
+
+.char-exp-chart-grid {
+
+display: grid;
+
+grid-template-columns:
+    minmax(0,1.45fr)
+    minmax(0,1fr);
+
+gap: 22px;
+
+margin-bottom: 25px;
+}
+
+
+/* =========================================================
+CHART CARD
+========================================================= */
+
+.char-exp-chart-card {
+
+min-width: 0;
+
+min-height: 470px;
+
+padding: 25px;
+
+border-radius:
+    var(--char-exp-radius);
+
+background:
+    #ffffff;
+
+border:
+    1px solid
+    var(--char-exp-border);
+
+box-shadow:
+    var(--char-exp-shadow);
+}
+
+
+.char-exp-card-header {
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+gap: 15px;
+
+margin-bottom: 20px;
+}
+
+
+.char-exp-card-label {
+
+display: block;
+
+margin-bottom: 6px;
+
+font-size: 12px;
+
+font-weight: 800;
+
+letter-spacing: 1.4px;
+
+color:
+    var(--char-exp-orange);
+}
+
+
+.char-exp-card-header h2,
+.char-exp-log-header h2 {
+
+margin: 0;
+
+font-size: 25px;
+
+line-height: 1.25;
+
+color:
+    var(--char-exp-black);
+}
+
+
+.char-exp-small-btn {
+
+flex-shrink: 0;
+
+min-height: 43px;
+
+padding: 0 15px;
+
+border-radius: 10px;
+
+display: inline-flex;
+
+align-items: center;
+
+justify-content: center;
+
+background:
+    var(--char-exp-orange-light);
+
+color:
+    var(--char-exp-orange-dark);
+
+font-size: 16px;
+
+font-weight: 700;
+
+transition:
+    all 0.25s ease;
+}
+
+
+.char-exp-small-btn:hover {
+
+background:
+    var(--char-exp-orange);
+
+color:
+    #ffffff;
+}
+
+
+/* =========================================================
+CHART
+========================================================= */
+
+.char-exp-chart-wrapper {
+
+position: relative;
+
+width: 100%;
+
+height: 350px;
+}
+
+
+.char-exp-chart-wrapper canvas {
+
+width: 100% !important;
+
+height: 100% !important;
+}
+
+
+/* =========================================================
+CATEGORY
+========================================================= */
+
+.char-exp-category-area {
+
+min-height: 350px;
+
+display: flex;
+
+align-items: center;
+
+gap: 25px;
+}
+
+
+.char-exp-doughnut {
+
+position: relative;
+
+width: 220px;
+
+height: 220px;
+
+flex-shrink: 0;
+}
+
+
+.char-exp-doughnut canvas {
+
+width: 100% !important;
+
+height: 100% !important;
+}
+
+
+.char-exp-category-list {
+
+flex: 1;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 14px;
+}
+
+
+.char-exp-category-item {
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+gap: 15px;
+
+padding-bottom: 11px;
+
+border-bottom:
+    1px solid
+    #eeeeee;
+
+font-size: 16px;
+}
+
+
+.char-exp-category-item span {
+
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+color:
+    #555555;
+}
+
+
+.char-exp-category-item span i {
+
+font-size: 9px;
+
+color:
+    var(--char-exp-orange);
+}
+
+
+.char-exp-category-item strong {
+
+color:
+    var(--char-exp-black);
+}
+
+
+/* =========================================================
+EXPENSE LOG
+========================================================= */
+
+.char-exp-log-card {
+
+width: 100%;
+
+margin-bottom: 25px;
+
+padding: 27px;
+
+border-radius:
+    var(--char-exp-radius);
+
+background:
+    #ffffff;
+
+border:
+    1px solid
+    var(--char-exp-border);
+
+box-shadow:
+    var(--char-exp-shadow);
+}
+
+
+.char-exp-log-header {
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+gap: 20px;
+
+margin-bottom: 22px;
+}
+
+
+.char-exp-log-header p {
+
+margin: 7px 0 0;
+
+color:
+    var(--char-exp-muted);
+
+font-size: 17px;
+}
+
+
+.char-exp-view-all {
+
+flex-shrink: 0;
+
+min-height: 45px;
+
+padding: 0 17px;
+
+border-radius: 11px;
+
+display: inline-flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 8px;
+
+background:
+    var(--char-exp-black);
+
+color:
+    #ffffff;
+
+font-size: 16px;
+
+font-weight: 700;
+
+transition:
+    all 0.25s ease;
+}
+
+
+.char-exp-view-all:hover {
+
+background:
+    var(--char-exp-orange);
+
+transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+TABLE
+========================================================= */
+
+.char-exp-table-wrapper {
+
+width: 100%;
+
+overflow-x: auto;
+
+border:
+    1px solid
+    var(--char-exp-border);
+
+border-radius: 14px;
+}
+
+
+.char-exp-table {
+
+width: 100%;
+
+min-width: 950px;
+
+border-collapse: collapse;
+
+background:
+    #ffffff;
+}
+
+
+.char-exp-table th {
+
+padding:
+    17px 16px;
+
+background:
+    #111111;
+
+color:
+    #ffffff;
+
+font-size: 15px;
+
+font-weight: 700;
+
+text-align: left;
+
+white-space: nowrap;
+}
+
+
+.char-exp-table td {
+
+padding:
+    17px 16px;
+
+border-bottom:
+    1px solid
+    #eeeeee;
+
+color:
+    #555555;
+
+font-size: 16px;
+
+vertical-align: middle;
+}
+
+
+.char-exp-table tbody tr {
+
+transition:
+    background 0.2s ease;
+}
+
+
+.char-exp-table tbody tr:hover {
+
+background:
+    #fff9f4;
+}
+
+
+.char-exp-table tbody tr:last-child td {
+
+border-bottom: none;
+}
+
+
+/* =========================================================
+EXPENSE NAME
+========================================================= */
+
+.char-exp-name {
+
+display: flex;
+
+align-items: center;
+
+gap: 12px;
+
+min-width: 240px;
+}
+
+
+.char-exp-row-icon {
+
+width: 45px;
+
+height: 45px;
+
+flex-shrink: 0;
+
+border-radius: 12px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+background:
+    var(--char-exp-orange-light);
+
+color:
+    var(--char-exp-orange);
+
+font-size: 18px;
+}
+
+
+.char-exp-name strong {
+
+display: block;
+
+color:
+    var(--char-exp-black);
+
+font-size: 16px;
+}
+
+
+.char-exp-name span {
+
+display: block;
+
+margin-top: 3px;
+
+color:
+    #999999;
+
+font-size: 13px;
+}
+
+
+.char-exp-amount {
+
+color:
+    var(--char-exp-black) !important;
+
+font-weight: 800;
+}
+
+
+/* =========================================================
+STATUS
+========================================================= */
+
+.char-exp-status {
+
+display: inline-flex;
+
+align-items: center;
+
+justify-content: center;
+
+min-width: 95px;
+
+min-height: 31px;
+
+padding: 5px 10px;
+
+border-radius: 30px;
+
+font-size: 13px;
+
+font-weight: 700;
+}
+
+
+.char-exp-status.approved {
+
+background:
+    #e7f8ef;
+
+color:
+    #148447;
+}
+
+
+.char-exp-status.pending {
+
+background:
+    #fff5d9;
+
+color:
+    #b37b00;
+}
+
+
+/* =========================================================
+ACTION
+========================================================= */
+
+.char-exp-action {
+
+min-width: 82px;
+
+min-height: 38px;
+
+padding: 0 12px;
+
+display: inline-flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 6px;
+
+border-radius: 9px;
+
+background:
+    #f1f1f1;
+
+color:
+    var(--char-exp-black);
+
+font-size: 14px;
+
+font-weight: 700;
+
+transition:
+    all 0.25s ease;
+}
+
+
+.char-exp-action:hover {
+
+background:
+    var(--char-exp-orange);
+
+color:
+    #ffffff;
+}
+
+
+/* =========================================================
+BOTTOM GRID
+========================================================= */
+
+.char-exp-bottom-grid {
+
+display: grid;
+
+grid-template-columns:
+    repeat(3, minmax(0,1fr));
+
+gap: 20px;
+}
+
+
+.char-exp-info-card {
+
+min-height: 190px;
+
+padding: 23px;
+
+border-radius:
+    var(--char-exp-radius);
+
+background:
+    #ffffff;
+
+border:
+    1px solid
+    var(--char-exp-border);
+
+box-shadow:
+    var(--char-exp-shadow);
+
+display: flex;
+
+align-items: flex-start;
+
+gap: 17px;
+
+transition:
+    all 0.3s ease;
+}
+
+
+.char-exp-info-card:hover {
+
+transform:
+    translateY(-4px);
+}
+
+
+.char-exp-info-icon {
+
+width: 56px;
+
+height: 56px;
+
+flex-shrink: 0;
+
+border-radius: 15px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+background:
+    var(--char-exp-black);
+
+color:
+    var(--char-exp-orange);
+
+font-size: 23px;
+}
+
+
+.char-exp-info-content {
+
+flex: 1;
+
+min-width: 0;
+
+display: flex;
+
+flex-direction: column;
+}
+
+
+.char-exp-info-content > span {
+
+color:
+    var(--char-exp-muted);
+
+font-size: 16px;
+}
+
+
+.char-exp-info-content > strong {
+
+margin-top: 5px;
+
+font-size: 28px;
+
+color:
+    var(--char-exp-black);
+}
+
+
+.char-exp-info-content p {
+
+margin:
+    7px 0 0;
+
+color:
+    #777777;
+
+font-size: 14px;
+
+line-height: 1.5;
+}
+
+
+/* =========================================================
+PROGRESS
+========================================================= */
+
+.char-exp-progress {
+
+width: 100%;
+
+height: 8px;
+
+margin-top: 10px;
+
+overflow: hidden;
+
+border-radius: 20px;
+
+background:
+    #eeeeee;
+}
+
+
+.char-exp-progress span {
+
+display: block;
+
+height: 100%;
+
+border-radius: inherit;
+
+background:
+    var(--char-exp-orange);
+}
+
+
+/* =========================================================
+INFO BUTTON
+========================================================= */
+
+.char-exp-info-btn {
+
+align-self: flex-start;
+
+margin-top: 10px;
+
+display: inline-flex;
+
+align-items: center;
+
+gap: 7px;
+
+color:
+    var(--char-exp-orange-dark);
+
+font-size: 15px;
+
+font-weight: 700;
+}
+
+
+.char-exp-info-btn:hover {
+
+color:
+    var(--char-exp-black);
+}
+
+
+/* =========================================================
+LARGE LAPTOP
+========================================================= */
+
+@media (max-width: 1250px) {
+
+.char-exp-page {
+
+    padding: 30px;
+}
+
+
+.char-exp-summary-grid {
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+}
+
+
+.char-exp-chart-grid {
+
+    grid-template-columns:
+        1fr;
+}
+
+
+.char-exp-bottom-grid {
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+}
+
+}
+
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+.char-exp-page {
+
+    padding: 25px 20px;
+}
+
+
+.char-exp-page-header {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+}
+
+
+.char-exp-add-btn {
+
+    width: 100%;
+}
+
+
+.char-exp-heading h1 {
+
+    font-size: 32px;
+}
+
+
+.char-exp-heading p {
+
+    font-size: 21px;
+}
+
+
+.char-exp-summary-grid {
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 16px;
+}
+
+
+.char-exp-summary-card {
+
+    min-height: 145px;
+
+    padding: 19px;
+}
+
+
+.char-exp-category-area {
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.char-exp-doughnut {
+
+    width: 210px;
+
+    height: 210px;
+}
+
+
+.char-exp-category-list {
+
+    width: 100%;
+}
+
+
+.char-exp-log-card {
+
+    padding: 22px;
+}
+
+
+.char-exp-log-header {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+}
+
+
+.char-exp-view-all {
+
+    width: 100%;
+}
+
+
+.char-exp-bottom-grid {
+
+    grid-template-columns:
+        1fr;
+}
+
+}
+
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+.char-exp-page {
+
+    padding:
+        22px 14px 35px;
+
+    font-size: 21px;
+}
+
+
+.char-exp-page-header {
+
+    margin-bottom: 22px;
+}
+
+
+.char-exp-label {
+
+    font-size: 11px;
+}
+
+
+.char-exp-heading h1 {
+
+    margin-top: 10px;
+
+    font-size: 29px;
+}
+
+
+.char-exp-heading p {
+
+    font-size: 21px;
+
+    line-height: 1.55;
+}
+
+
+.char-exp-add-btn {
+
+    min-height: 54px;
+
+    font-size: 21px;
+}
+
+
+/* Summary */
+
+.char-exp-summary-grid {
+
+    grid-template-columns:
+        1fr;
+
+    gap: 14px;
+}
+
+
+.char-exp-summary-card {
+
+    min-height: 135px;
+
+    padding: 18px;
+}
+
+
+.char-exp-summary-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    font-size: 24px;
+}
+
+
+.char-exp-summary-content span {
+
+    font-size: 16px;
+}
+
+
+.char-exp-summary-content strong {
+
+    font-size: 26px;
+}
+
+
+.char-exp-summary-content small {
+
+    font-size: 13px;
+}
+
+
+/* Charts */
+
+.char-exp-chart-card {
+
+    min-height: auto;
+
+    padding: 18px;
+}
+
+
+.char-exp-card-header {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+}
+
+
+.char-exp-card-header h2,
+.char-exp-log-header h2 {
+
+    font-size: 23px;
+}
+
+
+.char-exp-small-btn {
+
+    width: 100%;
+}
+
+
+.char-exp-chart-wrapper {
+
+    height: 270px;
+}
+
+
+.char-exp-category-area {
+
+    min-height: auto;
+
+    gap: 20px;
+}
+
+
+.char-exp-doughnut {
+
+    width: 190px;
+
+    height: 190px;
+}
+
+
+.char-exp-category-item {
+
+    font-size: 15px;
+}
+
+
+/* Log */
+
+.char-exp-log-card {
+
+    padding: 18px;
+
+    overflow: hidden;
+}
+
+
+.char-exp-log-header p {
+
+    font-size: 15px;
+}
+
+
+.char-exp-view-all {
+
+    min-height: 47px;
+
+    font-size: 16px;
+}
+
+
+.char-exp-table-wrapper {
+
+    border-radius: 11px;
+}
+
+
+/* Bottom */
+
+.char-exp-info-card {
+
+    min-height: 175px;
+
+    padding: 19px;
+}
+
+
+.char-exp-info-icon {
+
+    width: 51px;
+
+    height: 51px;
+
+    font-size: 21px;
+}
+
+}
+
+
+/* =========================================================
+VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+.char-exp-page {
+
+    padding:
+        19px 11px 30px;
+}
+
+
+.char-exp-heading h1 {
+
+    font-size: 27px;
+}
+
+
+.char-exp-heading p {
+
+    font-size: 21px;
+}
+
+
+.char-exp-summary-card {
+
+    padding: 16px;
+
+    gap: 12px;
+}
+
+
+.char-exp-summary-icon {
+
+    width: 53px;
+
+    height: 53px;
+
+    font-size: 22px;
+}
+
+
+.char-exp-summary-content strong {
+
+    font-size: 24px;
+}
+
+
+.char-exp-chart-card,
+.char-exp-log-card {
+
+    padding: 15px;
+}
+
+
+.char-exp-chart-wrapper {
+
+    height: 235px;
+}
+
+
+.char-exp-doughnut {
+
+    width: 170px;
+
+    height: 170px;
+}
+
+
+.char-exp-category-item {
+
+    font-size: 14px;
+}
+
+
+.char-exp-info-card {
+
+    gap: 12px;
+
+    padding: 16px;
+}
+
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       EXPENSE OVERVIEW CHART
+    ====================================================== */
+
+    const overviewCanvas =
+        document.getElementById("charExpOverviewChart");
+
+    if (overviewCanvas) {
+
+        new Chart(overviewCanvas, {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug"
+                ],
+
+                datasets: [
+
+                    {
+                        label: "Expenses",
+
+                        data: [
+                            92000,
+                            108000,
+                            115000,
+                            98000,
+                            121000,
+                            128450
+                        ],
+
+                        backgroundColor: [
+                            "#111111",
+                            "#ff8a2a",
+                            "#ff7a00",
+                            "#111111",
+                            "#ff9b4a",
+                            "#ff7a00"
+                        ],
+
+                        borderRadius: 8,
+
+                        borderSkipped: false
+                    }
+
+                ]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                plugins: {
+
+                    legend: {
+                        display: false
+                    }
+
+                },
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true,
+
+                        grid: {
+                            color: "#eeeeee"
+                        },
+
+                        ticks: {
+                            font: {
+                                size: 13
+                            }
+                        }
+
+                    },
+
+                    x: {
+
+                        grid: {
+                            display: false
+                        },
+
+                        ticks: {
+                            font: {
+                                size: 13
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    }
+
+
+    /* =====================================================
+       CATEGORY DOUGHNUT
+    ====================================================== */
+
+    const categoryCanvas =
+        document.getElementById("charExpCategoryChart");
+
+    if (categoryCanvas) {
+
+        new Chart(categoryCanvas, {
+
+            type: "doughnut",
+
+            data: {
+
+                labels: [
+                    "Food & Meals",
+                    "Medical Support",
+                    "Education",
+                    "Operations",
+                    "Other"
+                ],
+
+                datasets: [
+
+                    {
+
+                        data: [
+                            32,
+                            24,
+                            19,
+                            15,
+                            10
+                        ],
+
+                        backgroundColor: [
+                            "#ff7a00",
+                            "#111111",
+                            "#ffad66",
+                            "#555555",
+                            "#ffc58f"
+                        ],
+
+                        borderWidth: 4,
+
+                        borderColor: "#ffffff"
+                    }
+
+                ]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                cutout: "65%",
+
+                plugins: {
+
+                    legend: {
+                        display: false
+                    }
+
+                }
+
+            }
+
+        });
+
+    }
+
+});
+
+</script>
+        
+
+
+<!-- ==========================================================
+     LOGOUT MODAL
+=========================================================== -->
+
+<div
+    class="gov-logout-modal"
+    id="govLogoutModal"
+    aria-hidden="true">
+
+
+    <!-- Backdrop -->
+
+    <div class="gov-modal-backdrop"></div>
+
+
+
+    <!-- Modal Card -->
+
+    <div
+        class="gov-logout-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="govLogoutTitle">
+
+
+        <!-- Colorful top decoration -->
+
+        <div class="gov-modal-decoration">
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+        </div>
+
+
+
+        <!-- Logout Icon -->
+
+        <div class="gov-modal-icon">
+
+
+            <div class="gov-modal-icon-inner">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+            </div>
+
+
+        </div>
+
+
+
+
+        
+
+        <style>
+
+html,
+body {
+
+    width: 100%;
+    min-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+}
+            /* ==========================================================
+               STACKLY GOVERNMENT DASHBOARD
+               ORANGE + BLACK GOVERNMENT THEME
+            
+               ALL CLASSES USE gov- PREFIX
+               TO REDUCE CSS CONFLICTS
+            ========================================================== */
+            
+            
+            /* ==========================================================
+               ROOT VARIABLES
+            ========================================================== */
+            
+            :root {
+            
+                --gov-primary: #ff6b00;
+            
+                --gov-primary-dark: #d94f00;
+            
+                --gov-primary-light: #fff1e6;
+            
+                --gov-blue: #ff6b00;
+            
+                --gov-blue-light: #fff4eb;
+            
+                --gov-white: #ffffff;
+            
+                --gov-bg: #f6f6f6;
+            
+                --gov-text: #171717;
+            
+                --gov-text-light: #6b7280;
+            
+                --gov-border: #e5e5e5;
+            
+                --gov-danger: #dc2626;
+            
+                --gov-success: #16a34a;
+            
+                --gov-sidebar-width: 290px;
+            
+                --gov-topbar-height: 88px;
+            
+                --gov-radius: 18px;
+            
+                --gov-shadow:
+                    0 10px 30px rgba(0, 0, 0, 0.08);
+            
+            }
+            
+            
+            /* ==========================================================
+               RESET
+            ========================================================== */
+            
+            .gov-dashboard,
+            .gov-dashboard *,
+            .gov-logout-modal,
+            .gov-logout-modal * {
+            
+                box-sizing: border-box;
+            
+            }
+            
+            
+            .gov-dashboard {
+            
+                margin: 0;
+            
+                padding: 0;
+            
+                width: 100%;
+            
+                min-height: 100vh;
+            
+                font-family:
+                    "Inter",
+                    Arial,
+                    sans-serif;
+            
+                background:
+                    var(--gov-bg);
+            
+                color:
+                    var(--gov-text);
+            
+            }
+            
+            
+            .gov-dashboard button,
+            .gov-dashboard a,
+            .gov-logout-modal button {
+            
+                font-family: inherit;
+            
+            }
+            
+            
+            .gov-dashboard a {
+            
+                text-decoration: none;
+            
+            }
+            
+            
+            /* ==========================================================
+               DASHBOARD
+            ========================================================== */
+            
+            .gov-dashboard {
+            
+                display: flex;
+            
+                min-height: 100vh;
+            
+            }
+            
+            
+            /* ==========================================================
+               SIDEBAR
+            ========================================================== */
+            
+            .gov-sidebar {
+            
+                position: fixed;
+            
+                left: 0;
+            
+                top: 0;
+            
+                width:
+                    var(--gov-sidebar-width);
+            
+                height: 100vh;
+            
+                background:
+                    linear-gradient(
+                        180deg,
+                        #111111 0%,
+                        #1d1d1d 55%,
+                        #0a0a0a 100%
+                    );
+            
+                color: #ffffff;
+            
+                z-index: 1000;
+            
+                display: flex;
+            
+                flex-direction: column;
+            
+                box-shadow:
+                    8px 0 30px
+                    rgba(0, 0, 0, 0.16);
+            
+            }
+            
+            
+            /* ==========================================================
+               SIDEBAR HEADER
+            ========================================================== */
+            
+            .gov-sidebar-header {
+            
+                height: 100px;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                padding:
+                    0 22px;
+            
+                border-bottom:
+                    1px solid
+                    rgba(255, 255, 255, 0.12);
+            
+            }
+            
+            
+            /* ==========================================================
+               STACKLY SIDEBAR LOGO
+            ========================================================== */
+            
+            .gov-sidebar-logo {
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: flex-start;
+            
+                width: 100%;
+            
+                height: 100%;
+            
+                text-decoration: none;
+            
+            }
+            
+            
+            /* Actual image */
+            
+            .gov-sidebar-logo-image {
+            
+                display: block;
+            
+                width: 175px;
+            
+                max-width: 100%;
+            
+                height: auto;
+            
+                max-height: 65px;
+            
+                object-fit: contain;
+            
+                object-position: left center;
+            
+                transition:
+                    transform 0.3s ease,
+                    opacity 0.3s ease;
+            
+            }
+            
+            
+            /* Hover */
+            
+            .gov-sidebar-logo:hover
+            .gov-sidebar-logo-image {
+            
+                transform:
+                    scale(1.03);
+            
+                opacity: 0.92;
+            
+            }
+            
+            
+            /* ==========================================================
+               SIDEBAR CLOSE
+            ========================================================== */
+            
+            .gov-sidebar-close {
+            
+                display: none;
+            
+                flex-shrink: 0;
+            
+                width: 44px;
+            
+                height: 44px;
+            
+                margin-left: 10px;
+            
+                border: 0;
+            
+                border-radius: 12px;
+            
+                background:
+                    rgba(255, 107, 0, 0.18);
+            
+                color: #ffffff;
+            
+                font-size: 22px;
+            
+                cursor: pointer;
+            
+                transition:
+                    all 0.25s ease;
+            
+            }
+            
+            
+            .gov-sidebar-close:hover {
+            
+                background:
+                    rgba(255, 107, 0, 0.35);
+            
+                color:
+                    #ff8a3d;
+            
+            }
+            
+            
+            /* ==========================================================
+               SIDEBAR PROFILE
+            ========================================================== */
+            
+            .gov-sidebar-profile {
+            
+                margin:
+                    22px 18px;
+            
+                padding:
+                    16px;
+            
+                border-radius: 16px;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                gap: 13px;
+            
+                background:
+                    rgba(255, 107, 0, 0.10);
+            
+                border:
+                    1px solid
+                    rgba(255, 107, 0, 0.20);
+            
+            }
+            
+            
+            .gov-profile-avatar {
+            
+                flex-shrink: 0;
+            
+                width: 52px;
+            
+                height: 52px;
+            
+                border-radius: 50%;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                background:
+                    #ff6b00;
+            
+                color:
+                    #ffffff;
+            
+                font-size: 23px;
+            
+                box-shadow:
+                    0 5px 15px
+                    rgba(255, 107, 0, 0.25);
+            
+            }
+            
+            
+            .gov-profile-details {
+            
+                min-width: 0;
+            
+                display: flex;
+            
+                flex-direction: column;
+            
+            }
+            
+            
+            .gov-profile-details strong {
+            
+                font-size: 17px;
+            
+                font-weight: 700;
+            
+                color: #ffffff;
+            
+                white-space: nowrap;
+            
+                overflow: hidden;
+            
+                text-overflow: ellipsis;
+            
+            }
+            
+            
+            .gov-profile-details span {
+            
+                margin-top: 5px;
+            
+                font-size: 13px;
+            
+                color:
+                    rgba(255, 255, 255, 0.68);
+            
+                white-space: nowrap;
+            
+                overflow: hidden;
+            
+                text-overflow: ellipsis;
+            
+            }
+            
+            
+            /* ==========================================================
+               SIDEBAR NAV
+            ========================================================== */
+            
+            .gov-sidebar-nav {
+            
+                flex: 1;
+            
+                padding:
+                    0 15px;
+            
+                overflow-y: auto;
+            
+            }
+            
+            
+            .gov-sidebar-nav::-webkit-scrollbar {
+            
+                width: 5px;
+            
+            }
+            
+            
+            .gov-sidebar-nav::-webkit-scrollbar-thumb {
+            
+                background:
+                    rgba(255, 107, 0, 0.45);
+            
+                border-radius: 20px;
+            
+            }
+            
+            
+            .gov-menu-title {
+            
+                margin:
+                    12px 10px;
+            
+                font-size: 12px;
+            
+                font-weight: 800;
+            
+                letter-spacing: 1.7px;
+            
+                color:
+                    rgba(255, 255, 255, 0.45);
+            
+            }
+            
+            
+            .gov-menu-title-bottom {
+            
+                margin-top: 25px;
+            
+            }
+            
+            
+            /* ==========================================================
+               NAV ITEM
+            ========================================================== */
+            
+            .gov-nav-item {
+            
+                position: relative;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                gap: 14px;
+            
+                width: 100%;
+            
+                min-height: 58px;
+            
+                margin:
+                    5px 0;
+            
+                padding:
+                    10px 14px;
+            
+                border-radius: 13px;
+            
+                color:
+                    rgba(255, 255, 255, 0.78);
+            
+                font-size: 18px;
+            
+                font-weight: 600;
+            
+                transition:
+                    all 0.25s ease;
+            
+            }
+            
+            
+            .gov-nav-item:hover {
+            
+                color:
+                    #ffffff;
+            
+                background:
+                    rgba(255, 107, 0, 0.15);
+            
+                transform:
+                    translateX(3px);
+            
+            }
+            
+            
+            .gov-nav-item.gov-active {
+            
+                color:
+                    #ffffff;
+            
+                background:
+                    linear-gradient(
+                        135deg,
+                        #ff6b00,
+                        #ff7f27
+                    );
+            
+                box-shadow:
+                    0 7px 20px
+                    rgba(255, 107, 0, 0.25);
+            
+            }
+            
+            
+            /* ==========================================================
+               NAV ICON
+            ========================================================== */
+            
+            .gov-nav-icon {
+            
+                width: 30px;
+            
+                min-width: 30px;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                font-size: 20px;
+            
+                color:
+                    inherit;
+            
+            }
+            
+            
+            .gov-nav-text {
+            
+                white-space: nowrap;
+            
+            }
+            
+            
+            /* ==========================================================
+               NOTIFICATION BADGE
+            ========================================================== */
+            
+            .gov-notification-count {
+            
+                margin-left: auto;
+            
+                min-width: 27px;
+            
+                height: 27px;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                border-radius: 50%;
+            
+                background:
+                    #ff9800;
+            
+                color:
+                    #111111;
+            
+                font-size: 13px;
+            
+                font-weight: 800;
+            
+            }
+            
+            
+            /* ==========================================================
+               SIDEBAR FOOTER
+            ========================================================== */
+            
+            .gov-sidebar-footer {
+            
+                padding:
+                    18px;
+            
+                border-top:
+                    1px solid
+                    rgba(255, 255, 255, 0.12);
+            
+            }
+            
+            
+            /* ==========================================================
+               SIDEBAR LOGOUT
+            ========================================================== */
+            
+            .gov-logout-sidebar {
+            
+                width: 100%;
+            
+                min-height: 58px;
+            
+                border: 0;
+            
+                border-radius: 14px;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                gap: 14px;
+            
+                padding:
+                    10px 14px;
+            
+                color:
+                    #ffffff;
+            
+                background:
+                    rgba(255, 82, 82, 0.14);
+            
+                font-size: 18px;
+            
+                font-weight: 700;
+            
+                cursor: pointer;
+            
+                transition:
+                    all 0.25s ease;
+            
+            }
+            
+            
+            .gov-logout-sidebar:hover {
+            
+                background:
+                    rgba(255, 82, 82, 0.28);
+            
+                transform:
+                    translateY(-2px);
+            
+            }
+            
+            
+            /* ==========================================================
+               MAIN
+            ========================================================== */
+            
+            .gov-main {
+            
+                width:
+                    calc(100% - var(--gov-sidebar-width));
+            
+                min-height: 100vh;
+            
+                margin-left:
+                    var(--gov-sidebar-width);
+            
+            }
+            
+            
+            /* ==========================================================
+               TOP BAR
+            ========================================================== */
+            
+            .gov-topbar {
+            
+                position: sticky;
+            
+                top: 0;
+            
+                z-index: 900;
+            
+                height:
+                    var(--gov-topbar-height);
+            
+                padding:
+                    0 30px;
+            
+                background:
+                    #030201;
+            
+                border-bottom:
+                    1px solid
+                    var(--gov-border);
+            
+                box-shadow:
+                    0 5px 22px
+                    rgba(0, 0, 0, 0.06);
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: space-between;
+                
+            
+            }
+            
+            
+            .gov-topbar-left,
+            .gov-topbar-right {
+            
+                display: flex;
+            
+                align-items: center;
+            
+            }
+            
+            
+            .gov-topbar-left {
+            
+                gap: 18px;
+            
+            }
+            
+            
+            /* ==========================================================
+               MOBILE MENU BUTTON
+            ========================================================== */
+            
+            .gov-menu-toggle {
+            
+                display: none;
+            
+                width: 48px;
+            
+                height: 48px;
+            
+                border: 0;
+            
+                border-radius: 13px;
+            
+                background:
+                    #fff1e6;
+            
+                color:
+                    #ff6b00;
+            
+                font-size: 23px;
+            
+                cursor: pointer;
+            
+                transition:
+                    all 0.25s ease;
+            
+            }
+            
+            
+            .gov-menu-toggle:hover {
+            
+                background:
+                    #ff6b00;
+            
+                color:
+                    #ffffff;
+            
+            }
+            
+            
+            /* ==========================================================
+               TOP LOGO
+            ========================================================== */
+            
+            .gov-top-logo {
+            
+                display: flex;
+            
+                align-items: center;
+            
+                gap: 12px;
+            
+                color:
+                    #ff6b00;
+            
+            }
+            
+            
+            .gov-top-logo-icon {
+            
+                width: 48px;
+            
+                height: 48px;
+            
+                border-radius: 13px;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                background:
+                    linear-gradient(
+                        135deg,
+                        #ff6b00,
+                        #ff8a3d
+                    );
+            
+                color:
+                    #ffffff;
+            
+                font-size: 23px;
+            
+                box-shadow:
+                    0 6px 15px
+                    rgba(255, 107, 0, 0.25);
+            
+            }
+            
+            
+            .gov-top-logo-text {
+            
+                display: flex;
+            
+                flex-direction: column;
+            
+            }
+            
+            
+            .gov-top-logo-text strong {
+            
+                font-size: 22px;
+            
+                font-weight: 800;
+            
+                letter-spacing: 0.8px;
+            
+                color:
+                    #111111;
+            
+            }
+            
+            
+            .gov-top-logo-text span {
+            
+                margin-top: 2px;
+            
+                font-size: 10px;
+            
+                font-weight: 700;
+            
+                letter-spacing: 1.8px;
+            
+                color:
+                    #777777;
+            
+            }
+            
+            
+            /* ==========================================================
+               TOP RIGHT
+            ========================================================== */
+            
+            .gov-topbar-right {
+            
+                gap: 20px;
+            
+            }
+            
+            
+            /* ==========================================================
+               TOP NOTIFICATION
+            ========================================================== */
+            
+            .gov-top-icon {
+            
+                position: relative;
+            
+                width: 48px;
+            
+                height: 48px;
+            
+                border:
+                    1px solid
+                    #e3e3e3;
+            
+                border-radius: 13px;
+            
+                background:
+                    #ffffff;
+            
+                color:
+                    #ff6b00;
+            
+                font-size: 22px;
+            
+                cursor: pointer;
+            
+                transition:
+                    all 0.25s ease;
+            
+            }
+            
+            
+            .gov-top-icon:hover {
+            
+                background:
+                    #fff1e6;
+            
+                border-color:
+                    #ffb27d;
+            
+            }
+            
+            
+            .gov-top-notification {
+            
+                position: absolute;
+            
+                top: -4px;
+            
+                right: -4px;
+            
+                width: 20px;
+            
+                height: 20px;
+            
+                border-radius: 50%;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                background:
+                    #ef4444;
+            
+                color:
+                    #ffffff;
+            
+                border:
+                    2px solid
+                    #ffffff;
+            
+                font-size: 10px;
+            
+                font-weight: 800;
+            
+            }
+            
+            
+            /* ==========================================================
+               TOP USER
+            ========================================================== */
+            
+            .gov-top-user {
+            
+                display: flex;
+            
+                align-items: center;
+            
+                gap: 12px;
+            
+                padding-right: 20px;
+            
+                border-right:
+                    1px solid
+                    #e5e5e5;
+            
+            }
+            
+            
+            .gov-top-avatar {
+            
+                width: 52px;
+            
+                height: 52px;
+            
+                border-radius: 50%;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                background:
+                    linear-gradient(
+                        135deg,
+                        #ff6b00,
+                        #ff8a3d
+                    );
+            
+                color:
+                    #ffffff;
+            
+                font-size: 23px;
+            
+                box-shadow:
+                    0 5px 15px
+                    rgba(255, 107, 0, 0.20);
+            
+            }
+            
+            
+            .gov-top-user-info {
+            
+                display: flex;
+            
+                flex-direction: column;
+            
+                min-width: 170px;
+            
+            }
+            
+            
+            .gov-top-user-info strong {
+            
+                font-size: 19px;
+            
+                font-weight: 800;
+            
+                color:
+                    white;
+            
+            }
+            
+            
+            .gov-top-user-info span {
+            
+                margin-top: 4px;
+            
+                font-size: 15px;
+            
+                color:
+                    white;
+            
+                white-space: nowrap;
+            
+            }
+            
+            
+            /* ==========================================================
+               TOP LOGOUT
+            ========================================================== */
+            
+            .gov-top-logout {
+            
+                min-height: 48px;
+            
+                padding:
+                    0 17px;
+            
+                border: 0;
+            
+                border-radius: 12px;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                gap: 9px;
+            
+                background:
+                    #fff1f2;
+            
+                color:
+                    #dc2626;
+            
+                font-size: 17px;
+            
+                font-weight: 700;
+            
+                cursor: pointer;
+            
+                transition:
+                    all 0.25s ease;
+            
+            }
+            
+            
+            .gov-top-logout:hover {
+            
+                background:
+                    #fee2e2;
+            
+                transform:
+                    translateY(-2px);
+            
+            }
+            
+            
+            /* ==========================================================
+               CONTENT
+            ========================================================== */
+            
+            .gov-content {
+            
+                padding:
+                    38px;
+            
+            }
+            
+            
+            .gov-content-header {
+            
+                display: flex;
+            
+                align-items: flex-end;
+            
+                justify-content: space-between;
+            
+                gap: 25px;
+            
+                margin-bottom: 30px;
+            
+            }
+            
+            
+            .gov-page-label {
+            
+                display: inline-block;
+            
+                padding:
+                    7px 12px;
+            
+                border-radius: 8px;
+            
+                background:
+                    #fff1e6;
+            
+                color:
+                    #ff6b00;
+            
+                font-size: 12px;
+            
+                font-weight: 800;
+            
+                letter-spacing: 1.3px;
+            
+            }
+            
+            
+            .gov-content-header h1 {
+            
+                margin:
+                    12px 0 8px;
+            
+                font-size: 32px;
+            
+                line-height: 1.2;
+            
+                color:
+                    #171717;
+            
+            }
+            
+            
+            .gov-content-header p {
+            
+                margin: 0;
+            
+                font-size: 17px;
+            
+                color:
+                    #6b7280;
+            
+                line-height: 1.7;
+            
+            }
+            
+            
+            .gov-date-box {
+            
+                flex-shrink: 0;
+            
+                padding:
+                    13px 18px;
+            
+                border-radius: 13px;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                gap: 9px;
+            
+                background:
+                    #ffffff;
+            
+                border:
+                    1px solid
+                    #e5e5e5;
+            
+                color:
+                    #ff6b00;
+            
+                font-size: 15px;
+            
+                font-weight: 600;
+            
+            }
+            
+            
+            /* ==========================================================
+               STAT GRID
+            ========================================================== */
+            
+            .gov-stat-grid {
+            
+                display: grid;
+            
+                grid-template-columns:
+                    repeat(4, minmax(0, 1fr));
+            
+                gap: 22px;
+            
+            }
+            
+            
+            .gov-stat-card {
+            
+                min-height: 150px;
+            
+                padding:
+                    25px;
+            
+                border-radius:
+                    var(--gov-radius);
+            
+                background:
+                    #ffffff;
+            
+                border:
+                    1px solid
+                    #e5e5e5;
+            
+                box-shadow:
+                    var(--gov-shadow);
+            
+                display: flex;
+            
+                align-items: center;
+            
+                gap: 18px;
+            
+                transition:
+                    all 0.3s ease;
+            
+            }
+            
+            
+            .gov-stat-card:hover {
+            
+                transform:
+                    translateY(-5px);
+            
+                border-color:
+                    rgba(255, 107, 0, 0.30);
+            
+                box-shadow:
+                    0 15px 35px
+                    rgba(0, 0, 0, 0.12);
+            
+            }
+            
+            
+            .gov-stat-icon {
+            
+                width: 62px;
+            
+                height: 62px;
+            
+                flex-shrink: 0;
+            
+                border-radius: 17px;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                background:
+                    #fff1e6;
+            
+                color:
+                    #ff6b00;
+            
+                font-size: 27px;
+            
+            }
+            
+            
+            .gov-stat-info {
+            
+                display: flex;
+            
+                flex-direction: column;
+            
+            }
+            
+            
+            .gov-stat-info span {
+            
+                font-size: 15px;
+            
+                color:
+                    #6b7280;
+            
+            }
+            
+            
+            .gov-stat-info strong {
+            
+                margin-top: 7px;
+            
+                font-size: 28px;
+            
+                color:
+                    #171717;
+            
+            }
+            
+            
+            /* ==========================================================
+               LOGOUT MODAL
+            ========================================================== */
+            
+            .gov-logout-modal {
+            
+                position: fixed;
+            
+                inset: 0;
+            
+                z-index: 5000;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                padding:
+                    25px;
+            
+                visibility: hidden;
+            
+                opacity: 0;
+            
+                transition:
+                    opacity 0.3s ease,
+                    visibility 0.3s ease;
+            
+            }
+            
+            
+            .gov-logout-modal.gov-modal-show {
+            
+                visibility: visible;
+            
+                opacity: 1;
+            
+            }
+            
+            
+            /* ==========================================================
+               MODAL BACKDROP
+            ========================================================== */
+            
+            .gov-modal-backdrop {
+            
+                position: absolute;
+            
+                inset: 0;
+            
+                background:
+                    rgba(0, 0, 0, 0.78);
+            
+                backdrop-filter:
+                    blur(9px);
+            
+            }
+            
+            
+            /* ==========================================================
+               MODAL CARD
+            ========================================================== */
+            
+            .gov-logout-card {
+            
+                position: relative;
+            
+                width:
+                    min(520px, 100%);
+            
+                padding:
+                    42px 38px 30px;
+            
+                border-radius:
+                    28px;
+            
+                background:
+                    linear-gradient(
+                        145deg,
+                        #ffffff,
+                        #fff8f2
+                    );
+            
+                box-shadow:
+                    0 35px 80px
+                    rgba(0, 0, 0, 0.35);
+            
+                border:
+                    1px solid
+                    rgba(255, 255, 255, 0.9);
+            
+                text-align:
+                    center;
+            
+                transform:
+                    translateY(30px)
+                    scale(0.95);
+            
+                transition:
+                    all 0.35s ease;
+            
+                overflow:
+                    hidden;
+            
+            }
+            
+            
+            .gov-modal-show
+            .gov-logout-card {
+            
+                transform:
+                    translateY(0)
+                    scale(1);
+            
+            }
+            
+            
+            /* ==========================================================
+               COLORFUL MODAL TOP
+            ========================================================== */
+            
+            .gov-modal-decoration {
+            
+                position: absolute;
+            
+                top: 0;
+            
+                left: 0;
+            
+                width: 100%;
+            
+                height: 7px;
+            
+                display: flex;
+            
+            }
+            
+            
+            .gov-modal-decoration span:nth-child(1) {
+            
+                flex: 1;
+            
+                background:
+                    #ff6b00;
+            
+            }
+            
+            
+            .gov-modal-decoration span:nth-child(2) {
+            
+                flex: 1;
+            
+                background:
+                    #ff8a3d;
+            
+            }
+            
+            
+            .gov-modal-decoration span:nth-child(3) {
+            
+                flex: 1;
+            
+                background:
+                    #ffc107;
+            
+            }
+            
+            
+            /* ==========================================================
+               MODAL ICON
+            ========================================================== */
+            
+            .gov-modal-icon {
+            
+                width: 100px;
+            
+                height: 100px;
+            
+                margin:
+                    5px auto 22px;
+            
+                padding: 8px;
+            
+                border-radius: 50%;
+            
+                background:
+                    linear-gradient(
+                        135deg,
+                        #ffe0cc,
+                        #fff0e6,
+                        #fff3cd
+                    );
+            
+            }
+            
+            
+            .gov-modal-icon-inner {
+            
+                width: 100%;
+            
+                height: 100%;
+            
+                border-radius: 50%;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                background:
+                    #ffffff;
+            
+                color:
+                    #ff6b00;
+            
+                font-size: 37px;
+            
+            }
+            
+            
+            /* ==========================================================
+               MODAL CONTENT
+            ========================================================== */
+            
+            .gov-modal-small {
+            
+                font-size: 11px;
+            
+                font-weight: 800;
+            
+                letter-spacing: 2px;
+            
+                color:
+                    #ff6b00;
+            
+            }
+            
+            
+            .gov-modal-content h2 {
+            
+                margin:
+                    10px 0 9px;
+            
+                font-size: 30px;
+            
+                color:
+                    #171717;
+            
+            }
+            
+            
+            .gov-modal-content p {
+            
+                max-width: 400px;
+            
+                margin:
+                    0 auto;
+            
+                font-size: 16px;
+            
+                line-height: 1.7;
+            
+                color:
+                    #6b7280;
+            
+            }
+            
+            
+            /* ==========================================================
+               MODAL BUTTONS
+            ========================================================== */
+            
+            .gov-modal-actions {
+            
+                display: grid;
+            
+                grid-template-columns:
+                    1fr 1fr;
+            
+                gap: 13px;
+            
+                margin-top: 28px;
+            
+            }
+            
+            
+            .gov-modal-cancel,
+            .gov-modal-confirm {
+            
+                min-height: 55px;
+            
+                border: 0;
+            
+                border-radius: 13px;
+            
+                font-size: 16px;
+            
+                font-weight: 700;
+            
+                cursor: pointer;
+            
+                display: flex;
+            
+                align-items: center;
+            
+                justify-content: center;
+            
+                gap: 9px;
+            
+                transition:
+                    all 0.25s ease;
+            
+            }
+            
+            
+            .gov-modal-cancel {
+            
+                background:
+                    #eeeeee;
+            
+                color:
+                    #333333;
+            
+            }
+            
+            
+            .gov-modal-cancel:hover {
+            
+                background:
+                    #dddddd;
+            
+                transform:
+                    translateY(-2px);
+            
+            }
+            
+            
+            .gov-modal-confirm {
+            
+                background:
+                    linear-gradient(
+                        135deg,
+                        #ff6b00,
+                        #ff8a3d
+                    );
+            
+                color:
+                    #ffffff;
+            
+                box-shadow:
+                    0 8px 20px
+                    rgba(255, 107, 0, 0.25);
+            
+            }
+            
+            
+            .gov-modal-confirm:hover {
+            
+                transform:
+                    translateY(-2px);
+            
+                box-shadow:
+                    0 12px 25px
+                    rgba(255, 107, 0, 0.35);
+            
+            }
+            
+            
+            /* ==========================================================
+               SECURITY MESSAGE
+            ========================================================== */
+            
+            .gov-modal-security {
+            
+                margin-top: 20px;
+            
+                font-size: 12px;
+            
+                color:
+                    #7a8799;
+            
+            }
+            
+            
+            .gov-modal-security i {
+            
+                margin-right: 5px;
+            
+                color:
+                    #16a34a;
+            
+            }
+            
+            
+            /* ==========================================================
+               LARGE LAPTOP
+            ========================================================== */
+            
+            @media (max-width: 1250px) {
+            
+                :root {
+            
+                    --gov-sidebar-width: 270px;
+            
+                }
+            
+            
+                .gov-main {
+            
+                    width:
+                        calc(100% - var(--gov-sidebar-width));
+            
+                    margin-left:
+                        var(--gov-sidebar-width);
+            
+                }
+            
+            
+                .gov-topbar {
+            
+                    padding:
+                        0 22px;
+            
+                }
+            
+            
+                .gov-content {
+            
+                    padding:
+                        30px;
+            
+                }
+            
+            
+                .gov-stat-grid {
+            
+                    grid-template-columns:
+                        repeat(2, minmax(0, 1fr));
+            
+                }
+            
+            
+                .gov-top-user-info {
+            
+                    min-width:
+                        145px;
+            
+                }
+            
+            
+                .gov-top-logout span {
+            
+                    display: none;
+            
+                }
+            
+            
+                .gov-top-logout {
+            
+                    width: 48px;
+            
+                    padding: 0;
+            
+                }
+            
+            }
+            
+            
+            /* ==========================================================
+               TABLET
+            ========================================================== */
+            
+            @media (max-width: 900px) {
+            
+                :root {
+            
+                    --gov-sidebar-width: 285px;
+            
+                }
+            
+            
+                /* Sidebar */
+            
+                .gov-sidebar {
+            
+                    transform:
+                        translateX(-100%);
+            
+                    transition:
+                        transform 0.3s ease;
+            
+                }
+            
+            
+                .gov-sidebar.gov-sidebar-open {
+            
+                    transform:
+                        translateX(0);
+            
+                }
+            
+            
+                .gov-sidebar-close {
+            
+                    display: flex;
+            
+                    align-items: center;
+            
+                    justify-content: center;
+            
+                }
+            
+            
+                /* Main */
+            
+                .gov-main {
+            
+                    width: 100%;
+            
+                    margin-left: 0;
+            
+                }
+            
+            
+                /* Menu */
+            
+                .gov-menu-toggle {
+            
+                    display: flex;
+            
+                    align-items: center;
+            
+                    justify-content: center;
+            
+                }
+            
+            
+                /* Overlay */
+            
+                .gov-sidebar-overlay {
+            
+                    position: fixed;
+            
+                    inset: 0;
+            
+                    z-index: 950;
+            
+                    background:
+                        rgba(0, 0, 0, 0.60);
+            
+                    opacity: 0;
+            
+                    visibility: hidden;
+            
+                    transition:
+                        all 0.3s ease;
+            
+                }
+            
+            
+                .gov-sidebar-overlay.gov-overlay-show {
+            
+                    opacity: 1;
+            
+                    visibility: visible;
+            
+                }
+            
+            
+                /* Topbar */
+            
+                .gov-topbar {
+            
+                    height:
+                        82px;
+            
+                }
+            
+            
+                .gov-top-user {
+            
+                    padding-right: 0;
+            
+                    border-right: 0;
+            
+                }
+            
+            
+                .gov-top-user-info {
+            
+                    display: none;
+            
+                }
+            
+            
+                /* Sidebar logo */
+            
+                .gov-sidebar-logo-image {
+            
+                    width:
+                        165px;
+            
+                }
+            
+            }
+            
+            
+            /* ==========================================================
+               MOBILE
+            ========================================================== */
+            
+            @media (max-width: 600px) {
+            
+            
+                /* ------------------------------------------------------
+                   TOPBAR
+                ------------------------------------------------------ */
+            
+                .gov-topbar {
+            
+                    height:
+                        78px;
+            
+                    padding:
+                        0 14px;
+            
+                }
+            
+            
+                .gov-topbar-left {
+            
+                    gap:
+                        9px;
+            
+                }
+            
+            
+                .gov-menu-toggle {
+            
+                    width:
+                        46px;
+            
+                    height:
+                        46px;
+            
+                    font-size:
+                        22px;
+            
+                }
+            
+            
+                .gov-top-logo-icon {
+            
+                    width:
+                        43px;
+            
+                    height:
+                        43px;
+            
+                    font-size:
+                        20px;
+            
+                }
+            
+            
+                .gov-top-logo-text strong {
+            
+                    font-size:
+                        20px;
+            
+                }
+            
+            
+                .gov-top-logo-text span {
+            
+                    font-size:
+                        8px;
+            
+                }
+            
+            
+                .gov-topbar-right {
+            
+                    gap:
+                        7px;
+            
+                }
+            
+            
+                .gov-top-icon {
+            
+                    width:
+                        44px;
+            
+                    height:
+                        44px;
+            
+                    font-size:
+                        20px;
+            
+                }
+            
+            
+                .gov-top-avatar {
+            
+                    width:
+                        44px;
+            
+                    height:
+                        44px;
+            
+                    font-size:
+                        20px;
+            
+                }
+            
+            
+                .gov-top-logout {
+            
+                    width:
+                        44px;
+            
+                    height:
+                        44px;
+            
+                    min-height:
+                        44px;
+            
+                    padding:
+                        0;
+            
+                    font-size:
+                        19px;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   CONTENT
+                ------------------------------------------------------ */
+            
+                .gov-content {
+            
+                    padding:
+                        23px 15px 35px;
+            
+                }
+            
+            
+                .gov-content-header {
+            
+                    display:
+                        block;
+            
+                    margin-bottom:
+                        23px;
+            
+                }
+            
+            
+                .gov-content-header h1 {
+            
+                    font-size:
+                        28px;
+            
+                }
+            
+            
+                .gov-content-header p {
+            
+                    font-size:
+                        17px;
+            
+                    line-height:
+                        1.65;
+            
+                }
+            
+            
+                .gov-date-box {
+            
+                    margin-top:
+                        18px;
+            
+                    width:
+                        fit-content;
+            
+                    font-size:
+                        14px;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   STATS
+                ------------------------------------------------------ */
+            
+                .gov-stat-grid {
+            
+                    grid-template-columns:
+                        1fr;
+            
+                    gap:
+                        15px;
+            
+                }
+            
+            
+                .gov-stat-card {
+            
+                    min-height:
+                        130px;
+            
+                    padding:
+                        20px;
+            
+                }
+            
+            
+                .gov-stat-info span {
+            
+                    font-size:
+                        16px;
+            
+                }
+            
+            
+                .gov-stat-info strong {
+            
+                    font-size:
+                        27px;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   SIDEBAR
+                ------------------------------------------------------ */
+            
+                .gov-nav-item {
+            
+                    min-height:
+                        62px;
+            
+                    font-size:
+                        20px;
+            
+                }
+            
+            
+                .gov-nav-icon {
+            
+                    font-size:
+                        21px;
+            
+                }
+            
+            
+                .gov-logout-sidebar {
+            
+                    font-size:
+                        20px;
+            
+                    min-height:
+                        62px;
+            
+                }
+            
+            
+                .gov-sidebar-header {
+            
+                    height:
+                        90px;
+            
+                    padding:
+                        0 18px;
+            
+                }
+            
+            
+                .gov-sidebar-logo-image {
+            
+                    width:
+                        155px;
+            
+                    max-height:
+                        60px;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   LOGOUT MODAL
+                ------------------------------------------------------ */
+            
+                .gov-logout-modal {
+            
+                    padding:
+                        15px;
+            
+                }
+            
+            
+                .gov-logout-card {
+            
+                    padding:
+                        38px 20px 24px;
+            
+                    border-radius:
+                        23px;
+            
+                }
+            
+            
+                .gov-modal-icon {
+            
+                    width:
+                        82px;
+            
+                    height:
+                        82px;
+            
+                }
+            
+            
+                .gov-modal-icon-inner {
+            
+                    font-size:
+                        30px;
+            
+                }
+            
+            
+                .gov-modal-content h2 {
+            
+                    font-size:
+                        26px;
+            
+                }
+            
+            
+                .gov-modal-content p {
+            
+                    font-size:
+                        15px;
+            
+                }
+            
+            
+                .gov-modal-actions {
+            
+                    grid-template-columns:
+                        1fr;
+            
+                }
+            
+            
+                .gov-modal-cancel,
+                .gov-modal-confirm {
+            
+                    min-height:
+                        56px;
+            
+                    font-size:
+                        17px;
+            
+                }
+            
+            }
+            
+            
+            /* ==========================================================
+               MOBILE TOP BAR
+               CONTENT MUST REMAIN VISIBLE
+            ========================================================== */
+            
+            @media (max-width: 600px) {
+            
+                .gov-topbar {
+            
+                    min-height:
+                        105px;
+            
+                    height:
+                        auto;
+            
+                    padding:
+                        12px 14px;
+            
+                    display:
+                        flex;
+            
+                    flex-direction:
+                        column;
+            
+                    align-items:
+                        stretch;
+            
+                    justify-content:
+                        center;
+            
+                    gap:
+                        10px;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   TOP LEFT
+                ------------------------------------------------------ */
+            
+                .gov-topbar-left {
+            
+                    width:
+                        100%;
+            
+                    display:
+                        flex;
+            
+                    align-items:
+                        center;
+            
+                    gap:
+                        10px;
+            
+                }
+            
+            
+                /* Hamburger */
+            
+                .gov-menu-toggle {
+            
+                    display:
+                        flex;
+            
+                    flex-shrink:
+                        0;
+            
+                    width:
+                        44px;
+            
+                    height:
+                        44px;
+            
+                    align-items:
+                        center;
+            
+                    justify-content:
+                        center;
+            
+                    border:
+                        none;
+            
+                    border-radius:
+                        12px;
+            
+                    background:
+                        #fff1e6;
+            
+                    color:
+                        #ff6b00;
+            
+                    font-size:
+                        21px;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   TOP LOGO
+                ------------------------------------------------------ */
+            
+                .gov-top-logo {
+            
+                    display:
+                        flex;
+            
+                    align-items:
+                        center;
+            
+                    gap:
+                        9px;
+            
+                    min-width:
+                        0;
+            
+                }
+            
+            
+                .gov-top-logo-icon {
+            
+                    flex-shrink:
+                        0;
+            
+                    width:
+                        42px;
+            
+                    height:
+                        42px;
+            
+                    border-radius:
+                        11px;
+            
+                    font-size:
+                        19px;
+            
+                }
+            
+            
+                .gov-top-logo-text {
+            
+                    display:
+                        flex;
+            
+                    flex-direction:
+                        column;
+            
+                    min-width:
+                        0;
+            
+                }
+            
+            
+                .gov-top-logo-text strong {
+            
+                    font-size:
+                        20px;
+            
+                    line-height:
+                        1.1;
+            
+                    white-space:
+                        nowrap;
+            
+                    color:
+                        #111111;
+            
+                }
+            
+            
+                .gov-top-logo-text span {
+            
+                    display:
+                        block;
+            
+                    margin-top:
+                        3px;
+            
+                    font-size:
+                        9px;
+            
+                    letter-spacing:
+                        1px;
+            
+                    white-space:
+                        nowrap;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   TOP RIGHT
+                ------------------------------------------------------ */
+            
+                .gov-topbar-right {
+            
+                    width:
+                        100%;
+            
+                    display:
+                        flex;
+            
+                    align-items:
+                        center;
+            
+                    justify-content:
+                        space-between;
+            
+                    gap:
+                        8px;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   NOTIFICATION
+                ------------------------------------------------------ */
+            
+                .gov-top-icon {
+            
+                    flex-shrink:
+                        0;
+            
+                    width:
+                        43px;
+            
+                    height:
+                        43px;
+            
+                    border-radius:
+                        11px;
+            
+                    font-size:
+                        19px;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   USER
+                ------------------------------------------------------ */
+            
+                .gov-top-user {
+            
+                    flex:
+                        1;
+            
+                    min-width:
+                        0;
+            
+                    display:
+                        flex;
+            
+                    align-items:
+                        center;
+            
+                    gap:
+                        9px;
+            
+                    padding:
+                        0;
+            
+                    border:
+                        none;
+            
+                }
+            
+            
+                .gov-top-avatar {
+            
+                    flex-shrink:
+                        0;
+            
+                    width:
+                        43px;
+            
+                    height:
+                        43px;
+            
+                    font-size:
+                        19px;
+            
+                }
+            
+            
+                /* IMPORTANT:
+                   NAME AND EMAIL VISIBLE ON MOBILE
+                */
+            
+                .gov-top-user-info {
+            
+                    display:
+                        flex;
+            
+                    flex:
+                        1;
+            
+                    min-width:
+                        0;
+            
+                    flex-direction:
+                        column;
+            
+                    overflow:
+                        hidden;
+            
+                }
+            
+            
+                .gov-top-user-info strong {
+            
+                    display:
+                        block;
+            
+                    font-size:
+                        16px;
+            
+                    line-height:
+                        1.2;
+            
+                    white-space:
+                        nowrap;
+            
+                    overflow:
+                        hidden;
+            
+                    text-overflow:
+                        ellipsis;
+            
+                    color:
+                        #171717;
+            
+                }
+            
+            
+                .gov-top-user-info span {
+            
+                    display:
+                        block;
+            
+                    margin-top:
+                        3px;
+            
+                    font-size:
+                        13px;
+            
+                    line-height:
+                        1.2;
+            
+                    white-space:
+                        nowrap;
+            
+                    overflow:
+                        hidden;
+            
+                    text-overflow:
+                        ellipsis;
+            
+                    color:
+                        #6b7280;
+            
+                }
+            
+            
+                /* ------------------------------------------------------
+                   LOGOUT BUTTON
+                ------------------------------------------------------ */
+            
+                .gov-top-logout {
+            
+                    flex-shrink:
+                        0;
+            
+                    width:
+                        43px;
+            
+                    height:
+                        43px;
+            
+                    min-height:
+                        43px;
+            
+                    padding:
+                        0;
+            
+                    border-radius:
+                        11px;
+            
+                    display:
+                        flex;
+            
+                    align-items:
+                        center;
+            
+                    justify-content:
+                        center;
+            
+                    font-size:
+                        18px;
+            
+                }
+            
+            
+                .gov-top-logout span {
+            
+                    display:
+                        none;
+            
+                }
+            
+            }
+            
+            
+            /* ==========================================================
+               VERY SMALL MOBILE
+            ========================================================== */
+            
+            @media (max-width: 390px) {
+            
+                .gov-topbar {
+            
+                    min-height:
+                        105px;
+            
+                    padding:
+                        10px 11px;
+            
+                }
+            
+            
+                .gov-topbar-left {
+            
+                    gap:
+                        8px;
+            
+                }
+            
+            
+                .gov-menu-toggle {
+            
+                    width:
+                        42px;
+            
+                    height:
+                        42px;
+            
+                    font-size:
+                        20px;
+            
+                }
+            
+            
+                .gov-top-logo-icon {
+            
+                    width:
+                        40px;
+            
+                    height:
+                        40px;
+            
+                    font-size:
+                        18px;
+            
+                }
+            
+            
+                .gov-top-logo-text {
+            
+                    display:
+                        flex;
+            
+                }
+            
+            
+                .gov-top-logo-text strong {
+            
+                    font-size:
+                        18px;
+            
+                }
+            
+            
+                .gov-top-logo-text span {
+            
+                    font-size:
+                        8px;
+            
+                }
+            
+            
+                .gov-topbar-right {
+            
+                    gap:
+                        6px;
+            
+                }
+            
+            
+                .gov-top-icon {
+            
+                    width:
+                        40px;
+            
+                    height:
+                        40px;
+            
+                    font-size:
+                        18px;
+            
+                }
+            
+            
+                .gov-top-avatar {
+            
+                    width:
+                        40px;
+            
+                    height:
+                        40px;
+            
+                    font-size:
+                        18px;
+            
+                }
+            
+            
+                .gov-top-user {
+            
+                    gap:
+                        7px;
+            
+                }
+            
+            
+                .gov-top-user-info strong {
+            
+                    font-size:
+                        15px;
+            
+                }
+            
+            
+                .gov-top-user-info span {
+            
+                    font-size:
+                        12px;
+            
+                }
+            
+            
+                .gov-top-logout {
+            
+                    width:
+                        40px;
+            
+                    height:
+                        40px;
+            
+                    min-height:
+                        40px;
+            
+                    font-size:
+                        17px;
+            
+                }
+            
+            }
+            
+            
+            /* ==========================================================
+               VERY SMALL MOBILE
+            ========================================================== */
+            
+            @media (max-width: 390px) {
+            
+                .gov-top-logo-text {
+            
+                    display:
+                        none;
+            
+                }
+            
+            
+                .gov-topbar-right {
+            
+                    gap:
+                        5px;
+            
+                }
+            
+            
+                .gov-top-icon,
+                .gov-top-avatar,
+                .gov-top-logout {
+            
+                    width:
+                        41px;
+            
+                    height:
+                        41px;
+            
+                }
+            
+            
+                .gov-content-header h1 {
+            
+                    font-size:
+                        26px;
+            
+                }
+            
+            
+                .gov-stat-card {
+            
+                    padding:
+                        17px;
+            
+                }
+            
+            
+                .gov-stat-icon {
+            
+                    width:
+                        55px;
+            
+                    height:
+                        55px;
+            
+                    font-size:
+                        23px;
+            
+                }
+            
+            }
+            
+            
+            /* ==========================================================
+               ACCESSIBILITY / REDUCED MOTION
+            ========================================================== */
+            
+            @media (prefers-reduced-motion: reduce) {
+            
+                .gov-dashboard *,
+                .gov-logout-modal * {
+            
+                    transition:
+                        none !important;
+            
+                    animation:
+                        none !important;
+            
+                }
+            
+            }
+            </style>
+     
+     <Script>
+         /* ==========================================================
+        STACKLY GOVERNMENT DASHBOARD JAVASCRIPT
+     
+        Handles:
+        1. LocalStorage user information
+        2. Mobile sidebar
+        3. Logout popup
+        4. Logout session
+        5. Current date
+     ========================================================== */
+     
+     
+     document.addEventListener(
+         "DOMContentLoaded",
+         function () {
+     
+     
+             /* ==================================================
+                LOCAL STORAGE
+             =================================================== */
+     
+     
+             /*
+              * First try userName.
+              * If it doesn't exist, try loggedUser.
+              */
+     
+             const userName =
+                 localStorage.getItem("userName") ||
+                 localStorage.getItem("loggedUser") ||
+                 "Government User";
+     
+     
+             /*
+              * First try userEmail.
+              * If it doesn't exist, try loggedInUserEmail.
+              */
+     
+             const userEmail =
+                 localStorage.getItem("userEmail") ||
+                 localStorage.getItem("loggedInUserEmail") ||
+                 "user@example.com";
+     
+     
+     
+             /* ==================================================
+                TOP BAR USER
+             =================================================== */
+     
+             const govTopName =
+                 document.getElementById(
+                     "govTopName"
+                 );
+     
+     
+             const govTopEmail =
+                 document.getElementById(
+                     "govTopEmail"
+                 );
+     
+     
+             if (govTopName) {
+     
+                 govTopName.textContent =
+                     userName;
+     
+             }
+     
+     
+             if (govTopEmail) {
+     
+                 govTopEmail.textContent =
+                     userEmail;
+     
+             }
+     
+     
+     
+             /* ==================================================
+                SIDEBAR USER
+             =================================================== */
+     
+             const govSidebarName =
+                 document.getElementById(
+                     "govSidebarName"
+                 );
+     
+     
+             const govSidebarEmail =
+                 document.getElementById(
+                     "govSidebarEmail"
+                 );
+     
+     
+             if (govSidebarName) {
+     
+                 govSidebarName.textContent =
+                     userName;
+     
+             }
+     
+     
+             if (govSidebarEmail) {
+     
+                 govSidebarEmail.textContent =
+                     userEmail;
+     
+             }
+     
+     
+     
+             /* ==================================================
+                CURRENT DATE
+             =================================================== */
+     
+             const currentDate =
+                 document.getElementById(
+                     "govCurrentDate"
+                 );
+     
+     
+             if (currentDate) {
+     
+     
+                 const today =
+                     new Date();
+     
+     
+                 currentDate.textContent =
+                     today.toLocaleDateString(
+                         "en-IN",
+                         {
+                             weekday: "short",
+                             day: "2-digit",
+                             month: "short",
+                             year: "numeric"
+                         }
+                     );
+     
+             }
+     
+     
+     
+             /* ==================================================
+                SIDEBAR ELEMENTS
+             =================================================== */
+     
+             const sidebar =
+                 document.getElementById(
+                     "govSidebar"
+                 );
+     
+     
+             const menuToggle =
+                 document.getElementById(
+                     "govMenuToggle"
+                 );
+     
+     
+             const sidebarClose =
+                 document.getElementById(
+                     "govSidebarClose"
+                 );
+     
+     
+             const sidebarOverlay =
+                 document.getElementById(
+                     "govSidebarOverlay"
+                 );
+     
+     
+     
+             /* ==================================================
+                OPEN SIDEBAR
+             =================================================== */
+     
+             function openSidebar() {
+     
+     
+                 if (!sidebar) {
+     
+                     return;
+     
+                 }
+     
+     
+                 sidebar.classList.add(
+                     "gov-sidebar-open"
+                 );
+     
+     
+                 if (sidebarOverlay) {
+     
+                     sidebarOverlay.classList.add(
+                         "gov-overlay-show"
+                     );
+     
+                 }
+     
+     
+                 document.body.style.overflow =
+                     "hidden";
+     
+             }
+     
+     
+     
+             /* ==================================================
+                CLOSE SIDEBAR
+             =================================================== */
+     
+             function closeSidebar() {
+     
+     
+                 if (!sidebar) {
+     
+                     return;
+     
+                 }
+     
+     
+                 sidebar.classList.remove(
+                     "gov-sidebar-open"
+                 );
+     
+     
+                 if (sidebarOverlay) {
+     
+                     sidebarOverlay.classList.remove(
+                         "gov-overlay-show"
+                     );
+     
+                 }
+     
+     
+                 document.body.style.overflow =
+                     "";
+     
+             }
+     
+     
+     
+             /* ==================================================
+                MOBILE MENU BUTTON
+             =================================================== */
+     
+             if (menuToggle) {
+     
+                 menuToggle.addEventListener(
+                     "click",
+                     openSidebar
+                 );
+     
+             }
+     
+     
+     
+             /* ==================================================
+                SIDEBAR CLOSE BUTTON
+             =================================================== */
+     
+             if (sidebarClose) {
+     
+                 sidebarClose.addEventListener(
+                     "click",
+                     closeSidebar
+                 );
+     
+             }
+     
+     
+     
+             /* ==================================================
+                SIDEBAR OVERLAY
+             =================================================== */
+     
+             if (sidebarOverlay) {
+     
+                 sidebarOverlay.addEventListener(
+                     "click",
+                     closeSidebar
+                 );
+     
+             }
+     
+     
+     
+             /* ==================================================
+                SIDEBAR NAVIGATION
+             =================================================== */
+     
+             const sidebarLinks =
+                 document.querySelectorAll(
+                     ".gov-nav-item"
+                 );
+     
+     
+             sidebarLinks.forEach(
+                 function (link) {
+     
+     
+                     link.addEventListener(
+                         "click",
+                         function () {
+     
+     
+                             if (
+                                 window.innerWidth <= 900
+                             ) {
+     
+                                 closeSidebar();
+     
+                             }
+     
+                         }
+                     );
+     
+                 }
+             );
+     
+     
+     
+             /* ==================================================
+                LOGOUT ELEMENTS
+             =================================================== */
+     
+             const logoutModal =
+                 document.getElementById(
+                     "govLogoutModal"
+                 );
+     
+     
+             const sidebarLogout =
+                 document.getElementById(
+                     "govSidebarLogout"
+                 );
+     
+     
+             const topLogout =
+                 document.getElementById(
+                     "govTopLogout"
+                 );
+     
+     
+             const cancelLogout =
+                 document.getElementById(
+                     "govCancelLogout"
+                 );
+     
+     
+             const confirmLogout =
+                 document.getElementById(
+                     "govConfirmLogout"
+                 );
+     
+     
+     
+             /* ==================================================
+                OPEN LOGOUT MODAL
+             =================================================== */
+     
+             function openLogoutModal() {
+     
+     
+                 if (!logoutModal) {
+     
+                     return;
+     
+                 }
+     
+     
+                 logoutModal.classList.add(
+                     "gov-modal-show"
+                 );
+     
+     
+                 logoutModal.setAttribute(
+                     "aria-hidden",
+                     "false"
+                 );
+     
+     
+                 document.body.style.overflow =
+                     "hidden";
+     
+             }
+     
+     
+     
+             /* ==================================================
+                CLOSE LOGOUT MODAL
+             =================================================== */
+     
+             function closeLogoutModal() {
+     
+     
+                 if (!logoutModal) {
+     
+                     return;
+     
+                 }
+     
+     
+                 logoutModal.classList.remove(
+                     "gov-modal-show"
+                 );
+     
+     
+                 logoutModal.setAttribute(
+                     "aria-hidden",
+                     "true"
+                 );
+     
+     
+                 document.body.style.overflow =
+                     "";
+     
+             }
+     
+     
+     
+             /* ==================================================
+                SIDEBAR LOGOUT
+             =================================================== */
+     
+             if (sidebarLogout) {
+     
+     
+                 sidebarLogout.addEventListener(
+                     "click",
+                     function () {
+     
+     
+                         closeSidebar();
+     
+                         openLogoutModal();
+     
+     
+                     }
+                 );
+     
+             }
+     
+     
+     
+             /* ==================================================
+                TOP LOGOUT
+             =================================================== */
+     
+             if (topLogout) {
+     
+     
+                 topLogout.addEventListener(
+                     "click",
+                     function () {
+     
+                         openLogoutModal();
+     
+                     }
+                 );
+     
+             }
+     
+     
+     
+             /* ==================================================
+                CANCEL LOGOUT
+             =================================================== */
+     
+             if (cancelLogout) {
+     
+     
+                 cancelLogout.addEventListener(
+                     "click",
+                     function () {
+     
+                         closeLogoutModal();
+     
+                     }
+                 );
+     
+             }
+     
+     
+     
+             /* ==================================================
+                BACKDROP CLICK
+             =================================================== */
+     
+             if (logoutModal) {
+     
+     
+                 logoutModal.addEventListener(
+                     "click",
+                     function (event) {
+     
+     
+                         if (
+                             event.target.classList.contains(
+                                 "gov-modal-backdrop"
+                             )
+                         ) {
+     
+                             closeLogoutModal();
+     
+                         }
+     
+                     }
+                 );
+     
+             }
+     
+     
+     
+             /* ==================================================
+                CONFIRM LOGOUT
+             =================================================== */
+     
+             if (confirmLogout) {
+     
+     
+                 confirmLogout.addEventListener(
+                     "click",
+                     function () {
+     
+     
+                         /*
+                          * Remove login/session information.
+                          */
+     
+                         localStorage.removeItem(
+                             "stackly_session"
+                         );
+     
+     
+                         localStorage.removeItem(
+                             "loggedInUserEmail"
+                         );
+     
+     
+                         localStorage.removeItem(
+                             "loggedUser"
+                         );
+     
+     
+                         localStorage.removeItem(
+                             "userName"
+                         );
+     
+     
+                         localStorage.removeItem(
+                             "userEmail"
+                         );
+     
+     
+                         /*
+                          * Redirect to login page.
+                          */
+     
+                         window.location.href =
+                             "login.html";
+     
+                     }
+                 );
+     
+             }
+     
+     
+     
+             /* ==================================================
+                ESCAPE KEY
+             =================================================== */
+     
+             document.addEventListener(
+                 "keydown",
+                 function (event) {
+     
+     
+                     if (
+                         event.key === "Escape"
+                     ) {
+     
+     
+                         closeLogoutModal();
+     
+                         closeSidebar();
+     
+     
+                     }
+     
+                 }
+             );
+     
+     
+     
+             /* ==================================================
+                WINDOW RESIZE
+             =================================================== */
+     
+             window.addEventListener(
+                 "resize",
+                 function () {
+     
+     
+                     if (
+                         window.innerWidth > 900
+                     ) {
+     
+                         closeSidebar();
+     
+                     }
+     
+                 }
+             );
+     
+     
+         }
+     );
+     </Script>
+     
+     </body>
+     
+     </html>

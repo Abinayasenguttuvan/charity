@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- Login CSS -->
+
+    <link rel="stylesheet"
+          href="login.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     LOGIN PAGE
+========================================================= -->
+
+<div class="stklogin-page">
+
+
+    <!-- BACKGROUND IMAGE -->
+
+    <div class="stklogin-background"></div>
+
+
+    <!-- COLOURFUL ANIMATED GLOWS -->
+
+    <div class="stklogin-glow stklogin-glow-one"></div>
+
+    <div class="stklogin-glow stklogin-glow-two"></div>
+
+    <div class="stklogin-glow stklogin-glow-three"></div>
+
+
+    <!-- FLOATING PARTICLES -->
+
+    <div class="stklogin-particles">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOP BACK BUTTON
+    ====================================================== -->
+
+    <header class="stklogin-topbar">
+
+        <a href="index.html"
+           class="stklogin-home-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span>
+                Back to Home
+            </span>
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN LOGIN SECTION
+    ====================================================== -->
+
+    <main class="stklogin-main">
+
+
+        <section class="stklogin-card">
+
+
+            <!-- TOP ANIMATED LINE -->
+
+            <div class="stklogin-card-line"></div>
+
+
+
+            <!-- =================================================
+                 LEFT SIDE CONTENT
+            ================================================== -->
+
+            <div class="stklogin-info">
+
+
+                <div class="stklogin-logo">
+
+                    <a href="index.html"
+                    class="logo">
+                        <img src="./white.webp"
+                            alt="Logo" style="height:40px;"
+        
+                            alt="Digital India">
+        
+                </a>
+
+                </div>
+
+
+                
+
+                <h1>
+
+                    Welcome
+
+                    <span>
+                        Back!
+                    </span>
+
+                </h1>
+
+
+                <p class="stklogin-info-text">
+
+                    Sign in to securely access your dashboard
+                    and manage your account from one place.
+
+                </p>
+
+
+
+                <!-- FEATURES -->
+
+                <div class="stklogin-info-items">
+
+
+                    <div class="stklogin-info-item">
+
+                        <div class="stklogin-info-icon">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                Secure Access
+                            </h4>
+
+                            <p>
+                                Your account is protected securely.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stklogin-info-item">
+
+                        <div class="stklogin-info-icon">
+
+                            <i class="fa-solid fa-bolt"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                Fast & Easy
+                            </h4>
+
+                            <p>
+                                Access your dashboard instantly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stklogin-info-item">
+
+                        <div class="stklogin-info-icon">
+
+                            <i class="fa-solid fa-users-gear"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                Role Based
+                            </h4>
+
+                            <p>
+                                Admin and Coordinator access.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RIGHT SIDE LOGIN FORM
+            ================================================== -->
+
+            <div class="stklogin-form-area">
+
+
+                <div class="stklogin-heading">
+
+
+                    <span class="stklogin-small-title">
+
+                        ACCOUNT ACCESS
+
+                    </span>
+
+
+                    <h2>
+                        Sign In
+                    </h2>
+
+
+                    <p>
+                        Enter your details to continue
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="stkloginForm"
+                      class="stklogin-form"
+                      novalidate>
+
+
+
+                    <!-- =========================================
+                         ROLE SELECTION
+                    ========================================== -->
+
+                    <div class="stklogin-role">
+
+
+                        <label class="stklogin-label">
+
+                            Select Your Role
+
+                        </label>
+
+
+                        <div class="stklogin-role-options">
+
+
+                            <!-- ADMIN -->
+
+                            <label class="stklogin-role-box active">
+
+
+                                <input type="radio"
+                                       name="stkloginRole"
+                                       value="admin"
+                                       checked>
+
+
+                                <span class="stklogin-role-content">
+
+                                    <i class="fa-solid fa-user-shield"></i>
+
+                                    <span>
+                                        Admin
+                                    </span>
+
+                                </span>
+
+
+                            </label>
+
+
+
+                            <!-- COORDINATOR -->
+
+                            <label class="stklogin-role-box">
+
+
+                                <input type="radio"
+                                       name="stkloginRole"
+                                       value="coordinator">
+
+
+                                <span class="stklogin-role-content">
+
+                                    <i class="fa-solid fa-users-gear"></i>
+
+                                    <span>
+                                        Coordinator
+                                    </span>
+
+                                </span>
+
+
+                            </label>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         NAME
+                    ========================================== -->
+
+                    <div class="stklogin-field">
+
+
+                        <label for="stkloginName">
+
+                            Name
+
+                        </label>
+
+
+                        <div class="stklogin-input">
+
+
+                            <i class="fa-regular fa-user"></i>
+
+
+                            <input type="text"
+                                   id="stkloginName"
+                                   placeholder="Enter your name"
+                                   autocomplete="name">
+
+
+                        </div>
+
+
+                        <small class="stklogin-error"
+                               id="stkloginNameError"></small>
+
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         MAIL ID
+                    ========================================== -->
+
+                    <div class="stklogin-field">
+
+
+                        <label for="stkloginEmail">
+
+                            Mail ID
+
+                        </label>
+
+
+                        <div class="stklogin-input">
+
+
+                            <i class="fa-regular fa-envelope"></i>
+
+
+                            <input type="email"
+                                   id="stkloginEmail"
+                                   placeholder="Enter your mail ID"
+                                   autocomplete="email">
+
+
+                        </div>
+
+
+                        <small class="stklogin-error"
+                               id="stkloginEmailError"></small>
+
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         PASSWORD
+                    ========================================== -->
+
+                    <div class="stklogin-field">
+
+
+                        <label for="stkloginPassword">
+
+                            Password
+
+                        </label>
+
+
+                        <div class="stklogin-input">
+
+
+                            <i class="fa-solid fa-lock"></i>
+
+
+                            <input type="password"
+                                   id="stkloginPassword"
+                                   placeholder="Enter your password"
+                                   autocomplete="current-password">
+
+
+                            <button type="button"
+                                    class="stklogin-password-toggle"
+                                    id="stkloginPasswordToggle"
+                                    aria-label="Show password">
+
+
+                                <i class="fa-regular fa-eye"></i>
+
+
+                            </button>
+
+
+                        </div>
+
+
+                        <small class="stklogin-error"
+                               id="stkloginPasswordError"></small>
+
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         REMEMBER + FORGOT
+                    ========================================== -->
+
+                    <div class="stklogin-options">
+
+
+                        <label class="stklogin-remember">
+
+
+                            <input type="checkbox"
+                                   id="stkloginRemember">
+
+
+                            <span class="stklogin-checkmark"></span>
+
+
+                            <span>
+                                Remember me
+                            </span>
+
+
+                        </label>
+
+
+
+                        <a href="./404.html"
+                           class="stklogin-forgot">
+
+                            Forgot Password?
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         SIGN IN BUTTON
+                    ========================================== -->
+
+                    <button type="submit"
+                            class="stklogin-submit"
+                            id="stkloginSubmitBtn">
+
+
+                        <span>
+                            Sign In
+                        </span>
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+
+                    </button>
+
+
+
+                    <!-- =========================================
+                         SIGN UP
+                    ========================================== -->
+
+                    <div class="stklogin-signup">
+
+
+                        <span>
+                            Don't have an account?
+                        </span>
+
+
+                        <a href="./register.html">
+
+                            Sign Up
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         DIVIDER
+                    ========================================== -->
+
+                    <div class="stklogin-divider">
+
+                        <span></span>
+
+                        <p>
+                            OR CONTINUE WITH
+                        </p>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         SOCIAL LOGIN
+                    ========================================== -->
+
+                    <div class="stklogin-social">
+
+
+                        <!-- FACEBOOK -->
+
+                        <button type="button"
+                                class="stklogin-social-btn"
+                                aria-label="Facebook">
+
+                            <i class="fa-brands fa-facebook-f"></i>
+
+                        </button>
+
+
+
+                        <!-- PINTEREST -->
+
+                        <button type="button"
+                                class="stklogin-social-btn"
+                                aria-label="Pinterest">
+
+                            <i class="fa-brands fa-pinterest-p"></i>
+
+                        </button>
+
+
+
+                        <!-- GOOGLE -->
+
+                        <button type="button"
+                                class="stklogin-social-btn"
+                                aria-label="Google">
+
+                            <i class="fa-brands fa-google"></i>
+
+                        </button>
+
+
+
+                        <!-- APPLE -->
+
+                        <button type="button"
+                                class="stklogin-social-btn"
+                                aria-label="Apple">
+
+                            <i class="fa-brands fa-apple"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<style>
+    /* =========================================================
+   LOGIN PAGE
+   UNIQUE PREFIX: stklogin-
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.stklogin-page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #050505;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.stklogin-background {
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 0, 0, 0.96),
+            rgba(0, 0, 0, 0.80),
+            rgba(15, 7, 0, 0.88)
+        ),
+        url("images/login-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   ANIMATED GLOWS
+========================================================= */
+
+.stklogin-glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 1;
+    animation: stkloginGlowMove 8s ease-in-out infinite alternate;
+}
+
+
+.stklogin-glow-one {
+    width: 420px;
+    height: 420px;
+
+    background: #ff4d00;
+
+    opacity: 0.20;
+
+    top: -150px;
+    left: -120px;
+}
+
+
+.stklogin-glow-two {
+    width: 450px;
+    height: 450px;
+
+    background: #ff9500;
+
+    opacity: 0.16;
+
+    bottom: -180px;
+    right: -130px;
+
+    animation-delay: 2s;
+}
+
+
+.stklogin-glow-three {
+    width: 250px;
+    height: 250px;
+
+    background: #ff3000;
+
+    opacity: 0.12;
+
+    top: 30%;
+    right: 25%;
+
+    animation-delay: 4s;
+}
+
+
+@keyframes stkloginGlowMove {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(50px, 40px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(-30px, 70px) scale(0.9);
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.stklogin-particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+.stklogin-particles span {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    background: #ff7200;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #ff7200,
+        0 0 25px rgba(255, 114, 0, 0.8);
+
+    animation: stkloginParticleMove 8s linear infinite;
+}
+
+
+.stklogin-particles span:nth-child(1) {
+    left: 10%;
+    top: 80%;
+}
+
+.stklogin-particles span:nth-child(2) {
+    left: 20%;
+    top: 30%;
+    animation-delay: 1s;
+}
+
+.stklogin-particles span:nth-child(3) {
+    left: 35%;
+    top: 90%;
+    animation-delay: 2s;
+}
+
+.stklogin-particles span:nth-child(4) {
+    left: 50%;
+    top: 60%;
+    animation-delay: 3s;
+}
+
+.stklogin-particles span:nth-child(5) {
+    left: 65%;
+    top: 85%;
+    animation-delay: 4s;
+}
+
+.stklogin-particles span:nth-child(6) {
+    left: 75%;
+    top: 40%;
+    animation-delay: 2.5s;
+}
+
+.stklogin-particles span:nth-child(7) {
+    left: 85%;
+    top: 75%;
+    animation-delay: 1.5s;
+}
+
+.stklogin-particles span:nth-child(8) {
+    left: 92%;
+    top: 30%;
+    animation-delay: 5s;
+}
+
+.stklogin-particles span:nth-child(9) {
+    left: 45%;
+    top: 25%;
+    animation-delay: 4.5s;
+}
+
+.stklogin-particles span:nth-child(10) {
+    left: 28%;
+    top: 55%;
+    animation-delay: 3.5s;
+}
+
+
+@keyframes stkloginParticleMove {
+
+    0% {
+        transform: translateY(100px) scale(0.4);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-250px) scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.stklogin-topbar {
+    position: relative;
+    z-index: 10;
+
+    padding: 25px 5%;
+}
+
+
+.stklogin-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    border: 1px solid rgba(255, 106, 0, 0.50);
+
+    background: rgba(0, 0, 0, 0.65);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.stklogin-home-btn i {
+    color: #ff7200;
+}
+
+
+.stklogin-home-btn:hover {
+    background: #ff6500;
+    border-color: #ff6500;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 30px rgba(255, 101, 0, 0.35);
+}
+
+
+.stklogin-home-btn:hover i {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.stklogin-main {
+    position: relative;
+    z-index: 5;
+
+    min-height: calc(100vh - 90px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 5% 60px;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.stklogin-card {
+    width: min(1120px, 100%);
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: rgba(8, 8, 8, 0.90);
+
+    border: 1px solid rgba(255, 106, 0, 0.25);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.80),
+        0 0 60px rgba(255, 100, 0, 0.10);
+
+    animation: stkloginCardEntry 0.8s ease forwards;
+}
+
+
+@keyframes stkloginCardEntry {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.stklogin-card-line {
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+
+    width: 84%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ff4d00,
+        #ff9500,
+        #ff4d00,
+        transparent
+    );
+
+    box-shadow: 0 0 20px #ff6500;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   LEFT SECTION
+========================================================= */
+
+.stklogin-info {
+    padding: 60px 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 85, 0, 0.15),
+        rgba(0, 0, 0, 0.30)
+    );
+
+    border-right: 1px solid rgba(255, 106, 0, 0.15);
+}
+
+
+.stklogin-logo {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4d00,
+        #ff9500
+    );
+
+    font-size: 26px;
+
+    box-shadow: 0 10px 35px rgba(255, 90, 0, 0.35);
+
+    animation: stkloginLogoFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes stkloginLogoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+.stklogin-welcome-small {
+    color: #ff7200;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+.stklogin-info h1 {
+    font-size: 50px;
+    line-height: 1.1;
+
+    margin-bottom: 18px;
+}
+
+
+.stklogin-info h1 span {
+    color: #ff7200;
+}
+
+
+.stklogin-info-text {
+    color: #b8b8b8;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+    margin-bottom: 35px;
+}
+
+
+/* INFO ITEMS */
+
+.stklogin-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.stklogin-info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.stklogin-info-icon {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(255, 106, 0, 0.10);
+
+    border: 1px solid rgba(255, 106, 0, 0.30);
+
+    color: #ff7200;
+}
+
+
+.stklogin-info-item h4 {
+    font-size: 14px;
+
+    margin-bottom: 3px;
+}
+
+
+.stklogin-info-item p {
+    font-size: 11px;
+
+    color: #888888;
+}
+
+
+/* =========================================================
+   FORM AREA
+========================================================= */
+
+.stklogin-form-area {
+    padding: 55px 65px;
+
+    background: rgba(5, 5, 5, 0.82);
+}
+
+
+.stklogin-heading {
+    margin-bottom: 25px;
+}
+
+
+.stklogin-small-title {
+    display: block;
+
+    color: #ff7200;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.stklogin-heading h2 {
+    font-size: 35px;
+
+    margin-bottom: 5px;
+}
+
+
+.stklogin-heading p {
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ROLE SELECTION
+========================================================= */
+
+.stklogin-role {
+    margin-bottom: 18px;
+}
+
+
+.stklogin-label,
+.stklogin-field > label {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #d5d5d5;
+
+    margin-bottom: 8px;
+}
+
+
+.stklogin-role-options {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+.stklogin-role-box {
+    cursor: pointer;
+
+    position: relative;
+}
+
+
+.stklogin-role-box input {
+    position: absolute;
+
+    opacity: 0;
+}
+
+
+.stklogin-role-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 8px;
+
+    border-radius: 8px;
+
+    border: 1px solid #292929;
+
+    color: #888888;
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+
+.stklogin-role-content i {
+    color: #777;
+}
+
+
+.stklogin-role-box.active .stklogin-role-content,
+.stklogin-role-box:hover .stklogin-role-content {
+    border-color: #ff7200;
+
+    background: rgba(255, 114, 0, 0.08);
+
+    color: #ffffff;
+
+    box-shadow: 0 0 20px rgba(255, 114, 0, 0.10);
+}
+
+
+.stklogin-role-box.active i {
+    color: #ff7200;
+}
+
+
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+.stklogin-field {
+    margin-bottom: 14px;
+}
+
+
+.stklogin-input {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #2c2c2c;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    transition: 0.3s ease;
+}
+
+
+.stklogin-input:focus-within {
+    border-color: #ff7200;
+
+    background: rgba(255, 114, 0, 0.04);
+
+    box-shadow: 0 0 0 3px rgba(255, 114, 0, 0.06);
+}
+
+
+.stklogin-input > i {
+    width: 48px;
+
+    text-align: center;
+
+    color: #777;
+}
+
+
+.stklogin-input:focus-within > i {
+    color: #ff7200;
+}
+
+
+.stklogin-input input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+
+.stklogin-input input::placeholder {
+    color: #666666;
+}
+
+
+/* PASSWORD TOGGLE */
+
+.stklogin-password-toggle {
+    width: 48px;
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+
+.stklogin-password-toggle:hover {
+    color: #ff7200;
+}
+
+
+/* ERROR */
+
+.stklogin-error {
+    display: block;
+
+    min-height: 15px;
+
+    color: #ff4d4d;
+
+    font-size: 10px;
+
+    padding-top: 3px;
+}
+
+
+/* =========================================================
+   REMEMBER / FORGOT
+========================================================= */
+
+.stklogin-options {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 5px 0 20px;
+}
+
+
+.stklogin-remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #999999;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.stklogin-remember input {
+    display: none;
+}
+
+
+.stklogin-checkmark {
+    width: 16px;
+    height: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #555;
+
+    border-radius: 4px;
+}
+
+
+.stklogin-remember input:checked + .stklogin-checkmark {
+    background: #ff7200;
+
+    border-color: #ff7200;
+}
+
+
+.stklogin-remember input:checked + .stklogin-checkmark::after {
+    content: "✓";
+
+    font-size: 11px;
+    font-weight: bold;
+
+    color: #ffffff;
+}
+
+
+.stklogin-forgot {
+    color: #ff7200;
+
+    text-decoration: none;
+
+    font-size: 12px;
+}
+
+
+.stklogin-forgot:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   SIGN IN BUTTON
+========================================================= */
+
+.stklogin-submit {
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        90deg,
+        #ff4d00,
+        #ff8500,
+        #ff4d00
+    );
+
+    background-size: 200%;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+
+    animation: stkloginButtonMove 4s linear infinite;
+
+    box-shadow: 0 10px 30px rgba(255, 90, 0, 0.25);
+}
+
+
+@keyframes stkloginButtonMove {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+
+}
+
+
+.stklogin-submit:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 15px 35px rgba(255, 90, 0, 0.40);
+}
+
+
+.stklogin-submit:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   SIGNUP
+========================================================= */
+
+.stklogin-signup {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    color: #777;
+}
+
+
+.stklogin-signup a {
+    color: #ff7200;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.stklogin-signup a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.stklogin-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 22px 0 15px;
+}
+
+
+.stklogin-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background: #282828;
+}
+
+
+.stklogin-divider p {
+    font-size: 9px;
+
+    color: #666;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+========================================================= */
+
+.stklogin-social {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+.stklogin-social-btn {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    border: 1px solid #303030;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: #bbbbbb;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+
+.stklogin-social-btn:hover {
+    transform: translateY(-4px);
+
+    color: #ffffff;
+
+    border-color: #ff7200;
+
+    background: rgba(255, 114, 0, 0.10);
+
+    box-shadow: 0 10px 25px rgba(255, 114, 0, 0.18);
+}
+
+
+/* =========================================================
+   LAPTOP / TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .stklogin-card {
+        grid-template-columns: 0.8fr 1.2fr;
+    }
+
+
+    .stklogin-info {
+        padding: 50px 35px;
+    }
+
+
+    .stklogin-form-area {
+        padding: 50px 45px;
+    }
+
+
+    .stklogin-info h1 {
+        font-size: 42px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .stklogin-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stklogin-info {
+        padding: 40px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid rgba(255, 114, 0, 0.15);
+    }
+
+
+    .stklogin-info-items {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .stklogin-info-item p {
+        display: none;
+    }
+
+
+    .stklogin-form-area {
+        padding: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .stklogin-topbar {
+        padding: 18px;
+    }
+
+
+    .stklogin-home-btn {
+        font-size: 13px;
+
+        padding: 10px 15px;
+    }
+
+
+    .stklogin-main {
+        padding: 15px 15px 40px;
+    }
+
+
+    .stklogin-card {
+        border-radius: 18px;
+    }
+
+
+    .stklogin-info {
+        padding: 30px 24px;
+    }
+
+
+    .stklogin-logo {
+        width: 52px;
+        height: 52px;
+
+        font-size: 22px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .stklogin-info h1 {
+        font-size: 32px;
+    }
+
+
+    .stklogin-info-text {
+        font-size: 13px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .stklogin-info-items {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .stklogin-info-item p {
+        display: block;
+    }
+
+
+    .stklogin-form-area {
+        padding: 32px 24px;
+    }
+
+
+    .stklogin-heading h2 {
+        font-size: 30px;
+    }
+
+
+    .stklogin-role-content {
+        font-size: 11px;
+    }
+
+
+    .stklogin-input {
+        height: 48px;
+    }
+
+
+    .stklogin-options {
+        gap: 10px;
+    }
+
+
+    .stklogin-forgot {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .stklogin-home-btn span {
+        display: none;
+    }
+
+
+    .stklogin-home-btn {
+        width: 42px;
+        height: 42px;
+
+        justify-content: center;
+    }
+
+
+    .stklogin-info {
+        padding: 25px 20px;
+    }
+
+
+    .stklogin-form-area {
+        padding: 28px 20px;
+    }
+
+
+    .stklogin-info h1 {
+        font-size: 28px;
+    }
+
+
+    .stklogin-heading h2 {
+        font-size: 27px;
+    }
+
+
+    .stklogin-role-content {
+        font-size: 10px;
+
+        gap: 5px;
+    }
+
+}
+</style>
+
+<script>
+    /* =========================================================
+   LOGIN JAVASCRIPT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+/* =====================================================
+   GET ELEMENTS
+====================================================== */
+
+const loginForm =
+    document.getElementById("stkloginForm");
+
+
+const nameInput =
+    document.getElementById("stkloginName");
+
+
+const emailInput =
+    document.getElementById("stkloginEmail");
+
+
+const passwordInput =
+    document.getElementById("stkloginPassword");
+
+
+const rememberCheckbox =
+    document.getElementById("stkloginRemember");
+
+
+const passwordToggle =
+    document.getElementById(
+        "stkloginPasswordToggle"
+    );
+
+
+const submitButton =
+    document.getElementById(
+        "stkloginSubmitBtn"
+    );
+
+
+/* =====================================================
+   ERROR ELEMENTS
+====================================================== */
+
+const nameError =
+    document.getElementById(
+        "stkloginNameError"
+    );
+
+
+const emailError =
+    document.getElementById(
+        "stkloginEmailError"
+    );
+
+
+const passwordError =
+    document.getElementById(
+        "stkloginPasswordError"
+    );
+
+
+/* =====================================================
+   ROLE SELECTION
+====================================================== */
+
+const roleBoxes =
+    document.querySelectorAll(
+        ".stklogin-role-box"
+    );
+
+
+roleBoxes.forEach(function (box) {
+
+
+    const radio =
+        box.querySelector("input");
+
+
+    radio.addEventListener(
+        "change",
+        function () {
+
+
+            roleBoxes.forEach(function (item) {
+
+                item.classList.remove("active");
+
+            });
+
+
+            if (radio.checked) {
+
+                box.classList.add("active");
+
+            }
+
+
+        }
+    );
+
+
+});
+
+
+/* =====================================================
+   SHOW / HIDE PASSWORD
+====================================================== */
+
+passwordToggle.addEventListener(
+    "click",
+    function () {
+
+
+        if (
+            passwordInput.type === "password"
+        ) {
+
+
+            passwordInput.type = "text";
+
+
+            passwordToggle.innerHTML =
+                '<i class="fa-regular fa-eye-slash"></i>';
+
+
+        } else {
+
+
+            passwordInput.type = "password";
+
+
+            passwordToggle.innerHTML =
+                '<i class="fa-regular fa-eye"></i>';
+
+
+        }
+
+
+    }
+);
+
+
+/* =====================================================
+   LOAD SAVED USER DETAILS
+====================================================== */
+
+const rememberUser =
+    localStorage.getItem(
+        "stkloginRemember"
+    );
+
+
+if (rememberUser === "true") {
+
+
+    const savedName =
+        localStorage.getItem(
+            "userName"
+        );
+
+
+    const savedEmail =
+        localStorage.getItem(
+            "userEmail"
+        );
+
+
+    const savedRole =
+        localStorage.getItem(
+            "userRole"
+        );
+
+
+    /* Load Name */
+
+    if (savedName) {
+
+        nameInput.value =
+            savedName;
+
+    }
+
+
+    /* Load Email */
+
+    if (savedEmail) {
+
+        emailInput.value =
+            savedEmail;
+
+    }
+
+
+    /* Load Role */
+
+    if (savedRole) {
+
+
+        const savedRoleInput =
+            document.querySelector(
+                `input[name="stkloginRole"][value="${savedRole}"]`
+            );
+
+
+        if (savedRoleInput) {
+
+
+            savedRoleInput.checked = true;
+
+
+            roleBoxes.forEach(function (item) {
+
+                item.classList.remove("active");
+
+            });
+
+
+            savedRoleInput
+                .closest(".stklogin-role-box")
+                .classList.add("active");
+
+
+        }
+
+
+    }
+
+
+    /* Check Remember Me */
+
+    rememberCheckbox.checked = true;
+
+
+}
+
+
+/* =====================================================
+   LOGIN FORM SUBMIT
+====================================================== */
+
+loginForm.addEventListener(
+    "submit",
+    function (event) {
+
+
+        event.preventDefault();
+
+
+        /* Clear Previous Errors */
+
+        nameError.textContent = "";
+
+        emailError.textContent = "";
+
+        passwordError.textContent = "";
+
+
+        let isValid = true;
+
+
+        const userName =
+            nameInput.value.trim();
+
+
+        const userEmail =
+            emailInput.value.trim();
+
+
+        const userPassword =
+            passwordInput.value.trim();
+
+
+        const selectedRole =
+            document.querySelector(
+                'input[name="stkloginRole"]:checked'
+            );
+
+
+        /* =============================================
+           NAME VALIDATION
+        ============================================== */
+
+        if (userName === "") {
+
+
+            nameError.textContent =
+                "Please enter your name.";
+
+
+            isValid = false;
+
+
+        } else if (userName.length < 3) {
+
+
+            nameError.textContent =
+                "Name must contain at least 3 characters.";
+
+
+            isValid = false;
+
+
+        }
+
+
+        /* =============================================
+           EMAIL VALIDATION
+        ============================================== */
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (userEmail === "") {
+
+
+            emailError.textContent =
+                "Please enter your mail ID.";
+
+
+            isValid = false;
+
+
+        } else if (
+            !emailPattern.test(userEmail)
+        ) {
+
+
+            emailError.textContent =
+                "Please enter a valid mail ID.";
+
+
+            isValid = false;
+
+
+        }
+
+
+        /* =============================================
+           PASSWORD VALIDATION
+        ============================================== */
+
+        if (userPassword === "") {
+
+
+            passwordError.textContent =
+                "Please enter your password.";
+
+
+            isValid = false;
+
+
+        } else if (
+            userPassword.length < 6
+        ) {
+
+
+            passwordError.textContent =
+                "Password must contain at least 6 characters.";
+
+
+            isValid = false;
+
+
+        }
+
+
+        /* =============================================
+           CHECK IF VALID
+        ============================================== */
+
+        if (!isValid) {
+
+            return;
+
+        }
+
+
+        /* =============================================
+           GET ROLE
+        ============================================== */
+
+        const userRole =
+            selectedRole.value;
+
+
+        /* =============================================
+           STORE DATA IN LOCAL STORAGE
+        ============================================== */
+
+        localStorage.setItem(
+            "userName",
+            userName
+        );
+
+
+        localStorage.setItem(
+            "userEmail",
+            userEmail
+        );
+
+
+        localStorage.setItem(
+            "userRole",
+            userRole
+        );
+
+
+        localStorage.setItem(
+            "isLoggedIn",
+            "true"
+        );
+
+
+        /* =============================================
+           REMEMBER ME
+        ============================================== */
+
+        if (
+            rememberCheckbox.checked
+        ) {
+
+
+            localStorage.setItem(
+                "stkloginRemember",
+                "true"
+            );
+
+
+        } else {
+
+
+            localStorage.removeItem(
+                "stkloginRemember"
+            );
+
+
+        }
+
+
+        /* =============================================
+           BUTTON LOADING STATE
+        ============================================== */
+
+        submitButton.disabled = true;
+
+
+        submitButton.innerHTML = `
+
+            <span>
+                Signing In...
+            </span>
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+        `;
+
+
+        /* =============================================
+           REDIRECT BASED ON ROLE
+        ============================================== */
+
+        setTimeout(function () {
+
+
+            if (
+                userRole === "admin"
+            ) {
+
+
+                window.location.href =
+                    "admin-dashboard.html";
+
+
+            }
+
+
+            else if (
+                userRole === "coordinator"
+            ) {
+
+
+                window.location.href =
+                    "coordinator-dashboard.html";
+
+
+            }
+
+
+        }, 1000);
+
+
+    }
+);
+
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+const userName =
+    localStorage.getItem("userName");
+
+const userEmail =
+    localStorage.getItem("userEmail");
+
+
+document.getElementById(
+    "dashboardUserName"
+).textContent =
+    userName || "User";
+
+
+document.getElementById(
+    "dashboardUserEmail"
+).textContent =
+    userEmail || "No email available";
+
+});
+</script>
+
+</body>
+
+</html>
