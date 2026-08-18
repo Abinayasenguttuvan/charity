@@ -176,7 +176,7 @@
             <!-- Dashboard -->
 
             <a
-                href="./coordinator.html"
+                href="./coordinator-dashboard.html"
                 class="gov-nav-item ">
 
                 <span class="gov-nav-icon">
@@ -274,31 +274,117 @@
              SIDEBAR LOGOUT
         =================================================== -->
 
-        <div class="gov-sidebar-footer">
+        <!-- =========================================================
+     GOV LOGOUT SIDEBAR
+     UNIQUE PREFIX: govlogout-
+========================================================= -->
+
+<div class="govlogout-sidebar-footer">
+
+    <button
+        type="button"
+        class="govlogout-sidebar-btn"
+        id="govlogoutOpenBtn"
+        aria-haspopup="dialog"
+        aria-controls="govlogoutModal"
+    >
+        <span class="govlogout-nav-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </span>
+
+        <span class="govlogout-btn-text">
+            Logout
+        </span>
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     LOGOUT CONFIRMATION MODAL
+========================================================= -->
+
+<div
+    class="govlogout-modal-overlay"
+    id="govlogoutModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="govlogoutTitle"
+    aria-hidden="true"
+>
+
+    <div class="govlogout-modal-box">
+
+        <!-- Close Button -->
+        <button
+            type="button"
+            class="govlogout-close-btn"
+            id="govlogoutCloseBtn"
+            aria-label="Close logout popup"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <!-- Icon -->
+        <div class="govlogout-modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+
+        <!-- Content -->
+        <div class="govlogout-modal-content">
+
+            <h2 id="govlogoutTitle">
+                Logout Confirmation
+            </h2>
+
+            <p>
+                Are you sure you want to logout from your account?
+            </p>
+
+            <span class="govlogout-warning">
+                <i class="fa-solid fa-shield-halved"></i>
+                Your session will be securely closed.
+            </span>
+
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="govlogout-modal-actions">
+
+            <button
+                type="button"
+                class="govlogout-stay-btn"
+                id="govlogoutStayBtn"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Stay Logged In</span>
+            </button>
 
 
             <button
                 type="button"
-                class="gov-logout-sidebar"
-                id="govSidebarLogout">
-
-
-                <span class="gov-nav-icon">
-
-                    <i class="fa-solid fa-right-from-bracket"></i>
-
-                </span>
-
-<a href="./404.html">
-                <span>
-                    Logout
-                </span></a>
-
-
+                class="govlogout-confirm-btn"
+                id="govlogoutConfirmBtn"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
             </button>
 
-
         </div>
+
+    </div>
+
+</div>
+
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
 
 
     </aside>
@@ -1040,6 +1126,936 @@
 
 </main>
 
+<style>
+    /* =========================================================
+   GOV LOGOUT COMPONENT
+   UNIQUE PREFIX: govlogout-
+   COLOR: ORANGE + BLACK
+========================================================= */
+
+
+/* =========================================================
+   SIDEBAR LOGOUT AREA
+========================================================= */
+
+.govlogout-sidebar-footer {
+    width: 100%;
+    padding: 12px 14px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.govlogout-sidebar-btn {
+    width: 100%;
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    padding: 10px 14px;
+
+    border: 1px solid rgba(255, 145, 0, 0.45);
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #161616,
+        #080808
+    );
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* ICON */
+
+.govlogout-nav-icon {
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #ff9d00,
+        #ff6200
+    );
+
+    color: #000000;
+
+    font-size: 14px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* TEXT */
+
+.govlogout-btn-text {
+    white-space: nowrap;
+}
+
+
+/* HOVER */
+
+.govlogout-sidebar-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #ff8c00,
+        #ff6200
+    );
+
+    color: #000000;
+
+    border-color: #ff9800;
+
+    box-shadow:
+        0 8px 22px rgba(255, 132, 0, 0.25);
+
+    transform: translateY(-2px);
+}
+
+
+.govlogout-sidebar-btn:hover .govlogout-nav-icon {
+    background: #000000;
+    color: #ff9800;
+
+    transform: rotate(-8deg) scale(1.05);
+
+    box-shadow:
+        0 0 12px rgba(255, 145, 0, 0.45);
+}
+
+
+/* ACTIVE */
+
+.govlogout-sidebar-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.govlogout-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 128, 0, 0.12),
+            rgba(0, 0, 0, 0.88) 55%
+        );
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 99999;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* OPEN STATE */
+
+.govlogout-modal-overlay.govlogout-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   MODAL BOX
+========================================================= */
+
+.govlogout-modal-box {
+    position: relative;
+
+    width: min(440px, 100%);
+
+    padding: 32px 28px 26px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 145, 0, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #090909
+        );
+
+    color: #ffffff;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65),
+        0 0 35px rgba(255, 128, 0, 0.14);
+
+    transform:
+        translateY(30px)
+        scale(0.94);
+
+    transition:
+        transform 0.35s ease;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* TOP ORANGE GLOW */
+
+.govlogout-modal-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: -80px;
+    left: 50%;
+
+    width: 220px;
+    height: 160px;
+
+    transform: translateX(-50%);
+
+    background: #ff8500;
+
+    opacity: 0.12;
+
+    filter: blur(55px);
+
+    pointer-events: none;
+}
+
+
+/* OPEN MODAL */
+
+.govlogout-modal-overlay.govlogout-active
+.govlogout-modal-box {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.govlogout-close-btn {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+
+    background: #111111;
+
+    color: #aaaaaa;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.govlogout-close-btn:hover {
+    background: #ff7900;
+    color: #000000;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL ICON
+========================================================= */
+
+.govlogout-modal-icon {
+    position: relative;
+
+    width: 68px;
+    height: 68px;
+
+    margin: 4px auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffab00,
+            #ff6500
+        );
+
+    color: #000000;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 0 0 7px rgba(255, 140, 0, 0.08),
+        0 0 30px rgba(255, 140, 0, 0.25);
+
+    animation: govlogoutIconPulse 2s infinite;
+}
+
+
+@keyframes govlogoutIconPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 7px rgba(255, 140, 0, 0.08),
+            0 0 30px rgba(255, 140, 0, 0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 11px rgba(255, 140, 0, 0.04),
+            0 0 40px rgba(255, 140, 0, 0.38);
+    }
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.govlogout-modal-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.govlogout-modal-content h2 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 22px;
+    line-height: 1.3;
+
+    font-weight: 700;
+}
+
+
+.govlogout-modal-content p {
+    margin: 0 auto 16px;
+
+    max-width: 340px;
+
+    color: #bdbdbd;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   WARNING TEXT
+========================================================= */
+
+.govlogout-warning {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 128, 0, 0.08);
+
+    border: 1px solid rgba(255, 128, 0, 0.2);
+
+    color: #ffad4d;
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.govlogout-modal-actions {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin-top: 25px;
+}
+
+
+/* COMMON BUTTON */
+
+.govlogout-modal-actions button {
+    flex: 1;
+
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 10px 14px;
+
+    border-radius: 9px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* STAY BUTTON */
+
+.govlogout-stay-btn {
+    border: 1px solid #333333;
+
+    background: #222222;
+
+    color: #eeeeee;
+}
+
+
+.govlogout-stay-btn:hover {
+    background: #303030;
+
+    border-color: #555555;
+
+    transform: translateY(-2px);
+}
+
+
+/* LOGOUT CONFIRM BUTTON */
+
+.govlogout-confirm-btn {
+    border: 1px solid #ff8500;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9d00,
+            #ff6200
+        );
+
+    color: #000000;
+
+    box-shadow:
+        0 7px 20px rgba(255, 128, 0, 0.18);
+}
+
+
+.govlogout-confirm-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #ffb000,
+            #ff7200
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 28px rgba(255, 128, 0, 0.3);
+}
+
+
+.govlogout-modal-actions button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .govlogout-sidebar-footer {
+        padding: 10px 12px;
+    }
+
+    .govlogout-sidebar-btn {
+        min-height: 44px;
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .govlogout-nav-icon {
+        width: 28px;
+        height: 28px;
+        flex-basis: 28px;
+        font-size: 13px;
+    }
+
+    .govlogout-modal-box {
+        width: min(410px, 94%);
+        padding: 30px 24px 24px;
+    }
+
+    .govlogout-modal-content h2 {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .govlogout-sidebar-footer {
+        width: 100%;
+        padding: 8px 10px;
+    }
+
+    .govlogout-sidebar-btn {
+        width: 100%;
+
+        min-height: 42px;
+
+        padding: 8px 10px;
+
+        gap: 9px;
+
+        border-radius: 8px;
+
+        font-size: 12px;
+    }
+
+    .govlogout-nav-icon {
+        width: 27px;
+        height: 27px;
+
+        flex: 0 0 27px;
+
+        border-radius: 7px;
+
+        font-size: 12px;
+    }
+
+
+    /* MODAL */
+
+    .govlogout-modal-overlay {
+        padding: 14px;
+    }
+
+    .govlogout-modal-box {
+        width: 100%;
+
+        max-width: 370px;
+
+        padding:
+            30px
+            18px
+            20px;
+
+        border-radius: 17px;
+    }
+
+    .govlogout-close-btn {
+        top: 11px;
+        right: 11px;
+
+        width: 31px;
+        height: 31px;
+
+        font-size: 12px;
+    }
+
+    .govlogout-modal-icon {
+        width: 58px;
+        height: 58px;
+
+        margin-bottom: 15px;
+
+        font-size: 23px;
+    }
+
+    .govlogout-modal-content h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .govlogout-modal-content p {
+        max-width: 290px;
+
+        font-size: 12px;
+        line-height: 1.55;
+
+        margin-bottom: 13px;
+    }
+
+    .govlogout-warning {
+        font-size: 10px;
+        padding: 6px 9px;
+    }
+
+    .govlogout-modal-actions {
+        flex-direction: column;
+
+        gap: 8px;
+
+        margin-top: 20px;
+    }
+
+    .govlogout-modal-actions button {
+        width: 100%;
+
+        min-height: 40px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .govlogout-sidebar-btn {
+        min-height: 40px;
+
+        padding: 7px 8px;
+
+        font-size: 11px;
+    }
+
+    .govlogout-nav-icon {
+        width: 25px;
+        height: 25px;
+        flex-basis: 25px;
+
+        font-size: 11px;
+    }
+
+    .govlogout-modal-box {
+        padding: 27px 15px 17px;
+    }
+
+    .govlogout-modal-content h2 {
+        font-size: 17px;
+    }
+
+    .govlogout-modal-content p {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .govlogout-modal-overlay,
+    .govlogout-modal-box,
+    .govlogout-sidebar-btn,
+    .govlogout-nav-icon,
+    .govlogout-close-btn,
+    .govlogout-modal-actions button {
+        transition: none;
+    }
+
+    .govlogout-modal-icon {
+        animation: none;
+    }
+}
+    </style>
+    <script>
+        /* =========================================================
+   GOV LOGOUT MODAL
+   UNIQUE PREFIX: govlogout-
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+const govlogoutOpenBtn =
+    document.getElementById("govlogoutOpenBtn");
+
+const govlogoutModal =
+    document.getElementById("govlogoutModal");
+
+const govlogoutCloseBtn =
+    document.getElementById("govlogoutCloseBtn");
+
+const govlogoutStayBtn =
+    document.getElementById("govlogoutStayBtn");
+
+const govlogoutConfirmBtn =
+    document.getElementById("govlogoutConfirmBtn");
+
+
+/* Safety check */
+if (
+    !govlogoutOpenBtn ||
+    !govlogoutModal ||
+    !govlogoutCloseBtn ||
+    !govlogoutStayBtn ||
+    !govlogoutConfirmBtn
+) {
+    return;
+}
+
+
+/* =====================================================
+   OPEN MODAL
+===================================================== */
+
+function govlogoutOpenModal() {
+
+    govlogoutModal.classList.add("govlogout-active");
+
+    govlogoutModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.style.overflow = "hidden";
+
+    setTimeout(function () {
+
+        govlogoutCloseBtn.focus();
+
+    }, 100);
+}
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+function govlogoutCloseModal() {
+
+    govlogoutModal.classList.remove(
+        "govlogout-active"
+    );
+
+    govlogoutModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.style.overflow = "";
+
+    govlogoutOpenBtn.focus();
+}
+
+
+/* =====================================================
+   OPEN BUTTON
+===================================================== */
+
+govlogoutOpenBtn.addEventListener(
+    "click",
+    govlogoutOpenModal
+);
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+govlogoutCloseBtn.addEventListener(
+    "click",
+    govlogoutCloseModal
+);
+
+
+/* =====================================================
+   STAY LOGGED IN
+===================================================== */
+
+govlogoutStayBtn.addEventListener(
+    "click",
+    function () {
+
+        govlogoutCloseModal();
+
+    }
+);
+
+
+/* =====================================================
+   CLICK OUTSIDE MODAL
+===================================================== */
+
+govlogoutModal.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            event.target === govlogoutModal
+        ) {
+
+            govlogoutCloseModal();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            govlogoutModal.classList.contains(
+                "govlogout-active"
+            )
+        ) {
+
+            govlogoutCloseModal();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CONFIRM LOGOUT
+===================================================== */
+
+govlogoutConfirmBtn.addEventListener(
+    "click",
+    function () {
+
+        /*
+         * Clear login/session information.
+         * Remove or modify these if your project
+         * uses different localStorage keys.
+         */
+
+        localStorage.removeItem("stackly_session");
+        localStorage.removeItem("loggedInUserEmail");
+        localStorage.removeItem("loggedUser");
+        localStorage.removeItem("userName");
+        localStorage.removeItem("userEmail");
+
+
+        /*
+         * Redirect to login page.
+         *
+         * Change "login.html" if your login
+         * page has another filename.
+         */
+
+        window.location.href = "login.html";
+
+    }
+);
+
+});
+    </script>
 <style>
     /* ==========================================================
    STACKLY CHARITY
@@ -4555,7 +5571,7 @@ body {
                         ellipsis;
             
                     color:
-                        #171717;
+                        white;
             
                 }
             
@@ -4584,7 +5600,7 @@ body {
                         ellipsis;
             
                     color:
-                        #6b7280;
+                        white;
             
                 }
             
@@ -5501,6 +6517,52 @@ body {
          }
      );
      </Script>
+     <style>
+        /* =========================================
+   FORCE LOGOUT POPUP ABOVE EVERYTHING
+========================================= */
+
+.gov-logout-modal {
+    position: fixed !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100vh !important;
+
+    z-index: 999999 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    pointer-events: none;
+}
+
+
+.gov-logout-modal.gov-modal-show {
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    pointer-events: auto;
+}
+
+
+.gov-modal-backdrop {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    z-index: 1 !important;
+}
+
+
+.gov-logout-card {
+    position: relative !important;
+
+    z-index: 2 !important;
+}
+        </style>
      
      </body>
      

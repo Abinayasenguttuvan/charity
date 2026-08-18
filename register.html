@@ -385,45 +385,104 @@
 
                     <!-- ROLE -->
 
-                    <div class="gov-signup-field">
+                    <!-- =====================================================
+     ROLE
+====================================================== -->
 
-                        <label for="govSignupRole">
-                            Select Role
-                        </label>
+<div class="gov-signup-field">
 
-                        <div class="gov-signup-input-wrap gov-signup-select-wrap">
+    <label for="govSignupRole">
+        Select Role
+    </label>
 
-                            <i class="fa-solid fa-user-shield"></i>
+    <div class="gov-signup-role-dropdown">
 
-                            <select
-                                id="govSignupRole"
-                                name="role">
+        <!-- Selected Role Button -->
 
-                                <option value="">
-                                    Select your role
-                                </option>
+        <button
+            type="button"
+            class="gov-signup-role-button"
+            id="govSignupRoleButton"
+            aria-expanded="false">
 
-                                <option value="government-officer">
-                                    Government Officer
-                                </option>
+            <span class="gov-signup-role-button-content">
 
-                                <option value="citizen">
-                                    Citizen
-                                </option>
+                <i class="fa-solid fa-user-shield"></i>
 
-                            </select>
+                <span
+                    class="gov-signup-role-selected"
+                    id="govSignupRoleSelected">
 
-                            <i class="fa-solid fa-chevron-down gov-signup-select-arrow"></i>
+                    Select your role
 
-                        </div>
+                </span>
 
-                        <small
-                            class="gov-signup-error"
-                            id="govSignupRoleError">
-                        </small>
+            </span>
 
-                    </div>
+            <i
+                class="fa-solid fa-chevron-down gov-signup-role-arrow">
+            </i>
 
+        </button>
+
+
+        <!-- Role Options -->
+
+        <div
+            class="gov-signup-role-options"
+            id="govSignupRoleOptions">
+
+            <button
+                type="button"
+                class="gov-signup-role-option"
+                data-value="government-officer">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <span>
+
+                    Government Officer
+
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="gov-signup-role-option"
+                data-value="citizen">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+
+                    Citizen
+
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- Hidden input for form validation -->
+
+        <input
+            type="hidden"
+            id="govSignupRole"
+            name="role"
+            value="">
+
+    </div>
+
+
+    <small
+        class="gov-signup-error"
+        id="govSignupRoleError">
+    </small>
+
+</div>
 
                     <!-- TERMS -->
 
@@ -562,6 +621,441 @@
 
 
     <style>
+
+        /* =========================================================
+   CUSTOM ROLE DROPDOWN
+   UNIQUE PREFIX: gov-signup-role-
+========================================================= */
+
+.gov-signup-role-dropdown {
+
+position: relative;
+
+width: 100%;
+
+overflow: visible;
+
+}
+
+
+/* =========================================================
+ROLE BUTTON
+========================================================= */
+
+.gov-signup-role-button {
+
+width: 100%;
+
+min-height: 60px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+gap: 15px;
+
+padding: 0 20px;
+
+border: 1px solid #d7e0ea;
+
+border-radius: 14px;
+
+background: #ffffff;
+
+color: #1b2b3a;
+
+font-family: inherit;
+
+font-size: 18px;
+
+cursor: pointer;
+
+text-align: left;
+
+transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+
+}
+
+
+.gov-signup-role-button:hover {
+
+border-color: #0757a6;
+
+}
+
+
+.gov-signup-role-button.gov-signup-role-active {
+
+border-color: #0757a6;
+
+box-shadow:
+    0 0 0 4px
+    rgba(7, 87, 166, 0.10);
+
+}
+
+
+/* =========================================================
+LEFT CONTENT
+========================================================= */
+
+.gov-signup-role-button-content {
+
+display: flex;
+
+align-items: center;
+
+gap: 14px;
+
+min-width: 0;
+
+}
+
+
+.gov-signup-role-button-content > i {
+
+flex-shrink: 0;
+
+color: #0757a6;
+
+font-size: 19px;
+
+}
+
+
+.gov-signup-role-selected {
+
+overflow: hidden;
+
+white-space: nowrap;
+
+text-overflow: ellipsis;
+
+}
+
+
+/* =========================================================
+ARROW
+========================================================= */
+
+.gov-signup-role-arrow {
+
+flex-shrink: 0;
+
+font-size: 14px;
+
+color: #61708a;
+
+transition:
+    transform 0.3s ease;
+
+}
+
+
+.gov-signup-role-button.gov-signup-role-active
+.gov-signup-role-arrow {
+
+transform: rotate(180deg);
+
+}
+
+
+/* =========================================================
+DROPDOWN OPTIONS
+========================================================= */
+
+.gov-signup-role-options {
+
+position: absolute;
+
+top: calc(100% + 8px);
+
+left: 0;
+
+width: 100%;
+
+z-index: 9999;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 6px;
+
+padding: 8px;
+
+background: #ffffff;
+
+border: 1px solid #dce7f3;
+
+border-radius: 14px;
+
+box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.14);
+
+opacity: 0;
+
+visibility: hidden;
+
+transform:
+    translateY(-8px);
+
+pointer-events: none;
+
+transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+}
+
+
+/* =========================================================
+SHOW OPTIONS
+========================================================= */
+
+.gov-signup-role-dropdown.gov-signup-role-open
+.gov-signup-role-options {
+
+opacity: 1;
+
+visibility: visible;
+
+transform:
+    translateY(0);
+
+pointer-events: auto;
+
+}
+
+
+/* =========================================================
+INDIVIDUAL ROLE OPTION
+========================================================= */
+
+.gov-signup-role-option {
+
+width: 100%;
+
+min-height: 54px;
+
+display: flex;
+
+align-items: center;
+
+gap: 14px;
+
+padding: 12px 15px;
+
+border: none;
+
+border-radius: 10px;
+
+background: transparent;
+
+color: #1b2b3a;
+
+font-family: inherit;
+
+font-size: 17px;
+
+font-weight: 600;
+
+text-align: left;
+
+cursor: pointer;
+
+transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+
+}
+
+
+.gov-signup-role-option i {
+
+width: 24px;
+
+flex-shrink: 0;
+
+text-align: center;
+
+color: #0757a6;
+
+font-size: 18px;
+
+}
+
+
+.gov-signup-role-option:hover {
+
+background: #eaf4ff;
+
+color: #0757a6;
+
+transform:
+    translateX(3px);
+
+}
+
+
+/* =========================================================
+SELECTED OPTION
+========================================================= */
+
+.gov-signup-role-option.gov-signup-role-selected-option {
+
+background: #eaf4ff;
+
+color: #0757a6;
+
+}
+
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+.gov-signup-role-button {
+
+    min-height: 58px;
+
+    font-size: 17px;
+
+}
+
+
+.gov-signup-role-option {
+
+    min-height: 52px;
+
+    font-size: 17px;
+
+}
+
+}
+
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+.gov-signup-role-dropdown {
+
+    width: 100%;
+
+    max-width: 100%;
+
+}
+
+
+.gov-signup-role-button {
+
+    min-height: 56px;
+
+    padding:
+        0 16px;
+
+    gap: 10px;
+
+    font-size: 17px;
+
+    border-radius: 12px;
+
+}
+
+
+.gov-signup-role-button-content {
+
+    gap: 11px;
+
+}
+
+
+.gov-signup-role-button-content > i {
+
+    font-size: 17px;
+
+}
+
+
+.gov-signup-role-options {
+
+    top:
+        calc(100% + 6px);
+
+    padding: 6px;
+
+    border-radius: 12px;
+
+}
+
+
+.gov-signup-role-option {
+
+    min-height: 52px;
+
+    padding:
+        10px 13px;
+
+    font-size: 16px;
+
+    gap: 11px;
+
+}
+
+
+.gov-signup-role-option i {
+
+    font-size: 17px;
+
+}
+
+}
+
+
+/* =========================================================
+VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+.gov-signup-role-button {
+
+    min-height: 54px;
+
+    padding:
+        0 14px;
+
+    font-size: 16px;
+
+}
+
+
+.gov-signup-role-option {
+
+    min-height: 50px;
+
+    padding:
+        10px 12px;
+
+    font-size: 15px;
+
+}
+
+}
+        
         /* =========================================================
    STACKLY GOVERNMENT SIGNUP PAGE
    UNIQUE PREFIX:
@@ -631,7 +1125,7 @@ justify-content: center;
 background:
     linear-gradient(
         135deg,
-        #eef7f7 0%,
+        #f7f3ee 0%,
         #f5f8fc 50%,
         #eaf4fb 100%
     );
@@ -2576,9 +3070,662 @@ REDUCED MOTION
 }
 
 }
+/* =========================================================
+   CUSTOM ROLE DROPDOWN - 10PX VERSION
+========================================================= */
+
+/* Prevent dropdown from hiding */
+
+.gov-signup-field,
+.gov-signup-input-wrap,
+.gov-signup-role-dropdown,
+.gov-signup-form,
+.gov-signup-card {
+    overflow: visible !important;
+}
+
+
+/* Keep role dropdown above other content */
+
+.gov-signup-field:has(.gov-signup-role-dropdown) {
+    position: relative;
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   DROPDOWN WRAPPER
+========================================================= */
+
+.gov-signup-role-dropdown {
+    position: relative;
+    width: 100%;
+    z-index: 10000;
+}
+
+
+/* =========================================================
+   ROLE BUTTON
+========================================================= */
+
+.gov-signup-role-button {
+    width: 100%;
+    min-height: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 6px;
+
+    padding: 0 10px;
+
+    border: 1px solid #d7e0ea;
+    border-radius: 6px;
+
+    background: #ffffff;
+    color: #1b2b3a;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 500;
+
+    cursor: pointer;
+    text-align: left;
+
+    position: relative;
+    z-index: 10001;
+
+    transition: all 0.25s ease;
+}
+
+
+.gov-signup-role-button:hover,
+.gov-signup-role-button.gov-signup-role-active {
+    border-color: #0757a6;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(7, 87, 166, 0.10);
+}
+
+
+/* =========================================================
+   BUTTON CONTENT
+========================================================= */
+
+.gov-signup-role-button-content {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+
+.gov-signup-role-button-content > i {
+    flex-shrink: 0;
+
+    color: #0757a6;
+
+    font-size: 10px;
+}
+
+
+.gov-signup-role-selected {
+    min-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   DROPDOWN ARROW
+========================================================= */
+
+.gov-signup-role-arrow {
+    flex-shrink: 0;
+
+    color: #61708a;
+
+    font-size: 8px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.gov-signup-role-button.gov-signup-role-active
+.gov-signup-role-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DROPDOWN OPTIONS BOX
+========================================================= */
+
+.gov-signup-role-options {
+    position: absolute;
+
+    top: calc(100% + 3px);
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    padding: 3px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce7f3;
+    border-radius: 6px;
+
+    box-shadow:
+        0 8px 18px
+        rgba(0, 0, 0, 0.18);
+
+    z-index: 999999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-4px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+/* =========================================================
+   SHOW DROPDOWN
+========================================================= */
+
+.gov-signup-role-dropdown.gov-signup-role-open {
+    z-index: 999999;
+}
+
+
+.gov-signup-role-dropdown.gov-signup-role-open
+.gov-signup-role-options {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   ROLE OPTIONS
+========================================================= */
+
+.gov-signup-role-option {
+    width: 100%;
+
+    min-height: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 8px;
+
+    border: none;
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: #1b2b3a;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.gov-signup-role-option i {
+    width: 14px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    color: #0757a6;
+
+    font-size: 10px;
+}
+
+
+/* Hover */
+
+.gov-signup-role-option:hover {
+    background: #eaf4ff;
+
+    color: #0757a6;
+}
+
+
+/* Selected */
+
+.gov-signup-role-option.gov-signup-role-selected-option {
+    background: #eaf4ff;
+
+    color: #0757a6;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .gov-signup-role-button {
+        min-height: 34px;
+        height: 34px;
+        font-size: 10px;
+    }
+
+    .gov-signup-role-selected {
+        font-size: 10px;
+    }
+
+    .gov-signup-role-option {
+        min-height: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .gov-signup-role-dropdown {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    .gov-signup-role-button {
+        min-height: 32px;
+        height: 32px;
+
+        padding: 0 8px;
+
+        font-size: 10px;
+
+        border-radius: 5px;
+    }
+
+
+    .gov-signup-role-button-content {
+        gap: 6px;
+    }
+
+
+    .gov-signup-role-button-content > i {
+        font-size: 10px;
+    }
+
+
+    .gov-signup-role-selected {
+        font-size: 10px;
+    }
+
+
+    .gov-signup-role-arrow {
+        font-size: 7px;
+    }
+
+
+    .gov-signup-role-options {
+        top: calc(100% + 2px);
+
+        padding: 3px;
+
+        border-radius: 5px;
+    }
+
+
+    .gov-signup-role-option {
+        min-height: 28px;
+        height: 28px;
+
+        padding: 0 7px;
+
+        gap: 6px;
+
+        font-size: 10px;
+    }
+
+
+    .gov-signup-role-option i {
+        width: 13px;
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .gov-signup-role-button {
+        min-height: 30px;
+        height: 30px;
+
+        padding: 0 7px;
+
+        font-size: 10px;
+    }
+
+
+    .gov-signup-role-selected {
+        font-size: 10px;
+    }
+
+
+    .gov-signup-role-option {
+        min-height: 27px;
+        height: 27px;
+
+        font-size: 10px;
+    }
+
+}
     </style>
 
     <script>
+        /* =====================================================
+   CUSTOM ROLE DROPDOWN
+===================================================== */
+
+const govSignupRoleButton =
+    document.getElementById(
+        "govSignupRoleButton"
+    );
+
+const govSignupRoleDropdown =
+    document.querySelector(
+        ".gov-signup-role-dropdown"
+    );
+
+const govSignupRoleOptions =
+    document.getElementById(
+        "govSignupRoleOptions"
+    );
+
+const govSignupRoleSelected =
+    document.getElementById(
+        "govSignupRoleSelected"
+    );
+
+const govSignupRoleOptionButtons =
+    document.querySelectorAll(
+        ".gov-signup-role-option"
+    );
+
+
+/* =====================================================
+   OPEN / CLOSE DROPDOWN
+===================================================== */
+
+govSignupRoleButton.addEventListener(
+    "click",
+    function () {
+
+        const isOpen =
+            govSignupRoleDropdown.classList.contains(
+                "gov-signup-role-open"
+            );
+
+
+        if (isOpen) {
+
+            govSignupRoleDropdown.classList.remove(
+                "gov-signup-role-open"
+            );
+
+            govSignupRoleButton.classList.remove(
+                "gov-signup-role-active"
+            );
+
+            govSignupRoleButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        } else {
+
+            govSignupRoleDropdown.classList.add(
+                "gov-signup-role-open"
+            );
+
+            govSignupRoleButton.classList.add(
+                "gov-signup-role-active"
+            );
+
+            govSignupRoleButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SELECT ROLE
+===================================================== */
+
+govSignupRoleOptionButtons.forEach(
+    function (option) {
+
+        option.addEventListener(
+            "click",
+            function () {
+
+                const roleValue =
+                    this.getAttribute(
+                        "data-value"
+                    );
+
+                const roleText =
+                    this.querySelector(
+                        "span"
+                    ).textContent.trim();
+
+
+                /* Set hidden input */
+
+                govSignupRole.value =
+                    roleValue;
+
+
+                /* Show selected role */
+
+                govSignupRoleSelected.textContent =
+                    roleText;
+
+
+                /* Remove selected class */
+
+                govSignupRoleOptionButtons.forEach(
+                    function (item) {
+
+                        item.classList.remove(
+                            "gov-signup-role-selected-option"
+                        );
+
+                    }
+                );
+
+
+                /* Add selected class */
+
+                this.classList.add(
+                    "gov-signup-role-selected-option"
+                );
+
+
+                /* Close dropdown */
+
+                govSignupRoleDropdown.classList.remove(
+                    "gov-signup-role-open"
+                );
+
+                govSignupRoleButton.classList.remove(
+                    "gov-signup-role-active"
+                );
+
+                govSignupRoleButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+
+                /* Clear validation error */
+
+                if (govSignupRoleError) {
+
+                    govSignupRoleError.textContent = "";
+
+                }
+
+
+                const govRoleWrapper =
+                    govSignupRole.closest(
+                        ".gov-signup-role-dropdown"
+                    );
+
+                if (govRoleWrapper) {
+
+                    govRoleWrapper.classList.remove(
+                        "gov-signup-invalid"
+                    );
+
+                    govRoleWrapper.classList.add(
+                        "gov-signup-valid"
+                    );
+
+                }
+
+
+                /* Trigger change event */
+
+                govSignupRole.dispatchEvent(
+                    new Event("change")
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   CLOSE WHEN CLICKING OUTSIDE
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            !govSignupRoleDropdown.contains(
+                event.target
+            )
+        ) {
+
+            govSignupRoleDropdown.classList.remove(
+                "gov-signup-role-open"
+            );
+
+            govSignupRoleButton.classList.remove(
+                "gov-signup-role-active"
+            );
+
+            govSignupRoleButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CLOSE ON ESC KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (event.key === "Escape") {
+
+            govSignupRoleDropdown.classList.remove(
+                "gov-signup-role-open"
+            );
+
+            govSignupRoleButton.classList.remove(
+                "gov-signup-role-active"
+            );
+
+            govSignupRoleButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    }
+);
         /* =========================================================
    STACKLY GOVERNMENT SIGNUP
    UNIQUE PREFIX:
