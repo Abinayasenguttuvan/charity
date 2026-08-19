@@ -2548,14 +2548,14 @@ footer {
 
     font-size:
         clamp(
-            52px,
+            32px,
             5.6vw,
-            88px
+            45px
         );
 
     line-height: 1.05;
 
-    font-weight: 700;
+    font-weight: 300;
 
     letter-spacing: -2px;
 
@@ -2591,7 +2591,7 @@ footer {
 
     font-size: 14px;
 
-    font-weight: 700;
+    font-weight: 800;
 
     letter-spacing: .4px;
 
@@ -2607,7 +2607,18 @@ footer {
         background .3s ease,
         box-shadow .3s ease;
 }
+/* =========================================
+   FORCE ALL MOBILE FONT SIZES TO 22px
+========================================= */
 
+@media (max-width: 767px) {
+
+body,
+body * {
+    font-size: 20px !important;
+}
+
+}
 
 /* =========================================================
    BUTTON HOVER
